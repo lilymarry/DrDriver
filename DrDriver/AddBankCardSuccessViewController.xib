@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddBankCardSuccessViewController">
+            <connections>
+                <outlet property="theLable" destination="OhR-av-GGU" id="lM5-sh-Q2T"/>
+                <outlet property="topLine" destination="4HA-TL-SO7" id="jkw-IA-fN2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltj-de-sCv">
+                    <rect key="frame" x="0.0" y="64" width="375" height="190"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_bank_success" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-GY-kIj">
+                            <rect key="frame" x="147" y="43" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="Mmn-SJ-hj8"/>
+                                <constraint firstAttribute="height" constant="80" id="t56-2f-CsT"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="操作成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OhR-av-GGU">
+                            <rect key="frame" x="87" y="131" width="200" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="PWc-ID-o2A"/>
+                                <constraint firstAttribute="width" constant="200" id="gMv-kw-Iuz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.2196078431372549" green="0.41568627450980389" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="OhR-av-GGU" firstAttribute="top" secondItem="BXG-GY-kIj" secondAttribute="bottom" constant="8" id="0ll-ae-7Ar"/>
+                        <constraint firstItem="OhR-av-GGU" firstAttribute="centerX" secondItem="ltj-de-sCv" secondAttribute="centerX" id="Vkx-LL-UPJ"/>
+                        <constraint firstAttribute="height" constant="190" id="YQp-df-2oI"/>
+                        <constraint firstItem="BXG-GY-kIj" firstAttribute="top" secondItem="ltj-de-sCv" secondAttribute="top" constant="43" id="fTY-eP-4M2"/>
+                        <constraint firstItem="BXG-GY-kIj" firstAttribute="centerX" secondItem="ltj-de-sCv" secondAttribute="centerX" id="nBv-zV-3wa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ltj-de-sCv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="4HA-TL-SO7"/>
+                <constraint firstAttribute="trailing" secondItem="ltj-de-sCv" secondAttribute="trailing" id="GG1-OZ-SRV"/>
+                <constraint firstItem="ltj-de-sCv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TKW-DQ-i0H"/>
+            </constraints>
+            <point key="canvasLocation" x="-354" y="30"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="add_bank_success" width="80" height="80"/>
+    </resources>
+</document>

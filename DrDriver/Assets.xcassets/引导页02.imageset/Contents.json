@@ -1,0 +1,71 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-1.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-2.png",
+      "subtype" : "retina4",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-3.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-4.png",
+      "subtype" : "retina4",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02.png",
+      "subtype" : "667h",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-5.png",
+      "subtype" : "1792h",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-6.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-7.png",
+      "subtype" : "retina4",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "改动02-8.png",
+      "subtype" : "736h",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "02.png",
+      "subtype" : "2436h",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "02-1.png",
+      "subtype" : "2688h",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

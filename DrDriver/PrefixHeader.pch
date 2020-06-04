@@ -1,0 +1,375 @@
+//
+//  PrefixHeader.pch
+//  DrDriver
+//
+//  Created by mac on 2017/6/18.
+//  Copyright © 2017年 tangchaoke. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "Masonry.h"
+#import "CYTool.h"
+#import "AFRequestManager.h"
+#import "MJRefresh.h"
+#import "MJExtension.h"
+#import "SVProgressHUD.h"
+#import "NSString+CYString.h"
+#import "BaseViewController.h"
+
+// 如果在后台选择自动配置授权信息，下面的三个LICENSE相关的参数已经配置好了
+// 只需配置FACE_API_KEY和FACE_SECRET_KEY两个参数即可
+
+// 人脸license文件名
+#define FACE_LICENSE_NAME    @"idl-license"
+
+// 人脸license后缀
+#define FACE_LICENSE_SUFFIX  @"face-ios"
+
+// （您申请的应用名称(appname)+「-face-ios」后缀，如申请的应用名称(appname)为test123，则此处填写test123-face-ios）
+// 在后台 -> 产品服务 -> 人脸识别 -> 客户端SDK管理查看，如果没有的话就新建一个
+#define FACE_LICENSE_ID        @"WllivesDrDriver-face-ios"
+
+#define DeviceWidth     [UIScreen mainScreen].bounds.size.width
+#define DeviceHeight    [UIScreen mainScreen].bounds.size.height
+
+#define VIEW_BACKGROUND_COLOR  [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1]
+
+#define TEXT_COLOR  [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]
+
+#define BUTTON_BACKCOLOR  [UIColor colorWithRed:255/255.0 green:27/255.0 blue:99/255.0 alpha:1]
+
+#define CATECOLOR_NORMAL  [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
+
+#define CATECOLOR_SELECTED  [UIColor colorWithRed:37/255.0 green:145/255.0 blue:255/255.0 alpha:1]
+
+#define TABLEVIEW_BACKCOLOR   [UIColor groupTableViewBackgroundColor]
+
+#define RGBA(r,g,b,a)   [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+
+
+//判断是否是ipad
+#define isPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+//判断iPhoneX
+#define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPHoneXr
+#define IS_IPHONE_Xr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneXs
+#define IS_IPHONE_Xs ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+//判断iPhoneXs Max
+#define IS_IPHONE_Xs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !isPad : NO)
+
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+//iPhoneX系列
+#define k_Height_NavContentBar 44.0f
+#define k_Height_StatusBar (IPHONE_X ? 44.0 : 20.0)
+#define k_Height_NavBar (IPHONE_X ? 88.0 : 64.0)
+#define k_Height_TabBar (IPHONE_X ? 83.0 : 49.0)
+#define Top_Height (IPHONE_X ? 24.0 : 0.0)
+#define Bottom_Height (IPHONE_X ? 17.0 : 0.f)
+
+//DEBUG 模式下打印日志,当前行
+#ifdef DEBUG
+#define CYLog(...) NSLog(__VA_ARGS__)
+#else
+#define CYLog(...)
+#endif
+
+//工具类实例
+#define CYTSI  [CYTool sharedInstance]
+
+//正式域名
+//#define HTTP_URL  @"http://app.wllives.com/index.php/"
+#define HTTP_IMG_URL  @"http://app.wllives.com/"
+
+//测试域名
+#define HTTP_URL  @"http://wxtest.wllives.com/index.php/"
+//#define HTTP_IMG_URL  @"http://echuzu.tangchaoke.com/"
+//#define HTTP_URL  @"http://192.168.0.198/index.php/"
+//#define HTTP_URL  @"http://zhun.e1860.com/index.php/"
+//版本更新
+#define DRIVER_VERSION_DRIVER_CLIENT_UPDATE_IOS @"Driver/Version/driver_client_update_ios"
+
+//1.1 注册发送验证码
+#define DRIVER_SEND_VERIFY  @"Driver/Driver/send_verify"
+
+//1.2 司机注册ttp:
+#define DRIVER_DRIVER_REGISTER  @"Driver/Login/driver_register"
+
+//1.2 司机注册,完善个人信息接口地
+#define DRIVER_REGISTER_PERSON_INFO  @"Driver/Login/driver_register_perfect_info"
+
+//1.2.4 司机可切换的运行类型列表
+#define DRIVER_SHOW_DRIVER_CLASS @"Driver/Driver/show_driver_class"
+
+//1.2.5 司机切换运营类型
+#define DRIVER_SWITCH_DRIVER_CLASS @"Driver/Driver/switch_driver_class"
+
+//1.2.6 司机补录信息需提交的字段
+#define DRIVER_LOGIN_COMPLEMENT @"Driver/login/complement"
+
+//1.2.7 提交补录信息
+#define DRIVER_LOGIN_COMPLEMENT_INFO @"Driver/Login/complement_info"
+
+//1.3 司机注册,完善车辆信息接口地
+#define DRIVER_REGISTER_VEHICLE_INFO  @"Driver/Driver/driver_register_vehicle_info"
+
+//1.3.1 车辆品牌列表
+#define DRIVER_VEHICLE_BRAND_LIST  @"Driver/Driver/vehicle_brand_list"
+
+//1.3.2 车辆颜色列表
+#define DRIVER_VEHICLE_COLOR_LIST  @"Driver/Driver/vehicle_color_list"
+
+//1.4 司机注册,证书信息上传接口地
+#define DRIVER_REGISTER_CERTIFICATE_INFO  @"Driver/Login/driver_register_perfect_info"
+
+//1.5 车主登录
+#define DRIVER_LOGIN  @"Driver/Login/driver_login"
+
+//1.5.1 司机注册信息
+#define DRIVER_REGISTER_INFO @"Driver/Login/driver_register_info"
+
+//1.6 车主信息
+//#define DRIVER_BASE_DATA  @"Driver/Driver/driver_base_data"
+#define DRIVER_BASE_DATA  @"Driver/Driver/driver_data_new"
+
+//1.6.1 司机首页在线时长
+#define DRIVER_ONLINE_TIME  @"Driver/Driver/driver_online_time"
+
+//1.7 修改车主头像
+#define DRIVER_EDIT_BASE_DATA  @"Driver/Driver/edit_base_data"
+
+//1.8 修改密码,发送验证码
+#define DRIVER_DRIVER_MODIFY_SEND_VERIFY  @"Driver/Driver/modify_send_verify"
+
+//1.9 修改密码
+#define DRIVER_DRIVER_MODIFY_PASSWD  @"Driver/Driver/modify_passwd"
+
+//2.1 忘记密码,发送验证码
+#define DRIVER_RESET_SEND_VERIFY  @"Driver/Driver/reset_send_verify"
+
+//2.2 忘记密码,重置密码
+#define DRIVER_RESET_PASSWD  @"Driver/Driver/reset_passwd"
+
+//2.3 银行种类
+#define DRIVER_BANK_CLASS_LIST  @"Driver/DriverBank/bank_class_list"
+
+//2.4 车主添加银行卡
+#define DRIVER_DRIVERBANK_ADD_DRIVER_BANK  @"Driver/DriverBank/add_driver_bank"
+
+//2.5 车主银行卡列表
+#define DRIVER_DRIVERBANK_LIST  @"Driver/DriverBank/driver_bank_list"
+
+//2.6 删除车主银行卡
+#define DRIVER_DRIVERBANK_DELETE_DRIVER_BANK  @"Driver/DriverBank/delete_driver_bank"
+
+//2.7 用户提现,发送验证码
+#define DRIVER_WITHDRAW_SEND_VERIFY  @"Driver/Driver/withdraw_send_verify"
+
+//2.8 用户提现,添加提现记录
+#define DRIVER_WITHDRAW  @"Driver/Driver/withdraw"
+
+//2.9  司机余额收支记录
+#define DRIVER_CASH_RECORD  @"Driver/Driver/cash_record"
+
+
+
+
+//3.1  更新司机位置
+#define DRIVER_UPDATE_VEHICLE_LOCATION  @"Driver/Driver/update_vehicle_location"
+
+//3.2 司机邀请记录
+#define DRIVER_INVITE_INFO  @"Driver/DriverInviteRecord/driver_invite_info"
+
+//3.3 联系我们
+#define DRIVER_ARTICLE_CONTACT_US  @"Driver/Article/contact_us"
+
+//3.4 司机听单和停止听单请求接口
+#define DRIVER_DRIVER_DRIVER_ONLINE_STATE  @"Driver/Driver/driver_online_state"
+
+//3.5 收到订单推送的回执
+#define DRIVER_JOURNEYORDER_ORDER_PUSH_RECEIPT @"Driver/JourneyOrder/order_push_receipt"
+
+//4.1 [订单模块]司机接单
+#define DRIVER_TAKE_JOURNEY_ORDER  @"Driver/JourneyOrder/take_journey_order"
+
+//4.13 [订单模块]预约单司机前往出发地去接乘客
+#define DRIVER_PICK_UP_PASSENGER  @"Driver/JourneyOrder/driver_pick_up_passenger"
+
+
+//4.0.2 司机推送订单列表
+#define DRIVER_ORDERPUSH_LIST @"Driver/Driver/orderpush_list"
+
+//4.3 [订单模块]订单列表
+#define DRIVER_JOURNEY_ORDER_LIST  @"Driver/JourneyOrder/journey_order_list"
+
+//4.4 [订单模块]订单详情
+#define DRIVER_JOURNEY_ORDER_DETAIL_INFO  @"Driver/JourneyOrder/journey_order_detail_info"
+
+//4.5 [订单模块]到达乘客所在地
+#define DRIVER_ARRIVE_START_LOCATION  @"Driver/JourneyOrder/arrive_start_location"
+
+//4.6 [订单模块]已接到乘客
+#define DRIVER_RECEIVE_PASSENGER  @"Driver/JourneyOrder/driver_receive_passenger"
+
+//4.7 [订单模块]到达目的地
+#define DRIVER_ARRIVER_END_LOCATION  @"Driver/JourneyOrder/arrive_end_location"
+
+//4.7.1 [订单模块]乘客现金支付车费
+#define DRIVER_ORDERPAY_PASSENGER_OFFLINE_PAYMENT  @"Driver/OrderPay/passenger_offline_payment"
+
+//4.8 [订单模块]取消叫车原因列表
+#define DRIVER_CANCEL_ORDER_REASON  @"Driver/JourneyOrder/cancel_order_reason"
+
+//4.9 [订单模块]司机取消叫单
+#define DRIVER_CANCEL_ORDER  @"Driver/JourneyOrder/driver_cancel_order"
+
+//4.9.1 [订单模块]车主评价
+#define DRIVER_JOURNEYORDER_DRIVER_APPRAISE  @"Driver/JourneyOrder/driver_appraise"
+
+//4.9.2 [订单模块]获取进行中订单信息(公里数/车费/时间)
+#define DRIVER_JOURNEYORDER_OBTAIN_JOURNEY_ORDER_MILE  @"Driver/JourneyOrder/obtain_journey_order_mile"
+
+//4.10  司机报警
+#define DRIVER_JOURNEYORDER_ALARM @"Driver/JourneyOrder/alarm"
+
+
+
+//5.1 [消息]司机消息
+#define DRIVER_DRIVERMESSAGE_DRIVER_MESSAGE_INFO  @"Driver/DriverMessage/driver_message_info"
+
+//5.2 [邀请码]发送邀请码
+#define DRIVER_RECOMMEND_SEND_VERIFY  @"Driver/Driver/recommend_send_verify"
+
+//5.3 意见反馈
+#define DRIVER_FEEDBACK_ADD_BACK  @"Driver/Feedback/add_feedback"
+
+//5.4 [推送位置]司机快到达出发地，向乘客推送实时位置
+#define DRIVER_NEARBY_START_LOCATION_PUSH  @"http://app.wllives.com/Api/OrderPush /driver_nearby_start_location_push"
+
+//5.5 [快车]司机端打车费用
+#define DRIVER_JOURNEYORDER_CALC_JOURNEY_FEE  @"Driver/JourneyOrder/calc_journey_fee"
+
+//5.4 司机端分享
+#define DRIVER_SHARE_DRIVER_APP_SHARE  @"Driver/Share/driver_app_share"
+//6.1 获取司机收款码
+#define DRIVER_QRCODE_GETPAYQRCODE  @"Driver/Qrcode/getPayQrcode"
+//6.2 司机收款码详情
+#define DRIVER_QRCODE_DRIVER_INFO  @"Driver/Qrcode/driver_info"
+
+//   司机录入脸部照片
+#define DRIVER_BAIDUAIP_DRIVER_FACE_AUTH @"Driver/BaiduAip/driver_face_auth"
+
+//   司机人脸对比
+#define DRIVER_FACE_MATCH @"Driver/BaiduAip/driver_face_match"
+
+//     未完成的订单推送信息
+#define UNFINISH_NEW_ORDER @"Driver/Index/unfinish_new_order"
+
+//-------------------------------------------包车司机---------------------------------------
+
+//10.1.1 司机基本信息
+#define DRIVER_INTERCITY_DRIVER_BASE_INFO  @"Driver/Intercity/driver_base_info"
+
+//10.1.2 司机首页在线时长，定时请求接口
+#define DRIVER_INTERCITY_ONLINE_TIME  @"Driver/Intercity/driver_online_time"
+
+//10.2.1 司机上下班
+#define DRIVER_INTERCITY_DRIVER_ONLINE_STATE  @"Driver/Intercity/driver_online_state"
+
+//10.2.2  更新司机位置
+#define DRIVER_INTERCITY_UPDATE_VEHICLE_LOCATION  @"Driver/Intercity/update_vehicle_location"
+
+//10.3.1 包车订单列表
+#define DRIVER_INTERCITY_JOURNEY_ORDER_LIST  @"Driver/Intercity/journey_order_list"
+
+//10.3.2 包车订单列表详情
+#define DRIVER_INTERCITY_JOURNEY_ORDER_DETAIL  @"Driver/Intercity/journey_order_detail"
+
+//10.3.3 开始行程
+#define DRIVER_INTERCITY_DRIVER_RECEIVE_PASSENGER  @"Driver/Intercity/driver_receive_passenger"
+
+//10.3.4 结束行程
+#define DRIVER_INTERCITY_ARRIVER_END_LOCATION  @"Driver/Intercity/arrive_end_location"
+
+//10.3.5 车主评价
+#define DRIVER_INTERCITY_DRIVER_APPRAISE  @"Driver/Intercity/driver_appraise"
+
+
+//11.1 司机信息
+#define DRIVER_TRAVEL_DRIVER_INFO @"Driver/Travel/driver_info"
+
+//11.2 司机发布行程
+#define DRIVER_TRAVEL_PUNISH_ROUTE @"Driver/Travel/punish_route"
+
+//11.3 行程列表
+#define DRIVER_TRAVEL_TRAVEL_LIST @"Driver/Travel/travel_list"
+
+//11.4 修改行程信息
+#define DRIVER_TRAVEL_CHANGE_TRAVEL_INFO @"Driver/Travel/change_travel_info"
+
+//11.5  城际自由行开始行程
+#define DRIVER_TRAVEL_START_TRAVEL @"Driver/Travel/start_travel"
+
+//11.6   城际自由行到达目的地，结束行程
+#define DRIVER_TRAVEL_END_TRAVEL @"Driver/Travel/end_travel"
+
+//11.7  城际自由行司机取消行程
+#define DRIVER_TRAVEL_CANCEL_TRAVEL @"Driver/Travel/cancel_travel"
+
+//11.8 城际自由行司机修改订单状态
+#define DRIVER_TRAVEL_UPDATE_ORDER @"Driver/Travel/update_order"
+
+//11.9  行程详情
+#define DRIVER_TRAVEL_TRAVEL_DETAIL @"Driver/Travel/travel_detail"
+
+//11.10  更新司机位置
+#define DRIVER_TRAVEL_UPDATE_VEHICLE_LOCATION @"Driver/Travel/update_vehicle_location"
+
+//11.11  司机评价
+#define DRIVER_TRAVEL_DRIVER_APPRAISE @"Driver/Travel/driver_appraise"
+
+//11.12  司机取消订单原因
+#define DRIVER_TRAVEL_CANCEL_REASON @"Driver/Travel/cancel_reason"
+
+//11.13 路线列表
+#define DRIVER_TRAVEL_LINE_LIST @"Driver/Travel/line_list"
+
+//11.14 查看路线详情
+#define DRIVER_TRAVEL_LINE_DETAIL @"Driver/Travel/line_detail"
+
+//11.15 司机发布行程
+#define DRIVER_TRAVEL_CREAT_TRAVEL @"Driver/Travel/create_travel"
+
+//11.16.1 司机首页用户发布的行程列表
+#define DRIVER_TRAVEL_USER_TRAVEL_LIST @"Driver/Travel/user_travel_list"
+
+//11.16.2 根据司机行程匹配到的用户行程的列表
+#define DRIVER_TRAVEL_MATCH_ORDER_LIST @"Driver/Travel/match_order_list"
+
+//11.17 用户发布的行程详情
+#define DRIVER_TRAVEL_USER_ORDER_DETAIL @"Driver/Travel/user_order_detail"
+
+//11.18 司机抢单
+#define DRIVER_TRAVEL_GRAB_ORDER @"Driver/Travel/grab_order"
+
+//11.19 机备注信息列表
+#define TRAVEL_REMARK_LIST @"Driver/Travel/remark_list"
+
+//司机注册 选择类型列表
+#define DRIVER_LOGIN_REGISTER_TYPE @"Driver/Login/regist_type"
+
+#endif /* PrefixHeader_pch */

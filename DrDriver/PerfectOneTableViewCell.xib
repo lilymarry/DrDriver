@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="PerfectOneTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="329" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="329" height="82.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TYd-44-tRo">
+                        <rect key="frame" x="12" y="0.0" width="305" height="82.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_header" translatesAutoresizingMaskIntoConstraints="NO" id="rKr-Gh-J0V">
+                                <rect key="frame" x="10" y="10" width="51" height="62.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="I9o-V5-ic9"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juX-y2-wJb">
+                                <rect key="frame" x="0.0" y="0.0" width="305" height="82.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="上传头像">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rKr-Gh-J0V" firstAttribute="top" secondItem="TYd-44-tRo" secondAttribute="top" constant="10" id="DYe-PB-x7n"/>
+                            <constraint firstItem="rKr-Gh-J0V" firstAttribute="leading" secondItem="TYd-44-tRo" secondAttribute="leading" constant="10" id="IeV-Zy-L1w"/>
+                            <constraint firstItem="juX-y2-wJb" firstAttribute="leading" secondItem="TYd-44-tRo" secondAttribute="leading" id="PWC-BE-VRz"/>
+                            <constraint firstItem="juX-y2-wJb" firstAttribute="top" secondItem="TYd-44-tRo" secondAttribute="top" id="XxM-We-Aah"/>
+                            <constraint firstAttribute="bottom" secondItem="juX-y2-wJb" secondAttribute="bottom" id="giS-qg-Prn"/>
+                            <constraint firstAttribute="trailing" secondItem="juX-y2-wJb" secondAttribute="trailing" id="hhO-8k-HYX"/>
+                            <constraint firstAttribute="bottom" secondItem="rKr-Gh-J0V" secondAttribute="bottom" constant="10" id="vtG-7W-erz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="TYd-44-tRo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8L3-e8-edu"/>
+                    <constraint firstAttribute="trailing" secondItem="TYd-44-tRo" secondAttribute="trailing" constant="12" id="MoN-af-mmr"/>
+                    <constraint firstItem="TYd-44-tRo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="NQL-Tc-Ctm"/>
+                    <constraint firstAttribute="bottom" secondItem="TYd-44-tRo" secondAttribute="bottom" id="dsU-0Y-PLK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bgView" destination="TYd-44-tRo" id="2en-CV-Tko"/>
+                <outlet property="headerImageView" destination="rKr-Gh-J0V" id="l4i-Bv-dts"/>
+                <outlet property="uploadButton" destination="juX-y2-wJb" id="1CY-j2-R6N"/>
+            </connections>
+            <point key="canvasLocation" x="-113.5" y="-61.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="default_header" width="51" height="51"/>
+    </resources>
+</document>

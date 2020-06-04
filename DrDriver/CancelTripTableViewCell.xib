@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CancelTripTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBd-BL-eBP">
+                        <rect key="frame" x="280" y="0.0" width="40" height="43.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="b5t-T4-IJ9"/>
+                        </constraints>
+                        <state key="normal" image="cancel_trip_normal"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpZ-2a-Qca">
+                        <rect key="frame" x="12" y="11.5" width="256" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="CeF-sc-Nee"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-d8-cE7">
+                        <rect key="frame" x="12" y="43.5" width="296" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Xy9-VA-RoV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QH6-d8-cE7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="5li-eH-hTH"/>
+                    <constraint firstAttribute="trailing" secondItem="wBd-BL-eBP" secondAttribute="trailing" id="89E-v8-KlA"/>
+                    <constraint firstAttribute="bottom" secondItem="wBd-BL-eBP" secondAttribute="bottom" id="93h-zQ-wFr"/>
+                    <constraint firstItem="tpZ-2a-Qca" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="ECR-hO-6YG"/>
+                    <constraint firstItem="wBd-BL-eBP" firstAttribute="leading" secondItem="tpZ-2a-Qca" secondAttribute="trailing" constant="12" id="Ec2-lb-cKp"/>
+                    <constraint firstAttribute="trailing" secondItem="QH6-d8-cE7" secondAttribute="trailing" constant="12" id="io3-6b-PEF"/>
+                    <constraint firstAttribute="bottom" secondItem="QH6-d8-cE7" secondAttribute="bottom" id="lzy-Bt-GmZ"/>
+                    <constraint firstItem="tpZ-2a-Qca" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rcR-aQ-pTl"/>
+                    <constraint firstItem="wBd-BL-eBP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sFy-gD-3rJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lineView" destination="QH6-d8-cE7" id="u3g-GB-Mwk"/>
+                <outlet property="seasonLable" destination="tpZ-2a-Qca" id="2xs-6h-AgM"/>
+                <outlet property="selectButton" destination="wBd-BL-eBP" id="wmV-Ma-VUh"/>
+            </connections>
+            <point key="canvasLocation" x="-142" y="-56"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cancel_trip_normal" width="23" height="23"/>
+    </resources>
+</document>

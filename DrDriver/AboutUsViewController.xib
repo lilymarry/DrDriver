@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutUsViewController">
+            <connections>
+                <outlet property="appLogoIamgeView" destination="YpW-VS-hEZ" id="74f-b6-EM3"/>
+                <outlet property="appName" destination="vYg-YL-MBG" id="NKB-l1-Ueu"/>
+                <outlet property="companyName" destination="0tX-zX-nnP" id="lUb-HW-4sR"/>
+                <outlet property="totalLable" destination="2ud-zQ-PPR" id="ovt-Q5-Na3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="driver_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="YpW-VS-hEZ">
+                    <rect key="frame" x="114" y="101" width="128" height="128"/>
+                    <color key="backgroundColor" red="0.14117647059999999" green="0.53333333329999999" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="q4I-To-iL7"/>
+                        <constraint firstAttribute="width" constant="120" id="yhP-KL-iEI"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="网路出行" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYg-YL-MBG">
+                    <rect key="frame" x="121" y="251" width="114" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="EFj-zc-heX"/>
+                        <constraint firstAttribute="width" constant="150" id="nCo-Px-UdM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Copyright©2017 网路（天津）电子商务有限公司 all right reserved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ud-zQ-PPR">
+                    <rect key="frame" x="-23" y="612" width="392" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="217" id="DvO-IY-4eO"/>
+                        <constraint firstAttribute="height" constant="36" id="e8c-2b-0ZA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="网路（天津）电子商务有限公司" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tX-zX-nnP">
+                    <rect key="frame" x="58" y="574" width="229" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="M28-F5-Hxj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="YpW-VS-hEZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="161" id="8Ym-NF-dIg"/>
+                <constraint firstAttribute="bottom" secondItem="2ud-zQ-PPR" secondAttribute="bottom" constant="15" id="Cl6-c2-Vsp"/>
+                <constraint firstAttribute="trailing" secondItem="0tX-zX-nnP" secondAttribute="trailing" constant="30" id="EyK-tK-cF2"/>
+                <constraint firstItem="0tX-zX-nnP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="KLp-76-Fci"/>
+                <constraint firstItem="vYg-YL-MBG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kb0-kc-xLt"/>
+                <constraint firstItem="YpW-VS-hEZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aFP-RM-S8J"/>
+                <constraint firstItem="2ud-zQ-PPR" firstAttribute="top" secondItem="0tX-zX-nnP" secondAttribute="bottom" constant="5" id="gsx-XY-74Y"/>
+                <constraint firstItem="2ud-zQ-PPR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="h2V-J9-GSK"/>
+                <constraint firstItem="vYg-YL-MBG" firstAttribute="top" secondItem="YpW-VS-hEZ" secondAttribute="bottom" constant="7" id="uSm-Ad-EpB"/>
+            </constraints>
+            <point key="canvasLocation" x="-322" y="-256"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="driver_logo.png" width="90" height="90"/>
+    </resources>
+</document>
