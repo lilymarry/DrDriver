@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,7 +38,7 @@
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_cell_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="0Iw-rg-gYG">
-                                    <rect key="frame" x="358" y="27" width="5" height="11"/>
+                                    <rect key="frame" x="358" y="26.5" width="5" height="11"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="11" id="iQs-Q5-prI"/>
                                         <constraint firstAttribute="width" constant="5" id="uVL-6f-gBa"/>
@@ -108,7 +106,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="HoD-c8-aV7"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -139,7 +136,6 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Xbp-zv-Ldl"/>
                                     </constraints>
-                                    <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
@@ -173,7 +169,7 @@
                         <constraint firstAttribute="trailing" secondItem="jLx-4L-EbP" secondAttribute="trailing" id="kdo-og-qk9"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请提现成功后，工作人员将在每周二统一受理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30y-TX-SMY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请提现成功后，预计2-7天后到账(节假日延后)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30y-TX-SMY">
                     <rect key="frame" x="20" y="334" width="335" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="BNT-yd-Xby"/>

@@ -107,7 +107,7 @@
             [self.dateArr addObjectsFromArray:dataArr];
             [myTableView reloadData];
         }
-        NSLog(@"self.dataArrayself.dataArray%@",self.dateArr);
+//        NSLog(@"self.dataArrayself.dataArray%@",self.dateArr);
         [myTableView.mj_header endRefreshing];
         if ([currentPage intValue]>[responseObject[@"total_page"] intValue]) {
             [myTableView .mj_footer endRefreshingWithNoMoreData];

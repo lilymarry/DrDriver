@@ -422,8 +422,7 @@
     self.idCarLB.text = [NSString stringWithFormat:@"身份证号:%@",model.m_card_number];
     self.userRemarkLB.text = [NSString stringWithFormat:@"备注:%@",model.remark];
     self.orderNumberLB.text = [NSString stringWithFormat:@"订单号:%@",model.order_sn];
-    NSLog(@"model.passenger_phone%@",model.passenger_phone);
-    if (model.passenger_phone.length>7) {
+    if (model.passenger_phone.length>4) {
         NSString * secretStr=[model.passenger_phone substringWithRange:NSMakeRange(3,4)];
         NSString * sectet=[model.passenger_phone stringByReplacingOccurrencesOfString:secretStr withString:@"****"];
         self.phoneNumberLB.text = [NSString stringWithFormat:@"手机号:%@",sectet];
@@ -546,7 +545,7 @@
         self.endDetailAddressLB.text = model.end_address;
     }
     self.stateLB.text = model.state_name;
-    NSLog(@"model.state_name%@",model.state_name);
+//    NSLog(@"model.state_name%@",model.state_name);
     if ([model.state_name isEqualToString:@"待上车"]) {
         self.stateLB.text = @"去接乘客";
         self.stateLB.layer.cornerRadius  =  5;

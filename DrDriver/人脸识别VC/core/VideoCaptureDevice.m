@@ -11,6 +11,14 @@
 @interface VideoCaptureDevice () <AVCaptureVideoDataOutputSampleBufferDelegate> {
     dispatch_queue_t _videoBufferQueue;
 }
+
+
+/**
+ * 设定使用前置摄像头或者后置摄像头
+ * AVCaptureDevicePositionFront 前置摄像头(默认)
+ * AVCaptureDevicePositionBack 后置摄像头
+ */
+@property (nonatomic, readwrite, assign) AVCaptureDevicePosition position;
 @property (nonatomic, readwrite, retain) AVCaptureSession *captureSession;
 @property (nonatomic, readwrite, retain) AVCaptureDevice *captureDevice;
 @property (nonatomic, readwrite, retain) AVCaptureDeviceInput *captureInput;
@@ -29,15 +37,20 @@
     }
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        _captureSession = [[AVCaptureSession alloc] init];
-        _videoBufferQueue = dispatch_queue_create("video_buffer_handle_queue", NULL);
-        _isSessionBegin = NO;
-        _position = AVCaptureDevicePositionFront;
-    }
+
+- (instancetype)creatWithFount:(BOOL)isFount{
+   _captureSession = [[AVCaptureSession alloc] init];
+   _videoBufferQueue = dispatch_queue_create("video_buffer_handle_queue", NULL);
+   _isSessionBegin = NO;
+   if (isFount) {
+         _position = AVCaptureDevicePositionFront;
+      }else{
+        _position = AVCaptureDevicePositionBack;
+      }
     return self;
 }
+
+
 
 - (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition) position {
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -51,7 +64,7 @@
 
 - (void)startSession {
 #if TARGET_OS_SIMULATOR
-    NSLog(@"模拟器没有摄像头，此功能只有真机可用");
+//    NSLog(@"模拟器没有摄像头，此功能只有真机可用");
 #else
     if (self.captureSession.running) {
         return;
@@ -90,7 +103,7 @@
 
 - (void)stopSession {
 #if TARGET_OS_SIMULATOR
-    NSLog(@"模拟器没有摄像头，此功能只有真机可用");
+//    NSLog(@"模拟器没有摄像头，此功能只有真机可用");
 #else
     if (!self.captureSession.running) {
         return;

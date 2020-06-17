@@ -25,6 +25,7 @@
 
 @implementation LoginViewController
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.accountTextFiled.text = @"";
     self.passwordTextFiled.text = @"";
 }
@@ -51,12 +52,13 @@
 
     //检查软件是否需要更新
     [self checkForUpdate];
+  
 }
 #pragma mark ---- 检查软件是否需要更新
 -(void)checkForUpdate{
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     [AFRequestManager postRequestWithUrl:DRIVER_VERSION_DRIVER_CLIENT_UPDATE_IOS params:@{@"version":[infoDictionary objectForKey:@"CFBundleShortVersionString"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"CFBundleShortVersionString%@",responseObject);
+//        NSLog(@"CFBundleShortVersionString%@",responseObject);
         if ([responseObject[@"flag"] isEqualToString:@"success"]) {
             if ([responseObject[@"data"][@"is_force"] isEqualToString:@"1"]) {
             if (![responseObject[@"data"][@"version"]  isEqualToString:[infoDictionary objectForKey:@"CFBundleShortVersionString"]]) {
@@ -67,7 +69,7 @@
                 updateAlertView.versionNumberLabel.text = [NSString stringWithFormat:@"V %@",responseObject[@"data"][@"version"]];
                 [[UIApplication sharedApplication].keyWindow addSubview:updateAlertView];
             }
-            }
+          }
         }
     } failure:^(NSError *error) {
         
@@ -79,7 +81,7 @@
     UIButton * navBackButton=[UIButton buttonWithType:UIButtonTypeCustom];
     navBackButton.frame=CGRectMake(0, 0, 40, 40);
     navBackButton.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
-    [navBackButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [navBackButton setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
     [navBackButton addTarget:self action:@selector(navBackButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem * leftItem=[[UIBarButtonItem alloc]initWithCustomView:navBackButton];
@@ -90,7 +92,7 @@
 //导航栏返回按钮
 -(void)navBackButtonClicked
 {
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -113,12 +115,7 @@
     self.accountTextFiled.text=@"";
 }
 
-//注册按钮点击事件
-- (IBAction)resgisterButtonClicked:(id)sender
-{
-    TrueRegisterViewController * vc=[[TrueRegisterViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
+
 
 //忘记密码按钮点击事件
 - (IBAction)forgetPasswordButtonClicked:(id)sender
@@ -149,22 +146,19 @@
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     //手机系统版本
     NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
-    NSLog(@"手机系统版本: %@", phoneVersion);
+//    NSLog(@"手机系统版本: %@", phoneVersion);
     //手机型号
     NSString* phoneModel = [[UIDevice currentDevice] model];
-    NSLog(@"手机型号: %@",phoneModel );
+//    NSLog(@"手机型号: %@",phoneModel );
     // 当前应用软件版本  比如：1.0.1
     NSString *appCurVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    NSLog(@"当前应用软件版本:%@",appCurVersion);
+//    NSLog(@"当前应用软件版本:%@",appCurVersion);
     NSString *iphoneTypeStr = [CYTSI iphoneType];
-    NSLog(@"当前应用版本号码：%@",iphoneTypeStr);
+//    NSLog(@"当前应用版本号码：%@",iphoneTypeStr);
     
     [AFRequestManager postRequestWithUrl:DRIVER_LOGIN params:@{@"driver_account":self.accountTextFiled.text,@"driver_password":self.passwordTextFiled.text,@"system_type":@"2",@"brand":iphoneTypeStr,@"model":iphoneTypeStr,@"system_version":phoneVersion,@"soft_version":appCurVersion} tost:YES special:0 success:^(id responseObject) {
         
         DriverModel * driver=[DriverModel mj_objectWithKeyValues:responseObject[@"data"]];
-        
-        
-    NSLog(@" DRIVER_LOGIN ========%@",responseObject);
         if ([responseObject[@"data"][@"audit_state"] isEqualToString:@"3"] || [responseObject[@"data"][@"audit_state"] isEqualToString:@"4"]) {
             if ([responseObject[@"data"][@"audit_state"] isEqualToString:@"3"] ) {
                 [CYTSI otherShowTostWithString:@"审核未通过，请补充信息"];
@@ -172,11 +166,6 @@
             }else{
                 [CYTSI otherShowTostWithString:@"请补全您的个人信息"];                
             }
-//            UIStoryboard * board = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//            Add_ONE_ViewController * RVC = [board instantiateViewControllerWithIdentifier:@"Add_ONE_id"];
-//            RVC.driver = driver;
-//            RVC.ModelDic = responseObject[@"data"];
-//            [self.navigationController pushViewController:RVC animated:YES];
             RegisterCityAndCarTypeViewController *vc = [[RegisterCityAndCarTypeViewController alloc] init];
             vc.driver = driver;
             vc.type = @"login";
@@ -205,115 +194,16 @@
             NSString *d_class = [[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"];
             if ([d_class isEqualToString:@"3"]) {//扫码车进入
                 ScanCarViewController * vc=[[ScanCarViewController alloc]init];
-                if (_isMainJump) {//从首页进来的
-                    NSArray * vcArray=self.navigationController.viewControllers;
-                    BOOL isbool = [vcArray containsObject: vc];
-                    NSLog(@"isbool%d",isbool);
-                    if (isbool) {
-                        for (ScanCarViewController * vc in vcArray) {
-                            
-                            if ([vc isKindOfClass:[ScanCarViewController class]]) {
-                                
-                                vc.isNeedReload=YES;
-                                
-                                [self.navigationController popToViewController:vc animated:YES];
-                            }
-                            
-                        }
-                    }else{
-                        [self.navigationController pushViewController:vc animated:YES];
-                    }
-                    
-                } else {//从appdelegate进来的
-                    
-                    [self.navigationController pushViewController:vc animated:YES];
-                    
-                }
-                    
+                [self.navigationController pushViewController:vc animated:YES];
                 
             }else if ([d_class isEqualToString:@"6"]){//包车进入
+                
                 CharteredViewController * vc=[[CharteredViewController alloc]init];
-                if (_isMainJump) {//从首页进来的
-                    NSArray * vcArray=self.navigationController.viewControllers;
-                    BOOL isbool = [vcArray containsObject: vc];
-                    NSLog(@"isbool%d",isbool);
-                    if (isbool) {
-                        for (CharteredViewController * vc in vcArray) {
-                            
-                            if ([vc isKindOfClass:[CharteredViewController class]]) {
-                                
-                                vc.isNeedReload=YES;
-                                
-                                [self.navigationController popToViewController:vc animated:YES];
-                            }
-                            
-                        }
-                    }else{
-                        [self.navigationController pushViewController:vc animated:YES];
-                    }
-                    
-                } else {//从appdelegate进来的
-                    
-                    [self.navigationController pushViewController:vc animated:YES];
-                    
-                }
-                
-            }
-//            else if ([d_class isEqualToString:@"8"]){//城际自由行进入
-//                IndependentTravelView * vc=[[IndependentTravelView alloc]init];
-//                if (_isMainJump) {//从首页进来的
-//                    NSArray * vcArray=self.navigationController.viewControllers;
-//                    BOOL isbool = [vcArray containsObject: vc];
-//                    NSLog(@"isbool%d",isbool);
-//                    if (isbool) {
-//                        for (IndependentTravelView * vc in vcArray) {
-//
-//                            if ([vc isKindOfClass:[IndependentTravelView class]]) {
-//
-//                                vc.isNeedReload=YES;
-//
-//                                [self.navigationController popToViewController:vc animated:YES];
-//                            }
-//
-//                        }
-//                    }else{
-//                        [self.navigationController pushViewController:vc animated:YES];
-//                    }
-//
-//                } else {//从appdelegate进来的
-//
-//                    [self.navigationController pushViewController:vc animated:YES];
-//
-//                }
-//
-//            }
-            else{//快车/出租车 进入
+                [self.navigationController pushViewController:vc animated:YES];
+                   
+            }else{//快车/出租车 进入
                 ViewController * vc=[[ViewController alloc]init];
-                if (_isMainJump) {//从首页进来的
-                    NSArray * vcArray=self.navigationController.viewControllers;
-                    BOOL isbool = [vcArray containsObject: vc];
-                    NSLog(@"isbool%d",isbool);
-                    if (isbool) {
-                        for (ViewController * vc in vcArray) {
-                            
-                            if ([vc isKindOfClass:[ViewController class]]) {
-                                
-                                vc.isNeedReload=YES;
-                                
-                                [self.navigationController popToViewController:vc animated:YES];
-                            }
-                            
-                        }
-                    }else{
-                        [self.navigationController pushViewController:vc animated:YES];
-                    }
-                    
-                } else {//从appdelegate进来的
-                    
-                    [self.navigationController pushViewController:vc animated:YES];
-                    
-                }
-                
+                [self.navigationController pushViewController:vc animated:YES];
             }
             
         }

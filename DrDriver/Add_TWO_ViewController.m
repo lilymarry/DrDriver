@@ -12,7 +12,8 @@
 #import "RegisterProgressView.h"
 #import "CYAlertView.h"
 #import "AFNetWorking.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 #import "UIImage+FixIMG.h"
 #import "BJNumberPlateOC.h"
 #import <AVFoundation/AVFoundation.h>
@@ -532,9 +533,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSingleAlertView hideAlertView];
             NSArray * vcArray=weakSelf.navigationController.viewControllers;
-            for (LoginViewController * vc in vcArray) {
+            for (QuickLoginViewController * vc in vcArray) {
                 
-                if ([vc isKindOfClass:[LoginViewController class]]) {
+                if ([vc isKindOfClass:[QuickLoginViewController class]]) {
                     
                     //                    [CYTSI otherShowTostWithString:@"上传成功"];
                     [weakSelf.navigationController popToViewController:vc animated:YES];
@@ -680,7 +681,7 @@
             }
             if (i<4) {
                 NSString * dateStr=[NSString stringWithFormat:@"%@%@.png",dateString,imageStr];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 if (_DrivedateDic[imageStr] !=nil) {
                     //[self saveImage:_DrivedateDic[imageStr] withName:dateStr];
                     //  if (i==0) {
@@ -697,7 +698,7 @@
             }else{
                 
                 NSString * dateStr=[NSString stringWithFormat:@"%@%@.png",dateString,imageStr];
-                NSLog(@"otherDateStr%@",dateStr);
+//                NSLog(@"otherDateStr%@",dateStr);
                 if (_DateDic[imageStr] !=nil) {
                     [self saveImage:[UIImage fixOrientation:[self compressImageQuality:_DateDic[imageStr]  toByte:1024*1024]]withName:dateStr];
                     
@@ -758,6 +759,7 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
     LivenessViewController* lvc = [[LivenessViewController alloc] init];
+    lvc.isFount = YES;
     //    __weak typeof(self) weakSelf = self;
     lvc.liveBlock = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -784,14 +786,14 @@
             AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
             NSDictionary *dict = @{@"driver_id":_driver.driver_id,
                 @"token":_driver.token};
-             NSLog(@"===============%@",dict);
+//             NSLog(@"===============%@",dict);
             manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html", nil];
             
             [manager POST:urlString parameters:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                 
                 NSString * dateString=[CYTSI getDateStr];
                 NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                 
                 NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];

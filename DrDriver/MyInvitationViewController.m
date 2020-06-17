@@ -145,7 +145,7 @@
                 BOOL result = [APOpenAPI sendReq:request];
                 if (!result) {
                     //失败处理
-                    NSLog(@"发送失败");
+//                    NSLog(@"发送失败");
                 }
             }
                 break;

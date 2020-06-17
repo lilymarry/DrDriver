@@ -96,16 +96,17 @@
 
 @implementation ITTripDetailViewController
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(chengjiMessage:) name:@"chengjiMessage" object:nil];
 }
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"chengjiMessage" object:nil];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title=@"行程详情";
-    
     self.view.backgroundColor = TABLEVIEW_BACKCOLOR;
     self.locationManager = [[AMapLocationManager alloc] init];
     self.locationManager.delegate = self;
@@ -114,7 +115,6 @@
     self.dataArr = [NSMutableArray array];
     [self startLocation];
     [self setUpNav];//设置导航栏
-    
     [self getData];
     
 }
@@ -137,7 +137,7 @@
         
         if ([responseObject[@"flag"] isEqualToString:@"success"]) {
             NSDictionary *dic = responseObject[@"data"];
-            NSLog(@"orderorder%@",dic);
+//            NSLog(@"orderorder%@",dic);
             [[NSUserDefaults standardUserDefaults] setObject:self.travelID forKey:@"travel_id"];
             [[NSUserDefaults standardUserDefaults] setObject:dic[@"status"] forKey:@"orderState"];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -431,6 +431,7 @@
     //取消订单
     cell.cancelBlock = ^(NSString * _Nonnull orderID) {
         TravelCancelReasonViewController *vc = [[TravelCancelReasonViewController alloc] init];
+        vc.isSchoolBus = @"3";
         vc.orderID = orderID;
         vc.cancelBlock = ^{
             [weakSelf getData];
@@ -717,7 +718,7 @@
         //订单的起点到终点
         AMapNaviPoint * startPoint = [AMapNaviPoint locationWithLatitude:latitude longitude:longtitude];//订单的起点
         AMapNaviPoint * endPoint   = [AMapNaviPoint locationWithLatitude:[start_lat floatValue] longitude:[start_lng floatValue]];
-        NSLog(@"endCoordinate.latitude,self.endCoordinate.longitu%f %f  %f  %f",latitude,longtitude,self.endCoordinate.latitude,self.endCoordinate.longitude);
+//        NSLog(@"endCoordinate.latitude,self.endCoordinate.longitu%f %f  %f  %f",latitude,longtitude,self.endCoordinate.latitude,self.endCoordinate.longitude);
     
         [self.driveManager calculateDriveRouteWithStartPoints:@[startPoint]
                                                     endPoints:@[endPoint]
@@ -764,7 +765,7 @@
 - (void)driveManagerOnCalculateRouteSuccess:(AMapNaviDriveManager *)driveManager
 {
     [_mapView removeOverlay:self.commonPolyline];
-    NSLog(@"onCalculateRouteSuccess");
+//    NSLog(@"onCalculateRouteSuccess");
     NSArray * array=driveManager.naviRoute.routeCoordinates;
     CLLocationCoordinate2D commonPolylineCoords[array.count];
     for (int i=0; i<array.count; i++) {
@@ -972,7 +973,7 @@
  */
 - (void)driveManager:(AMapNaviDriveManager *)driveManager playNaviSoundString:(NSString *)soundString soundStringType:(AMapNaviSoundType)soundStringType
 {
-    NSLog(@"导航播报：%@",soundString);
+//    NSLog(@"导航播报：%@",soundString);
     
     [[SpeechSynthesizer sharedSpeechSynthesizer] speakString:soundString];
 }
@@ -1038,11 +1039,11 @@
             [[SpeechSynthesizer sharedSpeechSynthesizer] speakString:@"定位失败"];
         }
         
-        NSLog(@"location:%@", location);
+//        NSLog(@"location:%@", location);
         
         if (regeocode)
         {
-            NSLog(@"reGeocode:%@", regeocode);
+//            NSLog(@"reGeocode:%@", regeocode);
         }
         locationAnnotation = [[MAPointAnnotation alloc] init];
         locationAnnotation.coordinate = location.coordinate;

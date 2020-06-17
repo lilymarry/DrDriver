@@ -53,7 +53,7 @@
     [self.view addSubview:myWebView];
     
     [myWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/Driver/Article/register_protocol.html",HTTP_IMG_URL]]]];
-    
+    NSLog(@"%@%@",HTTP_IMG_URL,@"/Driver/Article/register_protocol.html");
 }
 
 - (void)didReceiveMemoryWarning {

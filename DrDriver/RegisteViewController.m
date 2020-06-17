@@ -8,8 +8,8 @@
 
 #import "RegisteViewController.h"
 #import "DriverModel.h"
-#import "LoginViewController.h"
-
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 @interface RegisteViewController () <UITextFieldDelegate>
 
 {

@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString * reason_id;//原因id
 @property (strong, nonatomic) NSString * title;//原因说明
+@property (strong, nonatomic) NSString * reason;//取消原因内容
 
 @end

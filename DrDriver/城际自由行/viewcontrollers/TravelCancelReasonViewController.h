@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TravelCancelReasonViewController : UIViewController
 
+@property (strong, nonatomic) NSString * isSchoolBus;//是否是校车取消
+
 @property (strong, nonatomic) NSString * orderID;//订单id
 
 @property(nonatomic,strong)void (^cancelBlock)();

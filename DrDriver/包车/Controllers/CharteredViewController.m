@@ -16,7 +16,8 @@
 #import "CYButtonView.h"
 #import "CYOrderView.h"
 #import "OrderRuningViewController.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 #import "ShouYeModel.h"
 #import "OrdeModel.h"
 #import "CompleteOrderModel.h"
@@ -117,11 +118,11 @@
     [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         // 当网络状态改变了, 就会调用这个block
         if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
-            NSLog(@"网络连接正常");
+//            NSLog(@"网络连接正常");
             [self refreshDown];//请求司机信息
             
         }else{
-            NSLog(@"网络连接错误");
+//            NSLog(@"网络连接错误");
             
         }
     }];
@@ -201,7 +202,7 @@
     if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied)
         //位置服务是在设置中禁用
     {
-        NSLog(@"您没有开启了定位权限");
+//        NSLog(@"您没有开启了定位权限");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"打开定位开关"
                                                         message:@"定位服务未开启，请进入系统设置允许APP获取位置信息"
                                                        delegate:self
@@ -254,7 +255,7 @@
 -(void)checkForUpdate{
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     [AFRequestManager postRequestWithUrl:DRIVER_VERSION_DRIVER_CLIENT_UPDATE_IOS params:@{@"version":[infoDictionary objectForKey:@"CFBundleShortVersionString"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"CFBundleShortVersionString%@",responseObject);
+//        NSLog(@"CFBundleShortVersionString%@",responseObject);
         if ([responseObject[@"flag"] isEqualToString:@"success"]) {
             if ([responseObject[@"data"][@"is_force"] isEqualToString:@"1"]) {
                 if (![responseObject[@"data"][@"version"]  isEqualToString:[infoDictionary objectForKey:@"CFBundleShortVersionString"]]) {
@@ -375,14 +376,14 @@
 //接收到透传消息
 -(void)TouChuan:(NSNotification *)noti
 {
-    NSLog(@"CharteredViewController.userInfo%@",noti.userInfo);
+//    NSLog(@"CharteredViewController.userInfo%@",noti.userInfo);
 
         NotiMessageModel * theNotiMessageModel=[NotiMessageModel mj_objectWithKeyValues:noti.userInfo];
     
         if ([theNotiMessageModel.extras.operate_class isEqualToString:@"new_intercity_order"]) {//新订单推送
       
             if ([self backViewController]){
-                NSLog(@"backViewControllerbackViewController");
+//                NSLog(@"backViewControllerbackViewController");
                 OrderRuningViewController * vc=[[OrderRuningViewController alloc]init];
                 __weak typeof(self) weakSelf = self;
                 vc.AlreadyListenBlock = ^{
@@ -475,7 +476,7 @@
         }];
         
         ShouYeModel * shouYe=[ShouYeModel mj_objectWithKeyValues:responseObject[@"data"]];
-        NSLog(@"DRIVER_INTERCITY_DRIVER_BASE_INFO    =========   %@",responseObject[@"data"]);
+//        NSLog(@"DRIVER_INTERCITY_DRIVER_BASE_INFO    =========   %@",responseObject[@"data"]);
         if (shouYe.audit_state==2) {//可以听单
             //移除透传消息的通知
             [[NSNotificationCenter defaultCenter] removeObserver:self name:@"touchuan" object:nil];
@@ -503,7 +504,7 @@
                     weakSelf.unEndOrderView.alertStr=@"您还有未完成的订单，是否立即查看?";
                     [weakSelf.unEndOrderView showAlertView];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"beginUpdate" object:weakSelf userInfo:nil];
-                    NSDictionary *dict =[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",theOrder.journey_state],@"orderState", nil];
+                    NSDictionary *dict =[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",(long)theOrder.journey_state],@"orderState", nil];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"orderState" object:weakSelf userInfo:dict];
                     
                     
@@ -516,7 +517,7 @@
                     weakSelf.unEndOrderView.phoneBlock = ^{
                         
                         [weakSelf.unEndOrderView hideAlertView];
-                        NSLog(@"theOrder.driver_face_statetheOrder.driver_face_state%@",theOrder.driver_face_state);
+//                        NSLog(@"theOrder.driver_face_statetheOrder.driver_face_state%@",theOrder.driver_face_state);
                         if ([theOrder.driver_face_state isEqualToString:@"1"]) {
                             [weakSelf scanFaceAction:UNFINISHORDER responseObject:@{@"model":theOrder}];
                         }else{
@@ -595,7 +596,7 @@
         [self.timer invalidate];
         _timer = nil;
     }
-    LoginViewController * vc=[[LoginViewController alloc]init];
+    QuickLoginViewController * vc=[[QuickLoginViewController alloc]init];
     vc.isMainJump=YES;
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -731,7 +732,7 @@
     
     [AFRequestManager postRequestWithUrl:DRIVER_INTERCITY_DRIVER_ONLINE_STATE params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"state":@"start",@"driver_lng":driverLocationLo,@"driver_lat":driverLocationLa} tost:NO special:1 success:^(id responseObject) {
         
-        NSLog(@"DRIVER_DRIVER_DRIVER_ONLINE_STATE");
+//        NSLog(@"DRIVER_DRIVER_DRIVER_ONLINE_STATE");
         
         [self updateDriver];
         
@@ -795,7 +796,7 @@
 -(void)updateDriverLocation
 {
     
-    NSLog(@" ===============updateDriverLocation =============================");
+//    NSLog(@" ===============updateDriverLocation =============================");
     
     NSDictionary * dic1 =@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
     [AFRequestManager postRequestWithUrl:DRIVER_INTERCITY_ONLINE_TIME params:dic1 tost:NO special:1 success:^(id responseObject) {
@@ -879,7 +880,7 @@
                     [weakSelf.navigationController pushViewController:vc animated:YES];
                 }
             }else{
-                NSLog(@"开始听单计时");
+//                NSLog(@"开始听单计时");
                 //移除透传消息的通知
                 [[NSNotificationCenter defaultCenter] removeObserver:self name:@"touchuan" object:nil];
                 //接受透传消息的通知
@@ -934,6 +935,7 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
     LivenessViewController* lvc = [[LivenessViewController alloc] init];
+    lvc.isFount = YES;
     lvc.liveBlock = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -973,7 +975,7 @@
                 
                 NSString * dateString=[CYTSI getDateStr];
                 NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                 
                 NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];
@@ -1028,7 +1030,7 @@
 }
 //开始听单
 -(void)alreadyListenAction{
-    NSLog(@"===============alreadyListenAction=================");
+//    NSLog(@"===============alreadyListenAction=================");
     self.midleButtonView.buttonState=ALREADY_LISTEN;
     [self.midleButtonView circlAnimation];
     [self setReceiveNoti];
@@ -1153,6 +1155,7 @@
             UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"是否确认收车下班" message:@"收车下班后将不会收到新的订单并不计数在线时长" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+               
                 [weakSelf stop];
             }];
             [alertController addAction:cancelAction];
@@ -1191,6 +1194,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"stopUpdate" object:self userInfo:nil];
 }
 -(void)stop{
+    
     _stopButton.hidden=YES;
     //停止语音
     [[SpeechSynthesizer sharedSpeechSynthesizer] stopSpeak];
@@ -1388,7 +1392,7 @@ if (nowOrderArray.count ==  0) {
         // NSLog(@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"]);
         if (regeocode)
         {
-            NSLog(@"reGeocode:%@", regeocode);
+//            NSLog(@"reGeocode:%@", regeocode);
             
             self.startAddress=regeocode.formattedAddress;
             if (regeocode.city != nil)

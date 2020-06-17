@@ -111,6 +111,9 @@
 
 
 
+//获取当前时间
+- (NSString*)getCurrentTimes;
+
 /**
  *  返回明天的日期
  *  date:某天的日期
@@ -266,12 +269,19 @@
 
 
 -(NSString *)getDateStr;
+
 -(void)saveImage:(UIImage *)currentImage withName:(NSString *)imageName;
+
 -(UIImage *)compressImageQuality:(UIImage *)image toByte:(NSInteger)maxLength;
+
 //判断是否为数字
 -(BOOL)isNumber:(NSString *)strValue;
-//时间戳装换为时间
+
+//时间戳装换为时间到分
 - (NSString *)timeWithTimeIntervalString:(NSString *)timeString;
+
+- (int)secondWithTimeIntervalString:(NSString *)timeString;
+
 //时间戳装换为天
 - (NSString *)dateWithTimeIntervalString:(NSString *)timeString;
 

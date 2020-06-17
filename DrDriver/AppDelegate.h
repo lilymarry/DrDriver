@@ -16,12 +16,8 @@
 @property (strong, nonatomic) UINavigationController * shouyeNav;
 @property(nonatomic,strong) NSTimer * driverLocationTimer;//司机位置定时器
 @property(nonatomic,assign)NSInteger networkCount;//上传经纬度网络请求失败次数
-
 @property(nonatomic,strong) NSTimer *driverTimer;//后台运行提示定时器
-
 @property(nonatomic,copy)NSString *listenState;
-
-
 
 @end
 

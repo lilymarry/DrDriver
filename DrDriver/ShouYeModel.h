@@ -46,4 +46,6 @@
 @property (nonatomic, copy) NSString *online_state;//司机上班状态
 @property (nonatomic, strong)NSArray *journey_order;//即时订单列表
 @property (nonatomic, strong)NSArray *travel_list;//自由行订单
+@property (nonatomic, strong)NSArray *school_order;//校园拼订单
+@property (nonatomic, strong)NSArray *work_order;//校园拼订单
 @end

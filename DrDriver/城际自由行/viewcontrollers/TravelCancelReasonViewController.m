@@ -58,14 +58,36 @@
 //请求界面数据
 -(void)creatHttp
 {
-    [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_CANCEL_REASON params:@{} tost:NO special:0 success:^(id responseObject) {
+    if ([self.isSchoolBus isEqualToString:@"0"]) {
         
-        seasonArray=[ChangeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
-        [myTableView reloadData];
-        
-    } failure:^(NSError *error) {
-        
-    }];
+        [AFRequestManager postRequestWithUrl:DRIVER_SCHOOLBUS_CANCEL_REASON params:@{} tost:NO special:0 success:^(id responseObject) {
+            
+            seasonArray=[ChangeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            [myTableView reloadData];
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }else if ([self.isSchoolBus isEqualToString:@"1"]){
+      [AFRequestManager postRequestWithUrl:DRIVER_WORKBUS_CANCEL_REASON params:@{} tost:NO special:0 success:^(id responseObject) {
+            
+            seasonArray=[ChangeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+            [myTableView reloadData];
+            
+        } failure:^(NSError *error) {
+            
+        }];
+    }else{
+        [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_CANCEL_REASON params:@{} tost:NO special:0 success:^(id responseObject) {
+                  
+                  seasonArray=[ChangeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
+                  [myTableView reloadData];
+                  
+              } failure:^(NSError *error) {
+                  
+              }];
+    }
+    
 }
 
 //创建主要视图
@@ -115,15 +137,40 @@
         [CYTSI otherShowTostWithString:@"请输入取消原因"];
         return;
     }
+    if ([self.isSchoolBus isEqualToString:@"0"]) {
     
-    [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_UPDATE_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"order_id":self.orderID,@"state":@"8",@"cancel_reason":season} tost:YES special:0 success:^(id responseObject) {
-        if ([responseObject[@"message"] isEqualToString:@"操作成功"]) {
-            self.cancelBlock();
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
+        [AFRequestManager postRequestWithUrl:DRIVER_SCHOOLBUS_CANCEL_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"order_id":self.orderID,@"reason":season} tost:YES special:0 success:^(id responseObject) {
+   
+            if ([responseObject[@"flag"] isEqualToString:@"success"]) {
+                self.cancelBlock();
+                [CYTSI otherShowTostWithString:@"操作成功！"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+    }else if ([self.isSchoolBus isEqualToString:@"1"]){
+        [AFRequestManager postRequestWithUrl:DRIVER_WORKBUS_CANCEL_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"order_id":self.orderID,@"reason":season} tost:YES special:0 success:^(id responseObject) {
+          
+                   if ([responseObject[@"flag"] isEqualToString:@"success"]) {
+                       self.cancelBlock();
+                       [CYTSI otherShowTostWithString:@"操作成功！"];
+                       [self.navigationController popViewControllerAnimated:YES];
+                   }
+               } failure:^(NSError *error) {
+                   
+               }];
+    }else{
+       [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_UPDATE_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"order_id":self.orderID,@"state":@"8",@"cancel_reason":season} tost:YES special:0 success:^(id responseObject) {
+            if ([responseObject[@"message"] isEqualToString:@"操作成功"]) {
+                self.cancelBlock();
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } failure:^(NSError *error) {
+            
+        }];
+    }
+    
     
 }
 
@@ -220,14 +267,33 @@
     }
     
     ChangeModel * change=seasonArray[indexPath.row];
-    
-    cell.seasonLable.text=change.title;
-    
-    if ([change.title isEqualToString:season]) {
-        cell.selectButton.selected=YES;
+    if ([self.isSchoolBus isEqualToString:@"0"]) {
+     
+        cell.seasonLable.text = change.reason;
+    }else if ([self.isSchoolBus isEqualToString:@"1"]) {
+          cell.seasonLable.text=change.reason;
+    }else{
+        cell.seasonLable.text=change.title;
     }
     
-    cell.selectButton.tag=10+indexPath.row;
+    
+    if ([self.isSchoolBus isEqualToString:@"0"]) {
+       
+           if ([change.reason isEqualToString:season]) {
+                 cell.selectButton.selected=YES;
+             }
+      }else if ([self.isSchoolBus isEqualToString:@"1"]){
+         if ([change.reason isEqualToString:season]) {
+             cell.selectButton.selected=YES;
+         }
+      }else{
+          if ([change.title isEqualToString:season]) {
+                    cell.selectButton.selected=YES;
+                 }
+      }
+   
+    
+    cell.selectButton.tag = 10 + indexPath.row;
     [cell.selectButton addTarget:self action:@selector(selectedButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
@@ -236,14 +302,27 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ChangeModel * change=seasonArray[indexPath.row];
-    season=change.title;
+    if ([self.isSchoolBus isEqualToString:@"0"]) {
+       season=change.reason;
+    }else if ([self.isSchoolBus isEqualToString:@"1"]) {
+     season=change.reason;
+    }else{
+      season=change.title;
+    }
+    
     //    [myTableView reloadData];
 }
 
 -(void)selectedButtonClicked:(UIButton *)btn
 {
-    ChangeModel * change=seasonArray[btn.tag-10];
-    season=change.title;
+    ChangeModel * change=seasonArray[btn.tag - 10];
+     if ([self.isSchoolBus isEqualToString:@"0"]) {
+        season=change.reason;
+       }else if ([self.isSchoolBus isEqualToString:@"1"]){
+        season=change.reason;
+       }else{
+         season=change.title;
+       }
     [myTableView reloadData];
 }
 
@@ -253,14 +332,5 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

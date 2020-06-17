@@ -37,7 +37,7 @@
         URLString = [NSString stringWithFormat:@"%@Driver/OnTime/online_times/driver_id/%@/token/%@/isgf/%@/currdate/%@",HTTP_URL,[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"0",[CYTSI getToday]];
     }
     
-    NSLog(@"%@",URLString);
+//    NSLog(@"%@",URLString);
     [self.WebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
 }
 //设置导航栏

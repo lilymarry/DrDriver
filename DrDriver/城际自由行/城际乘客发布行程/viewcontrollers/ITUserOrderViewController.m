@@ -81,7 +81,7 @@
 }
 -(void)creatHttp{
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userid"] == nil) {
-        NSLog(@"没有登录");
+//        NSLog(@"没有登录");
     }else{
         NSString *start_province = @"";NSString *start_city = @"";NSString *start_county = @"";NSString *end_province = @"";NSString *end_city = @"";NSString *end_county = @"";NSString *start_date = @"";NSString *start_time = @"";NSString *end_time = @"";NSString *passenger_num = @"";
         
@@ -116,9 +116,9 @@
             passenger_num = self.searchModel.passenger_num;
         }
         NSDictionary *dic = @{@"p":currentPage,@"start_province":start_province,@"start_city":start_city,@"start_county":start_county,@"end_province":end_province,@"end_city":end_city,@"end_county":end_county,@"start_date":start_date,@"start_time":start_time,@"end_time":end_time,@"passenger_num":passenger_num,@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
-        NSLog(@"NSDictionary *dic =%@",dic);
+//        NSLog(@"NSDictionary *dic =%@",dic);
         [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_USER_TRAVEL_LIST params:dic tost:YES special:0 success:^(id responseObject) {
-            NSLog(@"responseObjectresponseObject%@",responseObject);
+//            NSLog(@"responseObjectresponseObject%@",responseObject);
             
             if ([currentPage intValue]==1) {
                 [self.dataArr removeAllObjects];
@@ -214,7 +214,7 @@
     [self.ITTimeBtn addTarget:self action:@selector(TimeAction) forControlEvents:UIControlEventTouchUpInside];
     [self.topView addSubview:self.ITTimeBtn];
     [self.ITTimeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(lineLB.mas_top).offset(10);
+        make.top.equalTo(lineLB.mas_top).                                                                       offset(10);
         make.centerX.mas_offset(-DeviceWidth/4);
         make.width.mas_offset((DeviceWidth - 120)/2);
         make.height.mas_offset(25);
@@ -406,7 +406,7 @@
         [self creatHttp];
     }
     
-    NSLog(@"%@  %@  %@",province,city,area);
+//    NSLog(@"%@  %@  %@",province,city,area);
 }
 #pragma mark -----  pickerViewDelegate
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{

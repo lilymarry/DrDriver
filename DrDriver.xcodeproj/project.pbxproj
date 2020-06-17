@@ -273,6 +273,42 @@
 		4B40DAB922070E2800688668 /* ITListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B40DAB822070E2800688668 /* ITListModel.m */; };
 		4BD8CDE82202D1810081FEA4 /* TravelCancelReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8CDE72202D1800081FEA4 /* TravelCancelReasonViewController.m */; };
 		861A9AAB70ECCDC127FBED37 /* libPods-DrDriver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3116463114DF6DF9E4701F61 /* libPods-DrDriver.a */; };
+		88012BAF23A866CA0035EFCC /* SLContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 88012BAE23A866CA0035EFCC /* SLContract.m */; };
+		88012BB223A8749D0035EFCC /* SLStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = 88012BB123A8749D0035EFCC /* SLStudent.m */; };
+		8802F3C223B9F24B00E4C792 /* AfterSchoolTripDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8802F3C123B9F24B00E4C792 /* AfterSchoolTripDetialViewController.m */; };
+		8802F3C823B9F93600E4C792 /* AfterSchoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8802F3C723B9F93600E4C792 /* AfterSchoolTableViewCell.m */; };
+		880390C223D420A200802CE2 /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880390BB23D420A100802CE2 /* PlayerManager.m */; };
+		880390C323D420A200802CE2 /* lame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880390BF23D420A100802CE2 /* lame.framework */; };
+		880390C423D420A200802CE2 /* ConvertAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 880390C023D420A100802CE2 /* ConvertAudioFile.m */; };
+		880390C723D429AF00802CE2 /* AudioRecoderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880390C623D429AF00802CE2 /* AudioRecoderManager.m */; };
+		8822690623BD8F55008278A8 /* ChildMoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8822690523BD8F55008278A8 /* ChildMoreModel.m */; };
+		8822690E23BDB464008278A8 /* SLMoreInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8822690C23BDB464008278A8 /* SLMoreInfoTableViewCell.m */; };
+		8822690F23BDB464008278A8 /* SLMoreInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8822690D23BDB464008278A8 /* SLMoreInfoTableViewCell.xib */; };
+		8822691323BDE858008278A8 /* QuickLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8822691123BDE854008278A8 /* QuickLoginViewController.m */; };
+		8822691423BDE858008278A8 /* QuickLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8822691223BDE857008278A8 /* QuickLoginViewController.xib */; };
+		88290B7D23A47CB7001379E0 /* SchoolViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88290B7C23A47CB7001379E0 /* SchoolViewCell.m */; };
+		88290B8123A4C6FE001379E0 /* SchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88290B7F23A4C6FE001379E0 /* SchoolViewController.m */; };
+		88290B8223A4C6FE001379E0 /* SchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88290B8023A4C6FE001379E0 /* SchoolViewController.xib */; };
+		88290B8523A4D122001379E0 /* SLContratViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88290B8423A4D122001379E0 /* SLContratViewController.m */; };
+		882E07FD23B991C000ECA349 /* DriveNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882E07FC23B991C000ECA349 /* DriveNaviViewController.m */; };
+		882E080023B9D6BD00ECA349 /* SLPwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 882E07FF23B9D6BD00ECA349 /* SLPwdView.m */; };
+		88411C28246A6BA2008F34D8 /* GotoWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88411C27246A6BA2008F34D8 /* GotoWorkViewController.m */; };
+		88411C2B246A6C2C008F34D8 /* AfterWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88411C2A246A6C2C008F34D8 /* AfterWorkViewController.m */; };
+		88411C2E246A885A008F34D8 /* AfterWorkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88411C2D246A885A008F34D8 /* AfterWorkTableViewCell.m */; };
+		8849189623CD658400C56B55 /* PbulishLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849189523CD658400C56B55 /* PbulishLineView.m */; };
+		8849189923CD934200C56B55 /* CustomizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8849189823CD934200C56B55 /* CustomizeViewController.m */; };
+		8858F10823A72513001B2F8B /* SLContractDetialController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858F10723A72513001B2F8B /* SLContractDetialController.m */; };
+		8858F11623A73809001B2F8B /* SLContractDetialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858F11423A73807001B2F8B /* SLContractDetialCell.m */; };
+		8858F11723A73809001B2F8B /* SLContractDetialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8858F11523A73809001B2F8B /* SLContractDetialCell.xib */; };
+		8858F11A23A75A1C001B2F8B /* SLChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858F11923A75A1C001B2F8B /* SLChildViewController.m */; };
+		885B784323B443740014A2B1 /* Latlng.m in Sources */ = {isa = PBXBuildFile; fileRef = 885B784223B443740014A2B1 /* Latlng.m */; };
+		8891E8E82472299D00D1586F /* GoToWorkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8891E8E72472299D00D1586F /* GoToWorkTableViewCell.m */; };
+		88D1FB4D23B35351000CE047 /* SLTripList.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D1FB4C23B35351000CE047 /* SLTripList.m */; };
+		88E3F31423B1F2DD006AF5C1 /* SLTripListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E3F31323B1F2DD006AF5C1 /* SLTripListViewController.m */; };
+		88E3F31723B1F601006AF5C1 /* SLTripDetialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E3F31623B1F601006AF5C1 /* SLTripDetialViewController.m */; };
+		88E3F31A23B202A7006AF5C1 /* SLTripDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E3F31923B202A7006AF5C1 /* SLTripDetailTableViewCell.m */; };
+		88EB30CB23BB18F9009FD5E0 /* SLMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EB30C923BB18F9009FD5E0 /* SLMoreViewController.m */; };
+		88FC6B9123A9CC12008008B8 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FC6B9023A9CC12008008B8 /* WeekModel.m */; };
 		C11EA9642008659F00D7A0C5 /* UIImage+FixIMG.m in Sources */ = {isa = PBXBuildFile; fileRef = C11EA9632008659F00D7A0C5 /* UIImage+FixIMG.m */; };
 		C13055A71FF2071800E9E3AF /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = C13055851FF2071800E9E3AF /* IQNSArray+Sort.m */; };
 		C13055A81FF2071800E9E3AF /* IQUIScrollView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C13055871FF2071800E9E3AF /* IQUIScrollView+Additions.m */; };
@@ -788,6 +824,75 @@
 		4B40DAB822070E2800688668 /* ITListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ITListModel.m; sourceTree = "<group>"; };
 		4BD8CDE62202D1800081FEA4 /* TravelCancelReasonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TravelCancelReasonViewController.h; sourceTree = "<group>"; };
 		4BD8CDE72202D1800081FEA4 /* TravelCancelReasonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TravelCancelReasonViewController.m; sourceTree = "<group>"; };
+		88012BAD23A866CA0035EFCC /* SLContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLContract.h; sourceTree = "<group>"; };
+		88012BAE23A866CA0035EFCC /* SLContract.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLContract.m; sourceTree = "<group>"; };
+		88012BB023A8749D0035EFCC /* SLStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLStudent.h; sourceTree = "<group>"; };
+		88012BB123A8749D0035EFCC /* SLStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLStudent.m; sourceTree = "<group>"; };
+		8802F3C023B9F24B00E4C792 /* AfterSchoolTripDetialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AfterSchoolTripDetialViewController.h; sourceTree = "<group>"; };
+		8802F3C123B9F24B00E4C792 /* AfterSchoolTripDetialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AfterSchoolTripDetialViewController.m; sourceTree = "<group>"; };
+		8802F3C623B9F93600E4C792 /* AfterSchoolTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AfterSchoolTableViewCell.h; sourceTree = "<group>"; };
+		8802F3C723B9F93600E4C792 /* AfterSchoolTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AfterSchoolTableViewCell.m; sourceTree = "<group>"; };
+		880390BB23D420A100802CE2 /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
+		880390BC23D420A100802CE2 /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		880390BF23D420A100802CE2 /* lame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = lame.framework; sourceTree = "<group>"; };
+		880390C023D420A100802CE2 /* ConvertAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvertAudioFile.m; sourceTree = "<group>"; };
+		880390C123D420A100802CE2 /* ConvertAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertAudioFile.h; sourceTree = "<group>"; };
+		880390C523D429AF00802CE2 /* AudioRecoderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecoderManager.h; sourceTree = "<group>"; };
+		880390C623D429AF00802CE2 /* AudioRecoderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecoderManager.m; sourceTree = "<group>"; };
+		8822690423BD8F55008278A8 /* ChildMoreModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildMoreModel.h; sourceTree = "<group>"; };
+		8822690523BD8F55008278A8 /* ChildMoreModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildMoreModel.m; sourceTree = "<group>"; };
+		8822690B23BDB464008278A8 /* SLMoreInfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLMoreInfoTableViewCell.h; sourceTree = "<group>"; };
+		8822690C23BDB464008278A8 /* SLMoreInfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLMoreInfoTableViewCell.m; sourceTree = "<group>"; };
+		8822690D23BDB464008278A8 /* SLMoreInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SLMoreInfoTableViewCell.xib; sourceTree = "<group>"; };
+		8822691023BDE852008278A8 /* QuickLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickLoginViewController.h; sourceTree = "<group>"; };
+		8822691123BDE854008278A8 /* QuickLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickLoginViewController.m; sourceTree = "<group>"; };
+		8822691223BDE857008278A8 /* QuickLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickLoginViewController.xib; sourceTree = "<group>"; };
+		88290B7B23A47CB7001379E0 /* SchoolViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SchoolViewCell.h; sourceTree = "<group>"; };
+		88290B7C23A47CB7001379E0 /* SchoolViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolViewCell.m; sourceTree = "<group>"; };
+		88290B7E23A4C6FE001379E0 /* SchoolViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SchoolViewController.h; sourceTree = "<group>"; };
+		88290B7F23A4C6FE001379E0 /* SchoolViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolViewController.m; sourceTree = "<group>"; };
+		88290B8023A4C6FE001379E0 /* SchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolViewController.xib; sourceTree = "<group>"; };
+		88290B8323A4D122001379E0 /* SLContratViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLContratViewController.h; sourceTree = "<group>"; };
+		88290B8423A4D122001379E0 /* SLContratViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLContratViewController.m; sourceTree = "<group>"; };
+		882E07FB23B991BE00ECA349 /* DriveNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveNaviViewController.h; sourceTree = "<group>"; };
+		882E07FC23B991C000ECA349 /* DriveNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveNaviViewController.m; sourceTree = "<group>"; };
+		882E07FE23B9D6BD00ECA349 /* SLPwdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLPwdView.h; sourceTree = "<group>"; };
+		882E07FF23B9D6BD00ECA349 /* SLPwdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLPwdView.m; sourceTree = "<group>"; };
+		88411C26246A6BA2008F34D8 /* GotoWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GotoWorkViewController.h; sourceTree = "<group>"; };
+		88411C27246A6BA2008F34D8 /* GotoWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GotoWorkViewController.m; sourceTree = "<group>"; };
+		88411C29246A6C2C008F34D8 /* AfterWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AfterWorkViewController.h; sourceTree = "<group>"; };
+		88411C2A246A6C2C008F34D8 /* AfterWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AfterWorkViewController.m; sourceTree = "<group>"; };
+		88411C2C246A885A008F34D8 /* AfterWorkTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AfterWorkTableViewCell.h; sourceTree = "<group>"; };
+		88411C2D246A885A008F34D8 /* AfterWorkTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AfterWorkTableViewCell.m; sourceTree = "<group>"; };
+		8849189423CD658400C56B55 /* PbulishLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PbulishLineView.h; sourceTree = "<group>"; };
+		8849189523CD658400C56B55 /* PbulishLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PbulishLineView.m; sourceTree = "<group>"; };
+		8849189723CD934200C56B55 /* CustomizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomizeViewController.h; sourceTree = "<group>"; };
+		8849189823CD934200C56B55 /* CustomizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomizeViewController.m; sourceTree = "<group>"; };
+		8858F10623A72513001B2F8B /* SLContractDetialController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLContractDetialController.h; sourceTree = "<group>"; };
+		8858F10723A72513001B2F8B /* SLContractDetialController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLContractDetialController.m; sourceTree = "<group>"; };
+		8858F11323A73805001B2F8B /* SLContractDetialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLContractDetialCell.h; sourceTree = "<group>"; };
+		8858F11423A73807001B2F8B /* SLContractDetialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLContractDetialCell.m; sourceTree = "<group>"; };
+		8858F11523A73809001B2F8B /* SLContractDetialCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLContractDetialCell.xib; sourceTree = "<group>"; };
+		8858F11823A75A1C001B2F8B /* SLChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLChildViewController.h; sourceTree = "<group>"; };
+		8858F11923A75A1C001B2F8B /* SLChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLChildViewController.m; sourceTree = "<group>"; };
+		885B784123B443740014A2B1 /* Latlng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Latlng.h; sourceTree = "<group>"; };
+		885B784223B443740014A2B1 /* Latlng.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Latlng.m; sourceTree = "<group>"; };
+		8891E8E62472299D00D1586F /* GoToWorkTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoToWorkTableViewCell.h; sourceTree = "<group>"; };
+		8891E8E72472299D00D1586F /* GoToWorkTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoToWorkTableViewCell.m; sourceTree = "<group>"; };
+		889DFFCF238D135100D0FB3E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		889DFFD0238D135300D0FB3E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		88D1FB4B23B35351000CE047 /* SLTripList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTripList.h; sourceTree = "<group>"; };
+		88D1FB4C23B35351000CE047 /* SLTripList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTripList.m; sourceTree = "<group>"; };
+		88E3F31223B1F2DD006AF5C1 /* SLTripListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTripListViewController.h; sourceTree = "<group>"; };
+		88E3F31323B1F2DD006AF5C1 /* SLTripListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTripListViewController.m; sourceTree = "<group>"; };
+		88E3F31523B1F601006AF5C1 /* SLTripDetialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTripDetialViewController.h; sourceTree = "<group>"; };
+		88E3F31623B1F601006AF5C1 /* SLTripDetialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTripDetialViewController.m; sourceTree = "<group>"; };
+		88E3F31823B202A6006AF5C1 /* SLTripDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTripDetailTableViewCell.h; sourceTree = "<group>"; };
+		88E3F31923B202A7006AF5C1 /* SLTripDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTripDetailTableViewCell.m; sourceTree = "<group>"; };
+		88EB30C823BB18F9009FD5E0 /* SLMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLMoreViewController.h; sourceTree = "<group>"; };
+		88EB30C923BB18F9009FD5E0 /* SLMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLMoreViewController.m; sourceTree = "<group>"; };
+		88FC6B8F23A9CC12008008B8 /* WeekModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
+		88FC6B9023A9CC12008008B8 /* WeekModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeekModel.m; sourceTree = "<group>"; };
 		C11EA9622008659F00D7A0C5 /* UIImage+FixIMG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixIMG.h"; sourceTree = "<group>"; };
 		C11EA9632008659F00D7A0C5 /* UIImage+FixIMG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixIMG.m"; sourceTree = "<group>"; };
 		C13055841FF2071800E9E3AF /* IQNSArray+Sort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQNSArray+Sort.h"; sourceTree = "<group>"; };
@@ -853,6 +958,7 @@
 				0486D1D51F258398003B41F7 /* libAPOpenSdk.a in Frameworks */,
 				048C54001F0E5B1400012845 /* Security.framework in Frameworks */,
 				048C53FE1F0E5B0A00012845 /* libc++.tbd in Frameworks */,
+				880390C323D420A200802CE2 /* lame.framework in Frameworks */,
 				048C53FC1F0E5AFC00012845 /* libsqlite3.0.tbd in Frameworks */,
 				048C53FA1F0E5AEF00012845 /* libz.tbd in Frameworks */,
 				123987C1215DC35E00928DC4 /* IDLFaceSDK.framework in Frameworks */,
@@ -1024,6 +1130,7 @@
 		04154CF51EF64EFF00E0A609 /* 自定义类 */ = {
 			isa = PBXGroup;
 			children = (
+				880390B923D420A100802CE2 /* Record */,
 				125C66B122535003001E5D39 /* LeeTagView */,
 				120EF38521F5648C00C64ABC /* YUFoldingTableView */,
 				124CC38320B408C60042BE50 /* UpdateAlertView.h */,
@@ -1065,6 +1172,8 @@
 				044438A61F3B307400A6CB28 /* CYCrash.m */,
 				041CCDB81F3D5C74001CB939 /* SpeechSynthesizer.h */,
 				041CCDB91F3D5C74001CB939 /* SpeechSynthesizer.m */,
+				882E07FE23B9D6BD00ECA349 /* SLPwdView.h */,
+				882E07FF23B9D6BD00ECA349 /* SLPwdView.m */,
 			);
 			name = "自定义类";
 			sourceTree = "<group>";
@@ -1072,6 +1181,8 @@
 		04154CF61EF64F0200E0A609 /* 一级界面 */ = {
 			isa = PBXGroup;
 			children = (
+				88411C22246A6AC3008F34D8 /* 通勤行 */,
+				88290B7723A47B55001379E0 /* 校园拼 */,
 				120EF37E21F55E3000C64ABC /* 城际自由行 */,
 				04FB032E1EFE906200AFE82A /* models */,
 				04154CF81EF64F2600E0A609 /* controllers */,
@@ -1111,6 +1222,8 @@
 				121B400322E037EB008D1E41 /* TuiSongTableViewCell.m */,
 				1217347C22E192B600FACD15 /* TuiSongOrderAlertView.h */,
 				1217347D22E192B600FACD15 /* TuiSongOrderAlertView.m */,
+				8849189423CD658400C56B55 /* PbulishLineView.h */,
+				8849189523CD658400C56B55 /* PbulishLineView.m */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -1303,6 +1416,9 @@
 				042D9D591EF8F6B1001717CC /* LoginViewController.h */,
 				042D9D5A1EF8F6B1001717CC /* LoginViewController.m */,
 				042D9D5B1EF8F6B1001717CC /* LoginViewController.xib */,
+				8822691023BDE852008278A8 /* QuickLoginViewController.h */,
+				8822691123BDE854008278A8 /* QuickLoginViewController.m */,
+				8822691223BDE857008278A8 /* QuickLoginViewController.xib */,
 				042D9D5C1EF8F6B1001717CC /* TrueRegisterViewController.h */,
 				042D9D5D1EF8F6B1001717CC /* TrueRegisterViewController.m */,
 				042D9D5E1EF8F6B1001717CC /* TrueRegisterViewController.xib */,
@@ -1555,6 +1671,8 @@
 				120EF38321F55E5000C64ABC /* IndependentTravelView.m */,
 				120EF39121F5A4D000C64ABC /* CreationOrderViewController.h */,
 				120EF39221F5A4D000C64ABC /* CreationOrderViewController.m */,
+				8849189723CD934200C56B55 /* CustomizeViewController.h */,
+				8849189823CD934200C56B55 /* CustomizeViewController.m */,
 				120DFC4021F6AB1E0092E4B4 /* ITTripDetailViewController.h */,
 				120DFC4121F6AB1E0092E4B4 /* ITTripDetailViewController.m */,
 				121587B721F9899C001539EB /* ITAddressViewController.h */,
@@ -1742,12 +1860,12 @@
 		123987D6215DC38400928DC4 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				123987D7215DC38400928DC4 /* FaceAlertView.m */,
-				123987D8215DC38400928DC4 /* RemindView.m */,
-				123987D9215DC38400928DC4 /* CircleView.m */,
-				123987DA215DC38400928DC4 /* CircleView.h */,
-				123987DB215DC38400928DC4 /* RemindView.h */,
 				123987DC215DC38400928DC4 /* FaceAlertView.h */,
+				123987D7215DC38400928DC4 /* FaceAlertView.m */,
+				123987DA215DC38400928DC4 /* CircleView.h */,
+				123987D9215DC38400928DC4 /* CircleView.m */,
+				123987DB215DC38400928DC4 /* RemindView.h */,
+				123987D8215DC38400928DC4 /* RemindView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1878,6 +1996,157 @@
 				3116463114DF6DF9E4701F61 /* libPods-DrDriver.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		880390B923D420A100802CE2 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				880390BA23D420A100802CE2 /* PlayerManager */,
+				880390BD23D420A100802CE2 /* ConvertAudio */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		880390BA23D420A100802CE2 /* PlayerManager */ = {
+			isa = PBXGroup;
+			children = (
+				880390BB23D420A100802CE2 /* PlayerManager.m */,
+				880390BC23D420A100802CE2 /* PlayerManager.h */,
+				880390C523D429AF00802CE2 /* AudioRecoderManager.h */,
+				880390C623D429AF00802CE2 /* AudioRecoderManager.m */,
+			);
+			path = PlayerManager;
+			sourceTree = "<group>";
+		};
+		880390BD23D420A100802CE2 /* ConvertAudio */ = {
+			isa = PBXGroup;
+			children = (
+				880390BE23D420A100802CE2 /* Lame */,
+				880390C023D420A100802CE2 /* ConvertAudioFile.m */,
+				880390C123D420A100802CE2 /* ConvertAudioFile.h */,
+			);
+			path = ConvertAudio;
+			sourceTree = "<group>";
+		};
+		880390BE23D420A100802CE2 /* Lame */ = {
+			isa = PBXGroup;
+			children = (
+				880390BF23D420A100802CE2 /* lame.framework */,
+			);
+			path = Lame;
+			sourceTree = "<group>";
+		};
+		88290B7723A47B55001379E0 /* 校园拼 */ = {
+			isa = PBXGroup;
+			children = (
+				88290B7823A47B55001379E0 /* Controller */,
+				88290B7923A47B55001379E0 /* Model */,
+				88290B7A23A47B55001379E0 /* View */,
+			);
+			path = "校园拼";
+			sourceTree = "<group>";
+		};
+		88290B7823A47B55001379E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88290B7E23A4C6FE001379E0 /* SchoolViewController.h */,
+				88290B7F23A4C6FE001379E0 /* SchoolViewController.m */,
+				88290B8023A4C6FE001379E0 /* SchoolViewController.xib */,
+				88290B8323A4D122001379E0 /* SLContratViewController.h */,
+				88290B8423A4D122001379E0 /* SLContratViewController.m */,
+				8858F10623A72513001B2F8B /* SLContractDetialController.h */,
+				8858F10723A72513001B2F8B /* SLContractDetialController.m */,
+				8858F11823A75A1C001B2F8B /* SLChildViewController.h */,
+				8858F11923A75A1C001B2F8B /* SLChildViewController.m */,
+				88E3F31223B1F2DD006AF5C1 /* SLTripListViewController.h */,
+				88E3F31323B1F2DD006AF5C1 /* SLTripListViewController.m */,
+				88E3F31523B1F601006AF5C1 /* SLTripDetialViewController.h */,
+				88E3F31623B1F601006AF5C1 /* SLTripDetialViewController.m */,
+				8802F3C023B9F24B00E4C792 /* AfterSchoolTripDetialViewController.h */,
+				8802F3C123B9F24B00E4C792 /* AfterSchoolTripDetialViewController.m */,
+				882E07FB23B991BE00ECA349 /* DriveNaviViewController.h */,
+				882E07FC23B991C000ECA349 /* DriveNaviViewController.m */,
+				88EB30C823BB18F9009FD5E0 /* SLMoreViewController.h */,
+				88EB30C923BB18F9009FD5E0 /* SLMoreViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		88290B7923A47B55001379E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88012BAD23A866CA0035EFCC /* SLContract.h */,
+				88012BAE23A866CA0035EFCC /* SLContract.m */,
+				88012BB023A8749D0035EFCC /* SLStudent.h */,
+				88012BB123A8749D0035EFCC /* SLStudent.m */,
+				88FC6B8F23A9CC12008008B8 /* WeekModel.h */,
+				88FC6B9023A9CC12008008B8 /* WeekModel.m */,
+				88D1FB4B23B35351000CE047 /* SLTripList.h */,
+				88D1FB4C23B35351000CE047 /* SLTripList.m */,
+				885B784123B443740014A2B1 /* Latlng.h */,
+				885B784223B443740014A2B1 /* Latlng.m */,
+				8822690423BD8F55008278A8 /* ChildMoreModel.h */,
+				8822690523BD8F55008278A8 /* ChildMoreModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88290B7A23A47B55001379E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88290B7B23A47CB7001379E0 /* SchoolViewCell.h */,
+				88290B7C23A47CB7001379E0 /* SchoolViewCell.m */,
+				8858F11323A73805001B2F8B /* SLContractDetialCell.h */,
+				8858F11423A73807001B2F8B /* SLContractDetialCell.m */,
+				8858F11523A73809001B2F8B /* SLContractDetialCell.xib */,
+				88E3F31823B202A6006AF5C1 /* SLTripDetailTableViewCell.h */,
+				88E3F31923B202A7006AF5C1 /* SLTripDetailTableViewCell.m */,
+				8802F3C623B9F93600E4C792 /* AfterSchoolTableViewCell.h */,
+				8802F3C723B9F93600E4C792 /* AfterSchoolTableViewCell.m */,
+				8822690B23BDB464008278A8 /* SLMoreInfoTableViewCell.h */,
+				8822690C23BDB464008278A8 /* SLMoreInfoTableViewCell.m */,
+				8822690D23BDB464008278A8 /* SLMoreInfoTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88411C22246A6AC3008F34D8 /* 通勤行 */ = {
+			isa = PBXGroup;
+			children = (
+				88411C23246A6AC3008F34D8 /* Controller */,
+				88411C24246A6AC3008F34D8 /* Model */,
+				88411C25246A6AC3008F34D8 /* View */,
+			);
+			path = "通勤行";
+			sourceTree = "<group>";
+		};
+		88411C23246A6AC3008F34D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				88411C26246A6BA2008F34D8 /* GotoWorkViewController.h */,
+				88411C27246A6BA2008F34D8 /* GotoWorkViewController.m */,
+				88411C29246A6C2C008F34D8 /* AfterWorkViewController.h */,
+				88411C2A246A6C2C008F34D8 /* AfterWorkViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		88411C24246A6AC3008F34D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88411C25246A6AC3008F34D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8891E8E62472299D00D1586F /* GoToWorkTableViewCell.h */,
+				8891E8E72472299D00D1586F /* GoToWorkTableViewCell.m */,
+				88411C2C246A885A008F34D8 /* AfterWorkTableViewCell.h */,
+				88411C2D246A885A008F34D8 /* AfterWorkTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C13055821FF2071800E9E3AF /* IQKeyboardManager */ = {
@@ -2011,7 +2280,7 @@
 				04154CBA1EF64A6600E0A609 /* Sources */,
 				04154CBB1EF64A6600E0A609 /* Frameworks */,
 				04154CBC1EF64A6600E0A609 /* Resources */,
-				52B0F0A05075CF3D88E27BCD /* [CP] Copy Pods Resources */,
+				9A90AEB3F8BFEC425C0A7E01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2100,6 +2369,7 @@
 				English,
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 04154CB51EF64A6600E0A609;
 			productRefGroup = 04154CBF1EF64A6600E0A609 /* Products */;
@@ -2122,6 +2392,7 @@
 				04154CD11EF64A6600E0A609 /* LaunchScreen.storyboard in Resources */,
 				123987B2215DC28200928DC4 /* shouYeHeaderView.xib in Resources */,
 				042D9DA91EF9522C001717CC /* PerfectThreeTableViewCell.xib in Resources */,
+				88290B8223A4C6FE001379E0 /* SchoolViewController.xib in Resources */,
 				042D9D821EF9057C001717CC /* SureTiXianViewController.xib in Resources */,
 				042D9D061EF8CA86001717CC /* MoneyTableViewCell.xib in Resources */,
 				042D9D731EF8FA84001717CC /* BankCardTableViewCell.xib in Resources */,
@@ -2145,6 +2416,7 @@
 				042D9D7D1EF903AA001717CC /* AddBankCardSuccessViewController.xib in Resources */,
 				042D9D631EF8F6B1001717CC /* LoginViewController.xib in Resources */,
 				C13055B51FF2071800E9E3AF /* IQKeyboardManager.bundle in Resources */,
+				8858F11723A73809001B2F8B /* SLContractDetialCell.xib in Resources */,
 				04154D2F1EF6673000E0A609 /* TripOneTableViewCell.xib in Resources */,
 				042D9D2C1EF8EDB3001717CC /* AboutViewController.xib in Resources */,
 				123987C3215DC35E00928DC4 /* com.baidu.idl.face.model.bundle in Resources */,
@@ -2158,6 +2430,7 @@
 				04033DC21EF7CD1E00612BCB /* RobSuccessViewController.xib in Resources */,
 				042D9D301EF8EDB3001717CC /* AboutUsViewController.xib in Resources */,
 				042D9D671EF8F6B1001717CC /* CheckCodeViewController.xib in Resources */,
+				8822690F23BDB464008278A8 /* SLMoreInfoTableViewCell.xib in Resources */,
 				120EF38D21F5648D00C64ABC /* YUFolding_arrow.png in Resources */,
 				124A355020859F4300E4DEBD /* unicode_to_hanyu_pinyin.txt in Resources */,
 				042D9D4B1EF8F3B8001717CC /* MyInvitationTableViewCell.xib in Resources */,
@@ -2171,6 +2444,7 @@
 				0466E2AA1EFA0A64006E5F46 /* ChooseCityViewController.xib in Resources */,
 				042D9D6E1EF8F928001717CC /* BankCardViewController.xib in Resources */,
 				042D9D9F1EF93A94001717CC /* PerfectOneTableViewCell.xib in Resources */,
+				8822691423BDE858008278A8 /* QuickLoginViewController.xib in Resources */,
 				042D9DA41EF93C73001717CC /* PerfectTwoTableViewCell.xib in Resources */,
 				0448B1721EFE40E0005B160A /* DriveMapViewController.xib in Resources */,
 				04154D2A1EF6666F00E0A609 /* TripDetailViewController.xib in Resources */,
@@ -2205,23 +2479,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		52B0F0A05075CF3D88E27BCD /* [CP] Copy Pods Resources */ = {
+		9A90AEB3F8BFEC425C0A7E01 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DrDriver/Pods-DrDriver-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DrDriver/Pods-DrDriver-resources.sh",
 				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/AMapNavi/AMapNaviKit.framework/AMapNavi.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMapNavi.bundle",
@@ -2230,7 +2500,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DrDriver/Pods-DrDriver-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DrDriver/Pods-DrDriver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAEF14A0AE7808D1E90D35A1 /* [CP] Check Pods Manifest.lock */ = {
@@ -2275,11 +2545,15 @@
 				120DFC3F21F6A6800092E4B4 /* TripDetailTopView.m in Sources */,
 				04C4E9FB1F446122001D17D0 /* CarModel.m in Sources */,
 				044438A71F3B307400A6CB28 /* CYCrash.m in Sources */,
+				880390C723D429AF00802CE2 /* AudioRecoderManager.m in Sources */,
 				C13055B41FF2071800E9E3AF /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				880390C223D420A200802CE2 /* PlayerManager.m in Sources */,
 				1216C38020995427000FD07F /* ScanTripTableViewCell.m in Sources */,
 				04EF4EEA1F009BD800817106 /* CodeModel.m in Sources */,
 				121587BC21F98C6C001539EB /* SearchTopView.m in Sources */,
 				042D9D721EF8FA84001717CC /* BankCardTableViewCell.m in Sources */,
+				8822690623BD8F55008278A8 /* ChildMoreModel.m in Sources */,
+				88E3F31423B1F2DD006AF5C1 /* SLTripListViewController.m in Sources */,
 				125C66BB22535004001E5D39 /* LeeTagItem.m in Sources */,
 				12E3428E22E05E5100B40924 /* NewITTripViewController.m in Sources */,
 				042D9DA81EF9522C001717CC /* PerfectThreeTableViewCell.m in Sources */,
@@ -2296,12 +2570,17 @@
 				C1B57D7A1FF100800024F87B /* Register_ONE_ViewController.m in Sources */,
 				123987E5215DC38500928DC4 /* CircleView.m in Sources */,
 				1216C96522967DF100FE7444 /* ITTripViewController.m in Sources */,
+				88411C2E246A885A008F34D8 /* AfterWorkTableViewCell.m in Sources */,
+				88E3F31723B1F601006AF5C1 /* SLTripDetialViewController.m in Sources */,
 				0432B5221F028AF200CCF360 /* NotiMessageModel.m in Sources */,
 				04154CC91EF64A6600E0A609 /* ViewController.m in Sources */,
 				123987E3215DC38500928DC4 /* FaceAlertView.m in Sources */,
 				042D9D311EF8EDB3001717CC /* SuggestionViewController.m in Sources */,
+				88012BB223A8749D0035EFCC /* SLStudent.m in Sources */,
+				885B784323B443740014A2B1 /* Latlng.m in Sources */,
 				042D9D2D1EF8EDB3001717CC /* PhoneUsViewController.m in Sources */,
 				120DFC4521F6B08E0092E4B4 /* ITOrderDetailTableViewCell.m in Sources */,
+				88E3F31A23B202A7006AF5C1 /* SLTripDetailTableViewCell.m in Sources */,
 				124A355A20859F4300E4DEBD /* CityItem.m in Sources */,
 				042D9D6D1EF8F928001717CC /* BankCardViewController.m in Sources */,
 				120EF38B21F5648D00C64ABC /* YUFoldingTableView.m in Sources */,
@@ -2317,6 +2596,7 @@
 				04033DB01EF7674C00612BCB /* CYButtonView.m in Sources */,
 				04EF4EED1F00DA0F00817106 /* RecordModel.m in Sources */,
 				C1C502B21FFCA4CC00298F78 /* GYZCityHeaderView.m in Sources */,
+				882E080023B9D6BD00ECA349 /* SLPwdView.m in Sources */,
 				123987DE215DC38500928DC4 /* ImageUtils.m in Sources */,
 				123987E0215DC38500928DC4 /* LivenessViewController.m in Sources */,
 				04FE981D1F0CCA4800F9AC2F /* MineMessageTableViewCell.m in Sources */,
@@ -2330,6 +2610,7 @@
 				042D9D401EF8F0D8001717CC /* RegisteViewController.m in Sources */,
 				1210E18622239B3800E21E92 /* ITUserOrderViewController.m in Sources */,
 				042D9D621EF8F6B1001717CC /* LoginViewController.m in Sources */,
+				880390C423D420A200802CE2 /* ConvertAudioFile.m in Sources */,
 				042D9D641EF8F6B1001717CC /* TrueRegisterViewController.m in Sources */,
 				04154D0F1EF64F4800E0A609 /* CYPay.m in Sources */,
 				042D9D451EF8F25F001717CC /* MyInvitationViewController.m in Sources */,
@@ -2337,9 +2618,12 @@
 				124A355120859F4300E4DEBD /* PinyinHelper.m in Sources */,
 				120EF38421F55E5000C64ABC /* IndependentTravelView.m in Sources */,
 				121B400122E024A8008D1E41 /* TuiSongListViewController.m in Sources */,
+				88EB30CB23BB18F9009FD5E0 /* SLMoreViewController.m in Sources */,
 				123987E8215DD06900928DC4 /* AppointOrder.m in Sources */,
 				04EF4EF31F00E54C00817106 /* PhoneUsModel.m in Sources */,
+				8858F10823A72513001B2F8B /* SLContractDetialController.m in Sources */,
 				04154D101EF64F4800E0A609 /* NSString+CYString.m in Sources */,
+				88D1FB4D23B35351000CE047 /* SLTripList.m in Sources */,
 				04154CC61EF64A6600E0A609 /* AppDelegate.m in Sources */,
 				120FDADE21A395AC0024B85F /* OrderRuningViewController.m in Sources */,
 				1216462D221FDACB00FDD7E9 /* TopTypeView.m in Sources */,
@@ -2352,10 +2636,12 @@
 				04154D1C1EF652C100E0A609 /* LeftViewTableViewCell.m in Sources */,
 				04154D121EF64F4800E0A609 /* CYAlertView.m in Sources */,
 				12B9C7F720B29C4C00E9B05B /* BJNumberPlateOC.m in Sources */,
+				8822691323BDE858008278A8 /* QuickLoginViewController.m in Sources */,
 				120DB43C225AE63D0045F302 /* ChangeCarTypeViewController.m in Sources */,
 				042D9CF11EF8AEE1001717CC /* PersonalViewController.m in Sources */,
 				0448B1711EFE40E0005B160A /* DriveMapViewController.m in Sources */,
 				124A355B20859F4300E4DEBD /* CityButton.m in Sources */,
+				8858F11623A73809001B2F8B /* SLContractDetialCell.m in Sources */,
 				124A355C20859F4300E4DEBD /* CityListViewController.m in Sources */,
 				042D9D7C1EF903AA001717CC /* AddBankCardSuccessViewController.m in Sources */,
 				1216C96822967E1500FE7444 /* ITScanTripViewController.m in Sources */,
@@ -2364,17 +2650,20 @@
 				123987E2215DC38500928DC4 /* FaceViewController.m in Sources */,
 				C1C502B31FFCA4CC00298F78 /* GYZChooseCityController.m in Sources */,
 				1210E1952223C5C200E21E92 /* GetOrderAlertView.m in Sources */,
+				88411C28246A6BA2008F34D8 /* GotoWorkViewController.m in Sources */,
 				125C66BC22535004001E5D39 /* LeeTagView.m in Sources */,
 				120EF39321F5A4D000C64ABC /* CreationOrderViewController.m in Sources */,
 				04154CC31EF64A6600E0A609 /* main.m in Sources */,
 				04FB03311EFE907F00AFE82A /* ShouYeModel.m in Sources */,
 				123E606822894FC6008343E2 /* QueueUpViewController.m in Sources */,
+				8858F11A23A75A1C001B2F8B /* SLChildViewController.m in Sources */,
 				0466E2A91EFA0A64006E5F46 /* ChooseCityViewController.m in Sources */,
 				04154D0D1EF64F4800E0A609 /* CYTool.m in Sources */,
 				041BA8A91F21C9980045CA71 /* CYShareView.m in Sources */,
 				121587B621F9606F001539EB /* ITTableViewCell.m in Sources */,
 				04EF4EF01F00DEBD00817106 /* InvitationModel.m in Sources */,
 				12EA440B2238E13A001DAAA1 /* TakeAndSendAlertTableViewCell.m in Sources */,
+				88012BAF23A866CA0035EFCC /* SLContract.m in Sources */,
 				042D9D2B1EF8EDB3001717CC /* AboutViewController.m in Sources */,
 				12C009DD2237978E00187707 /* RegisterCityAndCarTypeViewController.m in Sources */,
 				C1AE8EEA1FF32D0100C70AE4 /* Add_TWO_ViewController.m in Sources */,
@@ -2391,6 +2680,7 @@
 				042D9D3E1EF8F0D8001717CC /* ChangePasswordTwoViewController.m in Sources */,
 				042D9D991EF91BC2001717CC /* RegisterProgressView.m in Sources */,
 				12C009E02237AE4600187707 /* CityAndTypeTableViewCell.m in Sources */,
+				88290B8123A4C6FE001379E0 /* SchoolViewController.m in Sources */,
 				124BE298205A04AC00AD1DBC /* OnlineTimeViewController.m in Sources */,
 				C13055B11FF2071800E9E3AF /* IQPreviousNextView.m in Sources */,
 				042D9D1A1EF8ECC7001717CC /* UIImage+SGHelper.m in Sources */,
@@ -2407,6 +2697,7 @@
 				042D9D3C1EF8F0D8001717CC /* ChangePasswordOneViewController.m in Sources */,
 				042D9CF61EF8B0F8001717CC /* PersonalTableViewCell.m in Sources */,
 				042D9DA31EF93C73001717CC /* PerfectTwoTableViewCell.m in Sources */,
+				88290B7D23A47CB7001379E0 /* SchoolViewCell.m in Sources */,
 				123987E4215DC38500928DC4 /* RemindView.m in Sources */,
 				1298999921367677009490A8 /* ExpenseDetailViewController.m in Sources */,
 				1257B1BC216EE00B00BAC9FD /* BaseViewController.m in Sources */,
@@ -2417,6 +2708,7 @@
 				C13055A81FF2071800E9E3AF /* IQUIScrollView+Additions.m in Sources */,
 				042D9D2F1EF8EDB3001717CC /* AboutUsViewController.m in Sources */,
 				04C4E9F71F4447E5001D17D0 /* ChooseCarTypeViewController.m in Sources */,
+				8849189923CD934200C56B55 /* CustomizeViewController.m in Sources */,
 				1210E1752223776000E21E92 /* GFAddressPicker.m in Sources */,
 				04033DC11EF7CD1E00612BCB /* RobSuccessViewController.m in Sources */,
 				C11EA9642008659F00D7A0C5 /* UIImage+FixIMG.m in Sources */,
@@ -2427,6 +2719,7 @@
 				C1C502B41FFCA4CC00298F78 /* GYZCity.m in Sources */,
 				C13055B21FF2071800E9E3AF /* IQTitleBarButtonItem.m in Sources */,
 				C13055AC1FF2071800E9E3AF /* IQUIWindow+Hierarchy.m in Sources */,
+				8802F3C223B9F24B00E4C792 /* AfterSchoolTripDetialViewController.m in Sources */,
 				042D9D661EF8F6B1001717CC /* CheckCodeViewController.m in Sources */,
 				12EA44082238DA95001DAAA1 /* TakeAndSendView.m in Sources */,
 				4B40DAB922070E2800688668 /* ITListModel.m in Sources */,
@@ -2435,20 +2728,25 @@
 				C13055A91FF2071800E9E3AF /* IQUITextFieldView+Additions.m in Sources */,
 				124A355920859F4300E4DEBD /* ButtonGroupView.m in Sources */,
 				123987DD215DC38500928DC4 /* VideoCaptureDevice.m in Sources */,
+				8822690E23BDB464008278A8 /* SLMoreInfoTableViewCell.m in Sources */,
 				12D3B406217051AB00BC78F0 /* MessageViewController.m in Sources */,
 				1210E17F222387DA00E21E92 /* ITUserTableViewCell.m in Sources */,
+				88290B8523A4D122001379E0 /* SLContratViewController.m in Sources */,
 				121587B021F95391001539EB /* ITDriverModel.m in Sources */,
 				042D9D901EF9187B001717CC /* PerfectTwoViewController.m in Sources */,
 				04154D2E1EF6673000E0A609 /* TripOneTableViewCell.m in Sources */,
+				88411C2B246A6C2C008F34D8 /* AfterWorkViewController.m in Sources */,
 				04033DB71EF7AB4B00612BCB /* CYAddressView.m in Sources */,
 				1210E18E2223BC7E00E21E92 /* ITOrderDriverDetailView.m in Sources */,
 				04033DB41EF77E0900612BCB /* UAProgressView.m in Sources */,
 				046D2C101F95F01B00AADE0A /* ShouYeTableViewCell.m in Sources */,
+				882E07FD23B991C000ECA349 /* DriveNaviViewController.m in Sources */,
 				1216C38320995491000FD07F /* ScanCarModel.m in Sources */,
 				0432B5251F028B0400CCF360 /* NotiModel.m in Sources */,
 				120EF38C21F5648D00C64ABC /* YUFoldingSectionHeader.m in Sources */,
 				126897BB216D83CA007DE385 /* AccountView.m in Sources */,
 				04EF4EF61F00F1EC00817106 /* OrderDetailModel.m in Sources */,
+				88FC6B9123A9CC12008008B8 /* WeekModel.m in Sources */,
 				124AE895213F6B610096F25D /* BjAlertView.m in Sources */,
 				1223C78B2366CFFA00C14D8F /* DriverInfoViewController.m in Sources */,
 				042D9D051EF8CA86001717CC /* MoneyTableViewCell.m in Sources */,
@@ -2463,8 +2761,11 @@
 				1210E1982223D25A00E21E92 /* ITFindUserOrderViewController.m in Sources */,
 				042D9D771EF8FE30001717CC /* CardTiXianViewController.m in Sources */,
 				042D9D0A1EF8EC89001717CC /* InvitationViewController.m in Sources */,
+				8849189623CD658400C56B55 /* PbulishLineView.m in Sources */,
 				121B3FFE22E00D5E008D1E41 /* ITAddTravelTableViewCell.m in Sources */,
+				8802F3C823B9F93600E4C792 /* AfterSchoolTableViewCell.m in Sources */,
 				122CEBEF229CE173006DC551 /* GeoFenceMapTopView.m in Sources */,
+				8891E8E82472299D00D1586F /* GoToWorkTableViewCell.m in Sources */,
 				121587B321F958B1001539EB /* ITOrderModel.m in Sources */,
 				041CCDBA1F3D5C74001CB939 /* SpeechSynthesizer.m in Sources */,
 				12164630221FDFF600FDD7E9 /* ITDriverOrderViewController.m in Sources */,
@@ -2510,6 +2811,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				04154CCB1EF64A6600E0A609 /* Base */,
+				889DFFCF238D135100D0FB3E /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -2518,6 +2820,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				04154CD01EF64A6600E0A609 /* Base */,
+				889DFFD0238D135300D0FB3E /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2625,12 +2928,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.7.4;
+				CURRENT_PROJECT_VERSION = 1.7.6;
 				DEVELOPMENT_TEAM = FM7YXM5TQM;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DrDriver/FaceSDK",
+					"$(PROJECT_DIR)/DrDriver/Record/ConvertAudio/Lame",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2643,7 +2947,7 @@
 					"$(PROJECT_DIR)/DrDriver/AliShare",
 					"$(PROJECT_DIR)/DrDriver/weichat",
 				);
-				MARKETING_VERSION = 2.3.3;
+				MARKETING_VERSION = 2.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tang.drdriver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2662,12 +2966,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.7.4;
+				CURRENT_PROJECT_VERSION = 1.7.6;
 				DEVELOPMENT_TEAM = FM7YXM5TQM;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DrDriver/FaceSDK",
+					"$(PROJECT_DIR)/DrDriver/Record/ConvertAudio/Lame",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2680,7 +2985,7 @@
 					"$(PROJECT_DIR)/DrDriver/AliShare",
 					"$(PROJECT_DIR)/DrDriver/weichat",
 				);
-				MARKETING_VERSION = 2.3.3;
+				MARKETING_VERSION = 2.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tang.drdriver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

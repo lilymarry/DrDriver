@@ -179,7 +179,7 @@
 
     __weak typeof(self) weakSelf = self;
     [AFRequestManager postRequestWithUrl:DRIVER_INTERCITY_JOURNEY_ORDER_DETAIL params:@{@"order_id":self.orderID,@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         [OrderDetailModel mj_setupObjectClassInArray:^NSDictionary *{
             
             return @{@"locus_point":@"DriverLocationModel"};
@@ -578,7 +578,7 @@
 //        NSLog(@"self.locationManagerself.locationManager");
         if (error)
         {
-            NSLog(@"errorerror%@",error);
+//            NSLog(@"errorerror%@",error);
             [CYTSI otherShowTostWithString:@"定位失败，请重试"];
             self.alert = [[BjAlertView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth,DeviceHeight) addressString:@"当前位置不可用"];
             self.alert.bjActionBlock = ^{
@@ -619,13 +619,13 @@
 -(void)bjNetwork{
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"] isEqualToString:@"6"]) {//包车
         [AFRequestManager postRequestWithUrl:DRIVER_JOURNEYORDER_ALARM params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":self.orderID,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"position_lng":self.bjPosition_lng,@"position_lat":self.bjPosition_lat,@"address":self.bjAddress,@"position_time":self.bjPosition_time,@"order_type":@"1"} tost:NO special:0 success:^(id responseObject) {
-            NSLog(@"正在播出报警电话call is dialing ");
+//            NSLog(@"正在播出报警电话call is dialing ");
         } failure:^(NSError *error) {
             
         }];
     }else{//非包车
         [AFRequestManager postRequestWithUrl:DRIVER_JOURNEYORDER_ALARM params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":self.orderID,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"position_lng":self.bjPosition_lng,@"position_lat":self.bjPosition_lat,@"address":self.bjAddress,@"position_time":self.bjPosition_time,@"order_type":@"0"} tost:NO special:0 success:^(id responseObject) {
-            NSLog(@"正在播出报警电话call is dialing ");
+//            NSLog(@"正在播出报警电话call is dialing ");
         } failure:^(NSError *error) {
             
         }];
@@ -1121,7 +1121,7 @@
                 [[SpeechSynthesizer sharedSpeechSynthesizer] speakString:@"定位失败"];
                 
             }
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+//            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
             
             if (error.code == AMapLocationErrorLocateFailed)
             {
@@ -1130,11 +1130,11 @@
             }
         }
         
-        NSLog(@"location:%@", location);
+//        NSLog(@"location:%@", location);
         
         if (regeocode)
         {
-            NSLog(@"reGeocode:%@", regeocode);
+//            NSLog(@"reGeocode:%@", regeocode);
         }
         
         self.currentCoordinate = location.coordinate;
@@ -1160,9 +1160,9 @@
         endAnnotation.title=@"终点";
         [self.mapView addAnnotation:endAnnotation];
         
-        NSLog(@"司机位置：%.14f,%.14f",location.coordinate.latitude,location.coordinate.longitude);
-        NSLog(@"开始位置：%.14f,%.14f",self.userStartCoordinate.latitude,self.userStartCoordinate.longitude);
-        NSLog(@"结束位置：%.14f,%.14f",self.endCoordinate.latitude,self.endCoordinate.longitude);
+//        NSLog(@"司机位置：%.14f,%.14f",location.coordinate.latitude,location.coordinate.longitude);
+//        NSLog(@"开始位置：%.14f,%.14f",self.userStartCoordinate.latitude,self.userStartCoordinate.longitude);
+//        NSLog(@"结束位置：%.14f,%.14f",self.endCoordinate.latitude,self.endCoordinate.longitude);
         
         //设置地图
         //        [weakSelf.mapView setZoomLevel:13 animated:YES];
@@ -1170,7 +1170,7 @@
         //        [weakSelf.mapView setCenterCoordinate:self.userStartCoordinate animated:NO];
         
         [self hidenLoading];
-        NSLog(@"_orderState_orderState_orderState_orderState_orderState%ld",_orderState);
+//        NSLog(@"_orderState_orderState_orderState_orderState_orderState%ld",_orderState);
 //        if (_orderState==0 || _orderState==1) {
 //
 //            isOverDrawTakeUserLine=YES;
@@ -1514,7 +1514,7 @@
     //    isAginDrawLine=NO;
     
     //    显示路径或开启导航
-    NSLog(@"线路点：%@",driveManager);
+//    NSLog(@"线路点：%@",driveManager);
     
     //起点到终点
     //    if (driveManager == self.driveManager) {
@@ -1596,7 +1596,7 @@
 //重新导航
 -(void)aginStartNavi
 {
-    NSLog(@"订单状态：%ld",(long)_orderState);
+//    NSLog(@"订单状态：%ld",(long)_orderState);
     
     if (_orderState==1 || _orderState==0) {
         
@@ -1752,7 +1752,7 @@
  */
 - (void)driveManager:(AMapNaviDriveManager *)driveManager playNaviSoundString:(NSString *)soundString soundStringType:(AMapNaviSoundType)soundStringType
 {
-    NSLog(@"导航播报：%@",soundString);
+//    NSLog(@"导航播报：%@",soundString);
     
     [[SpeechSynthesizer sharedSpeechSynthesizer] speakString:soundString];
 }
@@ -1825,7 +1825,7 @@
  */
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode
 {
-    NSLog(@"OrderRuningViewController--连续更新车速%f",location.speed);
+//    NSLog(@"OrderRuningViewController--连续更新车速%f",location.speed);
     //    carAnnotation.coordinate=location.coordinate;
     carSpeed=location.speed;
     

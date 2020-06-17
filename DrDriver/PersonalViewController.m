@@ -73,7 +73,7 @@
 -(void)requestMessage
 {
     [AFRequestManager postRequestWithUrl:DRIVER_BASE_DATA params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"audit_stateaudit_state%@",responseObject[@"data"][@"audit_state"]);
+//        NSLog(@"audit_stateaudit_state%@",responseObject[@"data"][@"audit_state"]);
         self.face_number = [responseObject[@"data"][@"face_number"] integerValue];
         self.audit_state = [responseObject[@"data"][@"audit_state"] integerValue];
         shouYe=[ShouYeModel mj_objectWithKeyValues:responseObject[@"data"]];

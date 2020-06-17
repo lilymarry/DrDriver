@@ -73,11 +73,6 @@
 //创建弹出视图
 -(void)creatAlertView
 {
-//    UIButton * hidenBgButton=[UIButton buttonWithType:UIButtonTypeCustom];
-//    hidenBgButton.frame=CGRectMake(0, 0, DeviceWidth, DeviceHeight);
-//    [hidenBgButton addTarget:self action:@selector(hidenBgButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:hidenBgButton];
-    
     _alertView=[[UIView alloc]init];
     _alertView.center=CGPointMake(DeviceWidth/2, DeviceHeight/2);
     _alertView.bounds=CGRectMake(0, 0, DeviceWidth*0.741, 173);
@@ -236,11 +231,11 @@
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSLog(@"文字长度：%u",textField.text.length);
+//    NSLog(@"文字长度：%u",textField.text.length);
     NSString * str=[NSString stringWithFormat:@"%@%@",textField.text,string];
-    NSLog(@"文字：%@",str);
+//    NSLog(@"文字：%@",str);
     
-    self.moneyStr=str;
+    self.moneyStr=str; 
     
     return YES;
 }

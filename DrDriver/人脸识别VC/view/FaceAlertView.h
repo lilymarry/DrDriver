@@ -28,8 +28,7 @@
 @property(nonatomic,copy)NSString *orderID;
 @property(nonatomic,assign)NSInteger btnState;
 
-
 -(void)showFaceAlertView:(NSDictionary *)dataDic state:(NSString *)stateStr orderid:(NSString *)orderID btnSate:(NSInteger)btnSate;
 -(void)cancelAction;
-
+-(void)hidenFaceAlertView;
 @end

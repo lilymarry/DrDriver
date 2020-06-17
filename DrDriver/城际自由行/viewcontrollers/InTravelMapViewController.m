@@ -94,7 +94,7 @@ AMapNaviDriveManagerDelegate>{
 }
 - (void)driveManagerOnCalculateRouteSuccess:(AMapNaviDriveManager *)driveManager
 {
-    NSLog(@"onCalculateRouteSuccess");
+//    NSLog(@"onCalculateRouteSuccess");
     //构造折线对象
     NSArray * array=driveManager.naviRoute.routeCoordinates;
     CLLocationCoordinate2D commonPolylineCoords[array.count];
@@ -178,7 +178,7 @@ AMapNaviDriveManagerDelegate>{
 -(void)navBackButtonClicked{
     
     BOOL isjjj = [AMapNaviDriveManager destroyInstance];
-    NSLog(@"isjjjisjjjisjjjisjjj%d",isjjj);
+//    NSLog(@"isjjjisjjjisjjjisjjj%d",isjjj);
     [self.mapView removeAnnotations:@[locationAnnotation,endAnnotation]];
     [self.mapView removeOverlay:self.commonPolyline];
     [self.mapView removeFromSuperview];

@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.videoCapture.position = AVCaptureDevicePositionBack;
+
 
 }
 
@@ -55,7 +55,7 @@
     _livenessArray = [NSArray arrayWithArray:livenessArray];
     _order = order;
     _numberOfLiveness = numberOfLiveness;
-    [[IDLFaceLivenessManager sharedInstance] livenesswithList:@[@1] order:order numberOfLiveness:numberOfLiveness];
+    [[IDLFaceLivenessManager sharedInstance] livenesswithList:livenessArray order:order numberOfLiveness:numberOfLiveness];
 }
 
 - (void)faceProcesss:(UIImage *)image {
@@ -71,7 +71,7 @@
                 if (images[@"bestImage"] != nil && [images[@"bestImage"] count] != 0) {
                     NSData* data = [[NSData alloc] initWithBase64EncodedString:[images[@"bestImage"] lastObject] options:NSDataBase64DecodingIgnoreUnknownCharacters];
                     UIImage * bestImage = [UIImage imageWithData:data];
-                    NSLog(@"bestImage = %@",bestImage);
+//                    NSLog(@"bestImage = %@",bestImage);
                     [self warningStatus:CommonStatus warning:@"检测完成"];
                     self.liveBlock(bestImage);
                 }

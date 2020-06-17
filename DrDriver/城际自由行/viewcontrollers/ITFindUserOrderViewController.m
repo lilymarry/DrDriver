@@ -58,9 +58,9 @@
     NSDictionary *dic = @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],
                           @"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],
                           @"travel_id":self.travel_id};
-    NSLog(@"NSDictionary *dic =%@",dic);
+//    NSLog(@"NSDictionary *dic =%@",dic);
     [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_MATCH_ORDER_LIST params:dic tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"responseObjectresponseObject%@",responseObject);
+//        NSLog(@"responseObjectresponseObject%@",responseObject);
         
         if ([currentPage intValue]==1) {
             [self.dataArr removeAllObjects];

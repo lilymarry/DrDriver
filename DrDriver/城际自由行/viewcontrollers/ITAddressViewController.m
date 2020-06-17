@@ -37,9 +37,11 @@
 
 @implementation ITAddressViewController
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self.titleTopView.CommericalTenantTF becomeFirstResponder];
 }
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [self.titleTopView.CommericalTenantTF resignFirstResponder];
 }
 - (void)viewDidLoad {
@@ -92,7 +94,7 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.image = [UIImage imageNamed:@"返回"];
     imageView.transform = CGAffineTransformMakeRotation(-M_PI/2);
-    imageView.frame=CGRectMake(0, 0, 9.0/414.0 * DeviceWidth, 5.0/414.0 * DeviceWidth);
+    imageView.frame=CGRectMake(0, 0, 18.0/414.0 * DeviceWidth, 15.0/414.0 * DeviceWidth);
     imageView.center = iView.center;
     [iView addSubview:imageView];
     UIBarButtonItem * locationItem=[[UIBarButtonItem alloc]initWithCustomView:iView];
@@ -151,7 +153,7 @@
     [self.titleTopView.CommericalTenantTF resignFirstResponder];
     AMapPOI * poi=self.poiArr[indexPath.row];
     NSDictionary *dic = @{@"province":poi.province,@"city":poi.city,@"county":poi.district,@"address":poi.address,@"lng":[NSString stringWithFormat:@"%f",poi.location.longitude],@"lat":[NSString stringWithFormat:@"%f",poi.location.latitude],@"name":poi.name};
-    NSLog(@"%@dddddddddd",dic);
+//    NSLog(@"%@dddddddddd",dic);
     self.addressBlock(dic);
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -171,7 +173,7 @@
 -(void)textFieldChangeText:(UITextField *)textField
 {
     if (textField.text!=nil && ![textField.text isEqualToString:@""]) {
-        NSLog(@"search111111111");
+//        NSLog(@"search111111111");
         AMapPOIKeywordsSearchRequest *request = [[AMapPOIKeywordsSearchRequest alloc] init];
         
         
@@ -239,7 +241,7 @@
         if (error)
         {
 
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+//            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
             [CYTSI otherShowTostWithString:@"定位失败，请重试"];
 //            self.currentCoordinate = CLLocationCoordinate2DMake(self.user_lat, self.user_lng);
 
@@ -253,7 +255,7 @@
             //            NSLog(@"regeocode ========= %f %f",location.coordinate.latitude,location.coordinate.longitude);
             weakSelf.currentCoordinate = location.coordinate;
             weakSelf.cityLB.text = regeocode.city;
-            NSLog(@"regeocode.cityregeocode.city%@",regeocode.city);
+//            NSLog(@"regeocode.cityregeocode.city%@",regeocode.city);
 
         }
 

@@ -1,0 +1,498 @@
+
+/* Class = "UILabel"; text = "身份证号"; ObjectID = "0fm-C8-g5I"; */
+"0fm-C8-g5I.text" = "身份证号";
+
+/* Class = "UILabel"; text = "运输证号"; ObjectID = "0s7-EU-czN"; */
+"0s7-EU-czN.text" = "运输证号";
+
+/* Class = "UILabel"; text = "男"; ObjectID = "1Ge-O7-2qK"; */
+"1Ge-O7-2qK.text" = "男";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "1Rc-ID-4Rf"; */
+"1Rc-ID-4Rf.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "2CI-W9-4In"; */
+"2CI-W9-4In.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "2GS-m7-Xa6"; */
+"2GS-m7-Xa6.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "2l4-UT-nuf"; */
+"2l4-UT-nuf.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "2nH-bQ-6YD"; */
+"2nH-bQ-6YD.text" = "*";
+
+/* Class = "UILabel"; text = "* 请上传车辆正面照片，确保车牌号码清晰可见"; ObjectID = "37s-Jt-6mM"; */
+"37s-Jt-6mM.text" = "* 请上传车辆正面照片，确保车牌号码清晰可见";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "3Gp-98-G73"; */
+"3Gp-98-G73.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "40I-xB-cti"; */
+"40I-xB-cti.text" = "*";
+
+/* Class = "UILabel"; text = "运营从业资格证"; ObjectID = "4di-lT-11n"; */
+"4di-lT-11n.text" = "运营从业资格证";
+
+/* Class = "UIButton"; normalTitle = "上传头像"; ObjectID = "4go-tP-MQ3"; */
+"4go-tP-MQ3.normalTitle" = "上传头像";
+
+/* Class = "UILabel"; text = "真实姓名"; ObjectID = "5Vp-fu-ZnM"; */
+"5Vp-fu-ZnM.text" = "真实姓名";
+
+/* Class = "UIButton"; normalTitle = "提交并身份核实"; ObjectID = "6cd-SM-o4C"; */
+"6cd-SM-o4C.normalTitle" = "提交并身份核实";
+
+/* Class = "UILabel"; text = "所属公司(选填)"; ObjectID = "6jc-zT-aME"; */
+"6jc-zT-aME.text" = "所属公司(选填)";
+
+/* Class = "UILabel"; text = "性别"; ObjectID = "6vl-jB-PBs"; */
+"6vl-jB-PBs.text" = "性别";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "7Bh-a1-LuQ"; */
+"7Bh-a1-LuQ.text" = "*";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "7RW-hw-fbG"; */
+"7RW-hw-fbG.normalTitle" = "下一步";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "7xH-w8-XmJ"; */
+"7xH-w8-XmJ.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "8E6-01-dyv"; */
+"8E6-01-dyv.text" = "*";
+
+/* Class = "UILabel"; text = "真实姓名"; ObjectID = "8TN-JQ-RBF"; */
+"8TN-JQ-RBF.text" = "真实姓名";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "8lf-R6-VRE"; */
+"8lf-R6-VRE.normalTitle" = "下一步";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "8p9-Am-Zoe"; */
+"8p9-Am-Zoe.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "9D2-RX-q64"; */
+"9D2-RX-q64.text" = "*";
+
+/* Class = "UITextField"; placeholder = "请输入您的驾驶证号"; ObjectID = "9f0-a2-i0x"; */
+"9f0-a2-i0x.placeholder" = "请输入您的驾驶证号";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "9qN-vO-WrF"; */
+"9qN-vO-WrF.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "9zv-Oe-khd"; */
+"9zv-Oe-khd.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "A4F-pM-JQt"; */
+"A4F-pM-JQt.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AGf-Ul-6Md"; */
+"AGf-Ul-6Md.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "AM8-rp-jEq"; */
+"AM8-rp-jEq.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "AMa-Zr-fhs"; */
+"AMa-Zr-fhs.text" = "*";
+
+/* Class = "UITextField"; placeholder = "请输入公司名称"; ObjectID = "AeK-oF-Dq0"; */
+"AeK-oF-Dq0.placeholder" = "请输入公司名称";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "Aex-pg-iam"; */
+"Aex-pg-iam.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Ay1-5g-gcU"; */
+"Ay1-5g-gcU.text" = "*";
+
+/* Class = "UILabel"; text = "* 请上传车辆正面照片，确保车牌号码清晰可见"; ObjectID = "B1r-YJ-PHA"; */
+"B1r-YJ-PHA.text" = "* 请上传车辆正面照片，确保车牌号码清晰可见";
+
+/* Class = "UILabel"; text = "手持身份证"; ObjectID = "BZu-aK-DTz"; */
+"BZu-aK-DTz.text" = "手持身份证";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "Bc1-TW-Wmc"; */
+"Bc1-TW-Wmc.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "行驶证"; ObjectID = "Bc9-py-gtS"; */
+"Bc9-py-gtS.text" = "行驶证";
+
+/* Class = "UILabel"; text = "驾驶员合同（挂靠协议）"; ObjectID = "BdD-TY-FzX"; */
+"BdD-TY-FzX.text" = "驾驶员合同（挂靠协议）";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "BjE-aC-ljY"; */
+"BjE-aC-ljY.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Ddv-G2-4Kz"; */
+"Ddv-G2-4Kz.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "EL0-YH-hJX"; */
+"EL0-YH-hJX.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "EPY-dT-lDz"; */
+"EPY-dT-lDz.text" = "*";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Evw-b9-M2Q"; */
+"Evw-b9-M2Q.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "交强险"; ObjectID = "Eyo-WL-EYr"; */
+"Eyo-WL-EYr.text" = "交强险";
+
+/* Class = "UILabel"; text = "发动机号码"; ObjectID = "F2F-LM-eWR"; */
+"F2F-LM-eWR.text" = "发动机号码";
+
+/* Class = "UILabel"; text = "车辆颜色"; ObjectID = "FdL-r3-Kc5"; */
+"FdL-r3-Kc5.text" = "车辆颜色";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "G3k-fP-b4j"; */
+"G3k-fP-b4j.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "GIf-pq-XY7"; */
+"GIf-pq-XY7.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "* 请上传正面照片,确保信息完整无缺失"; ObjectID = "HNa-y4-2Qc"; */
+"HNa-y4-2Qc.text" = "* 请上传正面照片,确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "IGu-JC-bSq"; */
+"IGu-JC-bSq.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Ijr-r1-ajs"; */
+"Ijr-r1-ajs.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "J7I-3W-Nbs"; */
+"J7I-3W-Nbs.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "驾驶证"; ObjectID = "Jjr-j0-Fwn"; */
+"Jjr-j0-Fwn.text" = "驾驶证";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "K4k-9r-BeQ"; */
+"K4k-9r-BeQ.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "KFP-q6-Wx6"; */
+"KFP-q6-Wx6.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "KTj-C3-5kF"; */
+"KTj-C3-5kF.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "车辆颜色"; ObjectID = "Kf5-Tl-7jf"; */
+"Kf5-Tl-7jf.text" = "车辆颜色";
+
+/* Class = "UILabel"; text = "商业险"; ObjectID = "KmR-xK-bmc"; */
+"KmR-xK-bmc.text" = "商业险";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Lpe-wa-RyV"; */
+"Lpe-wa-RyV.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Lr6-Hb-Oe9"; */
+"Lr6-Hb-Oe9.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "M2b-Dy-kn6"; */
+"M2b-Dy-kn6.text" = "*";
+
+/* Class = "UILabel"; text = "请选择车辆颜色"; ObjectID = "MFB-GV-Fgi"; */
+"MFB-GV-Fgi.text" = "请选择车辆颜色";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "MGj-hI-AyN"; */
+"MGj-hI-AyN.text" = "*";
+
+/* Class = "UILabel"; text = "请选择车辆颜色"; ObjectID = "NBB-xM-YIJ"; */
+"NBB-xM-YIJ.text" = "请选择车辆颜色";
+
+/* Class = "UILabel"; text = "发动机号码"; ObjectID = "NE8-a0-LgG"; */
+"NE8-a0-LgG.text" = "发动机号码";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "O2K-7x-s5T"; */
+"O2K-7x-s5T.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "手持身份证"; ObjectID = "O4U-yh-UxF"; */
+"O4U-yh-UxF.text" = "手持身份证";
+
+/* Class = "UILabel"; text = "驾驶证"; ObjectID = "Onn-2k-Iku"; */
+"Onn-2k-Iku.text" = "驾驶证";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Q2Z-TQ-hPX"; */
+"Q2Z-TQ-hPX.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "请输入您的驾驶证号"; ObjectID = "Q4p-zc-i0b"; */
+"Q4p-zc-i0b.placeholder" = "请输入您的驾驶证号";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Qbu-il-5NV"; */
+"Qbu-il-5NV.text" = "*";
+
+/* Class = "UILabel"; text = "身份证号"; ObjectID = "QwJ-vg-W1Q"; */
+"QwJ-vg-W1Q.text" = "身份证号";
+
+/* Class = "UILabel"; text = "* 请上传车辆正面照片，确保车牌号码清晰可见"; ObjectID = "RfF-ul-Tbj"; */
+"RfF-ul-Tbj.text" = "* 请上传车辆正面照片，确保车牌号码清晰可见";
+
+/* Class = "UILabel"; text = "驾驶证号"; ObjectID = "RwR-00-8mT"; */
+"RwR-00-8mT.text" = "驾驶证号";
+
+/* Class = "UILabel"; text = "请选择注册时间"; ObjectID = "RyE-rp-HeE"; */
+"RyE-rp-HeE.text" = "请选择注册时间";
+
+/* Class = "UILabel"; text = "驾驶证号"; ObjectID = "S0k-Ia-Uj6"; */
+"S0k-Ia-Uj6.text" = "驾驶证号";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "TZs-5Z-QAI"; */
+"TZs-5Z-QAI.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "UQD-Ti-O3N"; */
+"UQD-Ti-O3N.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "V88-Cf-fph"; */
+"V88-Cf-fph.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UITextField"; placeholder = "请输入车辆所有人姓名"; ObjectID = "WY2-FF-2mA"; */
+"WY2-FF-2mA.placeholder" = "请输入车辆所有人姓名";
+
+/* Class = "UILabel"; text = "请选择车辆品牌"; ObjectID = "Wkd-Bk-lbT"; */
+"Wkd-Bk-lbT.text" = "请选择车辆品牌";
+
+/* Class = "UITextField"; placeholder = "请输入发动机号(详见行驶证)"; ObjectID = "Wzh-79-beV"; */
+"Wzh-79-beV.placeholder" = "请输入发动机号(详见行驶证)";
+
+/* Class = "UILabel"; text = "车辆所有人(与驾驶证姓名相符)"; ObjectID = "X2C-CL-YZB"; */
+"X2C-CL-YZB.text" = "车辆所有人(与驾驶证姓名相符)";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "X4U-id-RlC"; */
+"X4U-id-RlC.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "XCb-BT-wgo"; */
+"XCb-BT-wgo.text" = "*";
+
+/* Class = "UILabel"; text = "所属公司(选填)"; ObjectID = "XKq-0i-Qum"; */
+"XKq-0i-Qum.text" = "所属公司(选填)";
+
+/* Class = "UILabel"; text = "男"; ObjectID = "XTp-oq-KFS"; */
+"XTp-oq-KFS.text" = "男";
+
+/* Class = "UITextField"; placeholder = "请输入核定载客位数"; ObjectID = "XcN-OD-AYf"; */
+"XcN-OD-AYf.placeholder" = "请输入核定载客位数";
+
+/* Class = "UILabel"; text = "核定载客位数"; ObjectID = "XdP-ok-GGy"; */
+"XdP-ok-GGy.text" = "核定载客位数";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "XfC-IW-z2C"; */
+"XfC-IW-z2C.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "行驶证"; ObjectID = "XvH-gL-8ob"; */
+"XvH-gL-8ob.text" = "行驶证";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Xyb-fp-ZaJ"; */
+"Xyb-fp-ZaJ.text" = "*";
+
+/* Class = "UITextField"; placeholder = "请输入核定载客位数"; ObjectID = "YvQ-CA-hrr"; */
+"YvQ-CA-hrr.placeholder" = "请输入核定载客位数";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "Yyl-Kd-OXn"; */
+"Yyl-Kd-OXn.text" = "*";
+
+/* Class = "UILabel"; text = "* 请上传车辆正面照片，确保车牌号码清晰可见"; ObjectID = "ZKO-8z-Ybm"; */
+"ZKO-8z-Ybm.text" = "* 请上传车辆正面照片，确保车牌号码清晰可见";
+
+/* Class = "UITextField"; placeholder = "请输入您的身份证号"; ObjectID = "Zft-QQ-ZyW"; */
+"Zft-QQ-ZyW.placeholder" = "请输入您的身份证号";
+
+/* Class = "UILabel"; text = "运输证照片"; ObjectID = "aLZ-q5-eF1"; */
+"aLZ-q5-eF1.text" = "运输证照片";
+
+/* Class = "UITextField"; placeholder = "请输入您的真实姓名"; ObjectID = "afl-kw-hAT"; */
+"afl-kw-hAT.placeholder" = "请输入您的真实姓名";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "ak2-Fj-O3c"; */
+"ak2-Fj-O3c.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "ape-s7-es5"; */
+"ape-s7-es5.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "b6F-G2-zIT"; */
+"b6F-G2-zIT.text" = "*";
+
+/* Class = "UILabel"; text = "车辆品牌"; ObjectID = "beD-wr-mHw"; */
+"beD-wr-mHw.text" = "车辆品牌";
+
+/* Class = "UITextField"; placeholder = "请输入公司名称"; ObjectID = "bzS-3G-mQN"; */
+"bzS-3G-mQN.placeholder" = "请输入公司名称";
+
+/* Class = "UILabel"; text = "运输证照片"; ObjectID = "c5o-jh-yFr"; */
+"c5o-jh-yFr.text" = "运输证照片";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "dHY-LS-UoA"; */
+"dHY-LS-UoA.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "车辆注册时间(以行驶证为准)"; ObjectID = "dPR-mm-IkR"; */
+"dPR-mm-IkR.text" = "车辆注册时间(以行驶证为准)";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "dtt-7b-V9g"; */
+"dtt-7b-V9g.text" = "*";
+
+/* Class = "UILabel"; text = "请选择注册时间"; ObjectID = "eI6-LE-VbE"; */
+"eI6-LE-VbE.text" = "请选择注册时间";
+
+/* Class = "UILabel"; text = "商业险"; ObjectID = "eun-Ay-HGb"; */
+"eun-Ay-HGb.text" = "商业险";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "fDy-7q-fEd"; */
+"fDy-7q-fEd.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "fHK-4A-KbD"; */
+"fHK-4A-KbD.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "fUy-4C-vXQ"; */
+"fUy-4C-vXQ.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "fbQ-SR-zON"; */
+"fbQ-SR-zON.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "fg1-XX-WuP"; */
+"fg1-XX-WuP.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "g70-sh-P2m"; */
+"g70-sh-P2m.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "gUh-uZ-L32"; */
+"gUh-uZ-L32.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UITextField"; placeholder = "请输入运输证号"; ObjectID = "hHq-04-EgU"; */
+"hHq-04-EgU.placeholder" = "请输入运输证号";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "hvf-wi-mS0"; */
+"hvf-wi-mS0.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "hxF-6I-yBO"; */
+"hxF-6I-yBO.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保信息完整无缺失"; ObjectID = "iI8-2c-gnK"; */
+"iI8-2c-gnK.text" = "* 请确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "iQo-2d-5gu"; */
+"iQo-2d-5gu.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "iv9-N2-C3a"; */
+"iv9-N2-C3a.text" = "*";
+
+/* Class = "UILabel"; text = "车辆品牌"; ObjectID = "jDI-QX-VWX"; */
+"jDI-QX-VWX.text" = "车辆品牌";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "jKO-u7-2Ad"; */
+"jKO-u7-2Ad.text" = "*";
+
+/* Class = "UILabel"; text = "车牌号"; ObjectID = "jVy-DS-KEV"; */
+"jVy-DS-KEV.text" = "车牌号";
+
+/* Class = "UILabel"; text = "* 请上传正面照片,确保信息完整无缺失"; ObjectID = "jgv-7F-smg"; */
+"jgv-7F-smg.text" = "* 请上传正面照片,确保信息完整无缺失";
+
+/* Class = "UILabel"; text = "人车合影"; ObjectID = "jnb-gk-f2N"; */
+"jnb-gk-f2N.text" = "人车合影";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "k1I-Ue-klm"; */
+"k1I-Ue-klm.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "liO-jE-sTe"; */
+"liO-jE-sTe.text" = "*";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lki-lH-zrr"; */
+"lki-lH-zrr.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "请选择车辆品牌"; ObjectID = "mIl-vw-00v"; */
+"mIl-vw-00v.text" = "请选择车辆品牌";
+
+/* Class = "UITextField"; placeholder = "请输入车牌号码"; ObjectID = "mih-Lo-S7X"; */
+"mih-Lo-S7X.placeholder" = "请输入车牌号码";
+
+/* Class = "UILabel"; text = "车牌号"; ObjectID = "nVm-9P-nbZ"; */
+"nVm-9P-nbZ.text" = "车牌号";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "qcs-wt-Y4C"; */
+"qcs-wt-Y4C.text" = "*";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "qfK-5Q-BdV"; */
+"qfK-5Q-BdV.text" = "*";
+
+/* Class = "UITextField"; placeholder = "请输入车辆识别代号(详见行驶证)"; ObjectID = "qn4-RZ-dnl"; */
+"qn4-RZ-dnl.placeholder" = "请输入车辆识别代号(详见行驶证)";
+
+/* Class = "UILabel"; text = "车辆所有人(与驾驶证姓名相符)"; ObjectID = "r30-u9-Sz3"; */
+"r30-u9-Sz3.text" = "车辆所有人(与驾驶证姓名相符)";
+
+/* Class = "UILabel"; text = "性别"; ObjectID = "r7V-nx-pw8"; */
+"r7V-nx-pw8.text" = "性别";
+
+/* Class = "UITextField"; placeholder = "请输入车牌号码"; ObjectID = "rNO-C6-sHD"; */
+"rNO-C6-sHD.placeholder" = "请输入车牌号码";
+
+/* Class = "UITextField"; placeholder = "请输入您的真实姓名"; ObjectID = "rNP-fB-SNI"; */
+"rNP-fB-SNI.placeholder" = "请输入您的真实姓名";
+
+/* Class = "UITextField"; placeholder = "请输入运输证号"; ObjectID = "rTV-BL-1A5"; */
+"rTV-BL-1A5.placeholder" = "请输入运输证号";
+
+/* Class = "UITextField"; placeholder = "请输入发动机号(详见行驶证)"; ObjectID = "rlA-0i-uTT"; */
+"rlA-0i-uTT.placeholder" = "请输入发动机号(详见行驶证)";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "rnr-Gk-G2Y"; */
+"rnr-Gk-G2Y.text" = "*";
+
+/* Class = "UILabel"; text = "车辆识别代号(VIN)"; ObjectID = "rza-oo-nVJ"; */
+"rza-oo-nVJ.text" = "车辆识别代号(VIN)";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "s92-Z7-E6X"; */
+"s92-Z7-E6X.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "运输证号"; ObjectID = "sVc-Hf-6g1"; */
+"sVc-Hf-6g1.text" = "运输证号";
+
+/* Class = "UILabel"; text = "车辆识别代号(VIN)"; ObjectID = "tAp-bO-okI"; */
+"tAp-bO-okI.text" = "车辆识别代号(VIN)";
+
+/* Class = "UILabel"; text = "运营从业资格证"; ObjectID = "taZ-Yh-mUF"; */
+"taZ-Yh-mUF.text" = "运营从业资格证";
+
+/* Class = "UILabel"; text = "驾驶员合同（挂靠协议）"; ObjectID = "teS-s0-dta"; */
+"teS-s0-dta.text" = "驾驶员合同（挂靠协议）";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "tgi-a2-Iom"; */
+"tgi-a2-Iom.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UITextField"; placeholder = "请输入车辆所有人姓名"; ObjectID = "u1Z-qV-Fxn"; */
+"u1Z-qV-Fxn.placeholder" = "请输入车辆所有人姓名";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "u6e-RH-egT"; */
+"u6e-RH-egT.text" = "*";
+
+/* Class = "UILabel"; text = "核定载客位数"; ObjectID = "uny-DH-YgE"; */
+"uny-DH-YgE.text" = "核定载客位数";
+
+/* Class = "UIButton"; normalTitle = "上传头像"; ObjectID = "v1G-uu-ZaN"; */
+"v1G-uu-ZaN.normalTitle" = "上传头像";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "wis-Xr-77t"; */
+"wis-Xr-77t.text" = "*";
+
+/* Class = "UITextField"; placeholder = "请输入您的身份证号"; ObjectID = "wmf-hb-MX2"; */
+"wmf-hb-MX2.placeholder" = "请输入您的身份证号";
+
+/* Class = "UILabel"; text = "交强险"; ObjectID = "xgW-Oj-vz8"; */
+"xgW-Oj-vz8.text" = "交强险";
+
+/* Class = "UILabel"; text = "*"; ObjectID = "xpa-Uz-ltO"; */
+"xpa-Uz-ltO.text" = "*";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "yTN-96-lDm"; */
+"yTN-96-lDm.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "人车合影"; ObjectID = "ygd-ce-V6j"; */
+"ygd-ce-V6j.text" = "人车合影";
+
+/* Class = "UITextField"; placeholder = "请输入车辆识别代号(详见行驶证)"; ObjectID = "yxj-AC-OeP"; */
+"yxj-AC-OeP.placeholder" = "请输入车辆识别代号(详见行驶证)";
+
+/* Class = "UILabel"; text = "* 请确保照片真实,严禁经过PS处理"; ObjectID = "zGQ-BF-f6M"; */
+"zGQ-BF-f6M.text" = "* 请确保照片真实,严禁经过PS处理";
+
+/* Class = "UILabel"; text = "车辆注册时间(以行驶证为准)"; ObjectID = "zRD-ut-GqA"; */
+"zRD-ut-GqA.text" = "车辆注册时间(以行驶证为准)";
+
+/* Class = "UIButton"; normalTitle = "提交并身份核实"; ObjectID = "zZR-nR-b1H"; */
+"zZR-nR-b1H.normalTitle" = "提交并身份核实";

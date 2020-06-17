@@ -32,7 +32,7 @@
     self.WebView.UIDelegate = self;
     
     NSString *URLString = [NSString stringWithFormat:@"%@Driver/OnTime/index/driver_id/%@/token/%@",HTTP_URL,[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]];
-    NSLog(@"%@",URLString);
+//    NSLog(@"%@",URLString);
     [self.WebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
 }
 //设置导航栏

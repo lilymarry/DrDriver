@@ -25,7 +25,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, readwrite, assign) CGRect detectRect;
 @property (nonatomic, readwrite, retain) CircleView * circleView;
 @property (nonatomic, readwrite, retain) VideoCaptureDevice *videoCapture;
-
+@property (nonatomic, readwrite, assign) BOOL isFount;//前置摄像头和后置摄像头设置
 - (void)faceProcesss:(UIImage *)image;
 
 - (void)closeAction;

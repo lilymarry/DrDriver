@@ -16,6 +16,6 @@
 @property (strong, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topLine;
 
-@property (assign, nonatomic) BOOL isMainJump;//是否是登录过期或退出登录过来的
+
 @property (assign, nonatomic) BOOL isCheck;//是否需要补充信息
 @end

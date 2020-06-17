@@ -32,7 +32,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"SGQRCodeScanningVC - dealloc");
+//    NSLog(@"SGQRCodeScanningVC - dealloc");
     [self removeScanningView];
 }
 
@@ -64,14 +64,14 @@
 //                        [self.navigationController pushViewController:vc animated:YES];
                     });
                     
-                    NSLog(@"当前线程 - - %@", [NSThread currentThread]);
+//                    NSLog(@"当前线程 - - %@", [NSThread currentThread]);
                     // 用户第一次同意了访问相机权限
-                    NSLog(@"用户第一次同意了访问相机权限");
+//                    NSLog(@"用户第一次同意了访问相机权限");
                     
                 } else {
                     
                     // 用户第一次拒绝了访问相机权限
-                    NSLog(@"用户第一次拒绝了访问相机权限");
+//                    NSLog(@"用户第一次拒绝了访问相机权限");
                 }
             }];
         } else if (status == AVAuthorizationStatusAuthorized) { // 用户允许当前应用访问相机
@@ -87,7 +87,7 @@
             [self presentViewController:alertC animated:YES completion:nil];
             
         } else if (status == AVAuthorizationStatusRestricted) {
-            NSLog(@"因为系统原因, 无法访问相册");
+//            NSLog(@"因为系统原因, 无法访问相册");
         }
     } else {
         UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"未检测到您的摄像头" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -185,13 +185,13 @@
     // 取得识别结果
     NSArray *features = [detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
     if (features.count == 0) {
-        NSLog(@"暂未识别出扫描的二维码");
+//        NSLog(@"暂未识别出扫描的二维码");
         return;
     }
     for (int index = 0; index < [features count]; index ++) {
         CIQRCodeFeature *feature = [features objectAtIndex:index];
         NSString *resultStr = feature.messageString;
-        NSLog(@"scannedResult - - %@", resultStr);
+//        NSLog(@"scannedResult - - %@", resultStr);
         
         if ([resultStr hasPrefix:@"http"]) {//网址
             
@@ -216,7 +216,7 @@
 }
 
 - (void)manager:(SGQRCodeManager *)manager captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-    NSLog(@"metadataObjects - - %@", metadataObjects);
+//    NSLog(@"metadataObjects - - %@", metadataObjects);
     if (metadataObjects != nil && metadataObjects.count > 0) {
         [manager SG_palySoundName:@"SGQRCode.bundle/sound.caf"];
         [manager SG_stopRunning];
@@ -228,7 +228,7 @@
         [self checkSuccess:[obj stringValue]];
         
     } else {
-        NSLog(@"暂未识别出扫描的二维码");
+//        NSLog(@"暂未识别出扫描的二维码");
     }
 }
 

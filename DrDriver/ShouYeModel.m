@@ -12,7 +12,9 @@
 + (NSDictionary *)objectClassInArray{
     return @{
              @"journey_list" : @"ScanCarModel",
-             @"appoint_order":@"AppointOrder"
+             @"appoint_order":@"AppointOrder",
+             @"school_order":@"SLTripList",
+             @"work_order":@"SLTripList"
              };
 }
 

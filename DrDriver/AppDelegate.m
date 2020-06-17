@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "LeftViewController.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 #import "IQKeyboardManager.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 
@@ -44,6 +45,7 @@
 #import "CharteredViewController.h"
 #import "IndependentTravelView.h"
 
+#import "AudioRecoderManager.h"
 
 @interface AppDelegate () <JPUSHRegisterDelegate,TencentSessionDelegate,WXApiDelegate,APOpenAPIDelegate,CLLocationManagerDelegate,AMapLocationManagerDelegate>
 
@@ -55,7 +57,7 @@
 
 @property (nonatomic ,strong)CYOrderView * orderView;//地址视图
 
-
+@property (nonatomic ,strong, readwrite) AudioRecoderManager *audioManager;
 
 @end
 
@@ -82,7 +84,7 @@
     [self registerThird:launchOptions];
     
     [UINavigationBar appearance].barTintColor=[CYTSI colorWithHexString:@"##383635"];
-    [[UINavigationBar appearance] setTitleTextAttributes: @{UITextAttributeTextColor: [UIColor whiteColor],UITextAttributeFont : [UIFont systemFontOfSize:16]}];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor whiteColor],NSFontAttributeName : [UIFont systemFontOfSize:16]}];
     
     //改变电池条颜色（plist设置）
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
@@ -90,7 +92,7 @@
     //未登录
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userid"]==nil) {
         
-        LoginViewController * vc=[[LoginViewController alloc]init];
+        QuickLoginViewController * vc=[[QuickLoginViewController alloc]init];
         self.shouyeNav = [[UINavigationController alloc] initWithRootViewController:vc];
         
         LeftViewController * leftVC=[[LeftViewController alloc]init];
@@ -120,8 +122,12 @@
         
     }
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginRecord:) name:@"beginRecord" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopRecord) name:@"stopRecord" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beginUpdate) name:@"beginUpdate" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopUpdate) name:@"stopUpdate" object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeOrderState:) name:@"orderState" object:nil];
     [self.window makeKeyAndVisible];
     
@@ -155,6 +161,9 @@
     
     return YES;
 }
+
+
+
 -(void)warningTone:(NSNotification *)noti{
     NSDictionary *dic =noti.userInfo;
     self.listenState = dic[@"state"];
@@ -171,16 +180,17 @@
 -(void)changeOrderState:(NSNotification *)noti{
     NSDictionary *dic =noti.userInfo;
     [[NSUserDefaults standardUserDefaults] setObject:[dic objectForKey:@"orderState"] forKey:@"orderState"];
-    NSLog(@"changeOrderState ========orderStateState%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"]);
+//    NSLog(@"changeOrderState ========orderStateState%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"]);
 }
 -(void)beginUpdate{
     NSLog(@"beginUpdate");
-    if ([_driverLocationTimer isValid]) {
-        [_driverLocationTimer invalidate];
-        _driverLocationTimer = nil;
+    if (![_driverLocationTimer isValid]) {
+//        [_driverLocationTimer invalidate];
+//        _driverLocationTimer = nil;
+        _driverLocationTimer =  [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateDriverLocation) userInfo:nil repeats:YES];
+           [[NSRunLoop currentRunLoop] addTimer:_driverLocationTimer forMode:NSRunLoopCommonModes];
     }
-    _driverLocationTimer =  [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(updateDriverLocation) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:_driverLocationTimer forMode:NSRunLoopCommonModes];
+   
 }
 -(void)stopUpdate{
     NSLog(@"stopUpdate");
@@ -199,7 +209,7 @@
 -(void)updateDriverLocation
 {
     self.listenState = @"行程中";
-    NSLog(@"appdelegate");
+    NSLog(@"appdelegate=============");
     double   latitude=[[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"] doubleValue];
     double  longtitude=[[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"] doubleValue];
     NSString *urlStr;
@@ -208,22 +218,8 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"stopUpdate" object:self userInfo:nil];
         return;
     }
-//    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"] isEqualToString:@"6"]) {//包车司机
-//        urlStr = DRIVER_INTERCITY_UPDATE_VEHICLE_LOCATION;
-//        dic =  @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"driver_lng":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"],@"driver_lat":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"],@"speed":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"],@"angle":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"],@"stime":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"],@"order_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"order_id"],@"state":[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
-//    }
-//    //    else if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"] isEqualToString:@"8"]) {
-//    //        urlStr = DRIVER_TRAVEL_UPDATE_VEHICLE_LOCATION;
-//    //        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"travel_id"] == nil) {
-//    //            dic =  @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"driver_lng":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"],@"driver_lat":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"],@"speed":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"],@"angle":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"],@"stime":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"],@"travel_id":@"",@"state":@"",@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
-//    //        }else{
-//    //            dic =  @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"driver_lng":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"],@"driver_lat":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"],@"speed":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"],@"angle":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"],@"stime":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"],@"travel_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"travel_id"],@"state":[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]};
-//    //        }
-//    //    }
-//    else {//其他司机
         urlStr = DRIVER_UPDATE_VEHICLE_LOCATION;
         dic =  @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"driver_lng":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"],@"driver_lat":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"],@"speed":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"],@"angle":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"],@"stime":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"],@"order_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"order_id"],@"state":[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"is_fatigue":@"1"};
-//    }
     //上传服务器司机的位置
     
     [AFRequestManager postRequestWithUrl:urlStr params:dic tost:NO special:1 success:^(id responseObject) {
@@ -257,7 +253,7 @@
         return;
     }
     
-    ///根据订单状态判断是否需要开始计费
+    //根据订单状态判断是否需要开始计费
     
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"] isEqualToString:@"3"]) {
         double newLatitude=[[[NSUserDefaults standardUserDefaults] objectForKey:@"new_latitude"] doubleValue];
@@ -413,12 +409,12 @@
     NSString* licensePath = [[NSBundle mainBundle] pathForResource:FACE_LICENSE_NAME ofType:FACE_LICENSE_SUFFIX];
     NSAssert([[NSFileManager defaultManager] fileExistsAtPath:licensePath], @"license文件路径不对，请仔细查看文档");
     [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
-    NSLog(@"canWork = %d",[[FaceSDKManager sharedInstance] canWork]);
+//    NSLog(@"canWork = %d",[[FaceSDKManager sharedInstance] canWork]);
     
 }
 - (void)networkDidReceiveMessage:(NSNotification *)notification
 {
-    NSLog(@"networkDidReceiveMessagenetworkDidReceiveMessage%@",notification);
+//    NSLog(@"networkDidReceiveMessagenetworkDidReceiveMessage%@",notification);
     NSDictionary * userInfo = [notification userInfo];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"touchuan" object:self userInfo:userInfo];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"newOrder" object:self userInfo:userInfo];
@@ -438,14 +434,14 @@
 }
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSLog(@"deviceToken%@",deviceToken);
+//    NSLog(@"deviceToken%@",deviceToken);
     /// Required - 注册 DeviceToken
     [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     //Optional
-    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+//    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
@@ -465,17 +461,17 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 }
 
 // iOS 10 Support
-- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^__strong)(void))completionHandler {
     NSDictionary * userInfo = response.notification.request.content.userInfo;
-    NSLog(@"userInfouserInfo%@",userInfo);
+//    NSLog(@"userInfouserInfo%@",userInfo);
     if([userInfo[@"operate_class"] isEqualToString:@"message_center"]){
         [[NSUserDefaults standardUserDefaults] setObject:@"xiangqing" forKey:@"jpushMessage"];
         NSString *d_class = [[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"];
         if ([d_class isEqualToString:@"3"]) {//扫码车进入
-            NSLog(@"SCANVC_xiangqing");
+//            NSLog(@"SCANVC_xiangqing");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"SCANVC_xiangqing" object:self userInfo:userInfo];
         }else{//出租车进入
-            NSLog(@"VC_xiangqing");
+//            NSLog(@"VC_xiangqing");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"VC_xiangqing" object:self userInfo:userInfo];
         }
     }
@@ -495,10 +491,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
         [[NSUserDefaults standardUserDefaults] setObject:@"xiangqing" forKey:@"jpushMessage"];
         NSString *d_class = [[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"];
         if ([d_class isEqualToString:@"3"]) {//扫码车进入
-            NSLog(@"SCANVC_xiangqing");
+//            NSLog(@"SCANVC_xiangqing");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"SCANVC_xiangqing" object:self userInfo:userInfo];
         }else{//出租车进入
-            NSLog(@"VC_xiangqing");
+//            NSLog(@"VC_xiangqing");
             [[NSNotificationCenter defaultCenter] postNotificationName:@"VC_xiangqing" object:self userInfo:userInfo];
         }
     }
@@ -586,15 +582,12 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self.manager startUpdatingLocation];
 }
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    NSLog(@"进入后台%@",self.listenState);
+
     if ([self.listenState isEqualToString:@"yes"] || [self.listenState isEqualToString:@"行程中"]) {
         [self begin];
     }
@@ -629,13 +622,13 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    NSLog(@"进入前台");
+//    NSLog(@"进入前台");
     [self stop];
     //进入前台
     [[NSNotificationCenter defaultCenter] postNotificationName:@"change_front" object:self];
 }
 -(void)begin{
-    NSLog(@"127378963827623%@",self.listenState);
+//    NSLog(@"127378963827623%@",self.listenState);
     if ([self.listenState isEqualToString:@"yes"] || [self.listenState isEqualToString:@"行程中"]){
         [self playVideo:@"网路出行持续喂您派单中"];//播放推送标题
     }
@@ -664,6 +657,31 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
 }
 
+
+#pragma mark - 录音相关
+
+-(void)beginRecord:(NSNotification*)noti{
+    self.audioManager.order_id = noti.userInfo[@"route_id"];
+    self.audioManager.order_type = noti.userInfo[@"order_type"];
+    NSLog(@"beginRecord ============");
+    [self.audioManager startUploadRecoard];
+}
+
+- (void)stopRecord{
+    if (self.audioManager){
+        NSLog(@"stopRecord ============");
+       [self.audioManager stopRecord];
+    }
+      
+}
+
+- (AudioRecoderManager *)audioManager{
+    if (!_audioManager) {
+        _audioManager = [[AudioRecoderManager alloc] init];
+    }
+    
+    return _audioManager;
+}
 
 @end
 

@@ -50,7 +50,7 @@
     self.WebView.UIDelegate = self;
     
     NSString *URLString = [NSString stringWithFormat:@"%@Driver/DriverMessage/notice/driver_id/%@/token/%@",HTTP_URL,[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]];
-    NSLog(@"%@",URLString);
+//    NSLog(@"%@",URLString);
     [self.WebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
     self.WebView.UIDelegate = self;
     [self.WebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];

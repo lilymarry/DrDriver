@@ -168,7 +168,7 @@
         self.tf.hidden = YES;
         self.lbView.hidden = YES;
         self.photoView.hidden = NO;
-        NSLog(@"imageimage%@",dic[@"image"]);
+//        NSLog(@"imageimage%@",dic[@"image"]);
         if (dic[@"image"] != nil) {
             [self.photoBtn setImage:dic[@"image"] forState:(UIControlStateNormal)];
         }else{

@@ -70,7 +70,7 @@
 -(void)creatHttp
 {
     [AFRequestManager postRequestWithUrl:DRIVER_LOGIN_COMPLEMENT params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"ITTripViewController%@",responseObject);
+//        NSLog(@"ITTripViewController%@",responseObject);
         NSArray *array = responseObject[@"data"][@"field_data"];
         self.tipslb.text =responseObject[@"data"][@"tips"];
         
@@ -78,7 +78,7 @@
             NSMutableDictionary *dic = [array[i] mutableCopy];
             [orderArray addObject:dic];
         }
-        NSLog(@"orderArrayorderArray%@",orderArray);
+//        NSLog(@"orderArrayorderArray%@",orderArray);
         [myTableView reloadData];
    
     } failure:^(NSError *error) {
@@ -133,7 +133,7 @@
         if ([dic[@"field_type"] isEqualToString:@"1"]) {
             NSIndexPath *indexPath=[NSIndexPath indexPathForRow:i  inSection:0];
             DriverInfoTableViewCell *cell = [myTableView cellForRowAtIndexPath:indexPath];
-            NSLog(@"cell.tf.textcell.tf.text%@",cell.tf.text);
+//            NSLog(@"cell.tf.textcell.tf.text%@",cell.tf.text);
             if (![cell.tf.text isEqualToString:@""]) {
                 [dict setValue:cell.tf.text forKey:dic[@"field_name"]];
             }
@@ -395,7 +395,7 @@
     
     NSIndexPath *indexPath=[NSIndexPath indexPathForRow:photoType  inSection:0];
     DriverInfoTableViewCell *cell = [myTableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"cell.tf.textcell.tf.text%@",cell.tf.text);
+//    NSLog(@"cell.tf.textcell.tf.text%@",cell.tf.text);
     NSDictionary *dic = orderArray[photoType];
     NSString * photoTypeStr= [NSString stringWithFormat:@"%@_PIC",dic[@"field_name"]];
     NSDictionary *photoDic = orderArray[photoType];

@@ -72,7 +72,7 @@
 -(void)creatHttp
 {
     [AFRequestManager postRequestWithUrl:DRIVER_ORDERPUSH_LIST params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"ITTripViewController%@",responseObject);
+//        NSLog(@"ITTripViewController%@",responseObject);
         NSArray * array = responseObject[@"data"];
         
         if ([currentPage intValue]==1) {
@@ -89,7 +89,7 @@
             [myTableView.mj_footer endRefreshing];
         }
         
-    } failure:^(NSError *error) {
+    } failure:^(NSError *error) { 
         
         [myTableView.mj_header endRefreshing];
         [myTableView.mj_footer endRefreshing];
@@ -112,9 +112,6 @@
     myTableView.mj_header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshDown)];
     myTableView.mj_footer=[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshUp)];
     myTableView.mj_footer.ignoredScrollViewContentInsetBottom = IS_IPHONE_X || IS_IPHONE_Xr || IS_IPHONE_Xs || IS_IPHONE_Xs_Max ? 34 : 0;
-    
-    
-    
     self.getOrderalertView = [[GetOrderAlertView alloc] initWithFrame:CGRectMake(DeviceWidth, 0, DeviceWidth, DeviceHeight)];
     __weak typeof(self) weakSelf = self;
     self.getOrderalertView.popViewBlock = ^(NSString * _Nonnull travel_id) {
@@ -186,10 +183,10 @@
     //普通订单
     if ([order_type isEqualToString:@"0"]) {
         [AFRequestManager postRequestWithUrl:DRIVER_TAKE_JOURNEY_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":order_id,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:1 success:^(id responseObject) {
-            NSLog(@"responseObjectresponseObjectresponseObjectresponseObject%@",responseObject);
+//            NSLog(@"responseObjectresponseObjectresponseObjectresponseObject%@",responseObject);
             //普通订单抢单成功
             if ([responseObject[@"flag"] isEqualToString:@"success"]) {
-                NSLog(@"weakSelf.receipt_face_stateweakSelf.receipt_face_state%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"receipt_face_state"]);
+//                NSLog(@"weakSelf.receipt_face_stateweakSelf.receipt_face_state%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"receipt_face_state"]);
                 //预约接机
                 if ([appoint_type isEqualToString:@"1"] || [appoint_type isEqualToString:@"2"]) {
                     UIWindow * window=[UIApplication sharedApplication].delegate.window;
@@ -264,17 +261,18 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"请检查您的网络并重启APP" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             
-            NSLog(@"点击取消");
+//            NSLog(@"点击取消");
             
         }]];
         [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            NSLog(@"点击确认");
+//            NSLog(@"点击确认");
             exit(1);
         }]];
         [self presentViewController:alertController animated:YES completion:nil];
     }else{
         LivenessViewController* lvc = [[LivenessViewController alloc] init];
+        lvc.isFount = YES;
         lvc.liveBlock = ^(UIImage *image) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
@@ -307,7 +305,7 @@
                     
                     NSString * dateString=[CYTSI getDateStr];
                     NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                    NSLog(@"dateStr%@",dateStr);
+//                    NSLog(@"dateStr%@",dateStr);
                     [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                     
                     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];
@@ -382,8 +380,7 @@
     vc.journey_fee=qiangOrder.journey_fee;
     vc.submit_class = qiangOrder.submit_class;
     vc.order_class= qiangOrder.order_class;
-    
-    
+
     [[NSUserDefaults standardUserDefaults] setObject:order_id forKey:@"order_id"];
     [self.navigationController pushViewController:vc animated:YES];
     [self.alert removeFromSuperview];

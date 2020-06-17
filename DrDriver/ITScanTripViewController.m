@@ -92,7 +92,7 @@
 {
     
     [AFRequestManager postRequestWithUrl:DRIVER_JOURNEY_ORDER_LIST params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"p":currentPage,@"isqrcode":@"1"} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSArray *array = [NSArray array];
         
         array = [OrdeModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];

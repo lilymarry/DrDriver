@@ -55,7 +55,7 @@
                 if ([[responseObject objectForKey:@"flag"] isEqualToString:@"success"]) {
                     success(responseObject);
                 } else {
-                    NSLog(@"0000000000000000000000");
+//                    NSLog(@"0000000000000000000000");
                     //token出错
                     if ([[responseObject objectForKey:@"error_code"] intValue]==1111) {
                         
@@ -79,7 +79,7 @@
                                 
                             }];
                             [[NSUserDefaults standardUserDefaults] setObject:@"n" forKey:@"isError"];
-                            NSLog(@"postNotificationName-loginfailed");
+//                            NSLog(@"postNotificationName-loginfailed");
                         }
                         
                         [HUD removeFromSuperview];
@@ -153,7 +153,7 @@
                                 }];
                                 [[NSNotificationCenter defaultCenter] postNotificationName:@"loginfailed" object:nil];
                                 [[NSUserDefaults standardUserDefaults] setObject:@"n" forKey:@"isError"];
-                                NSLog(@"postNotificationName-loginfailed");
+//                                NSLog(@"postNotificationName-loginfailed");
                             }
                             
                             [CYTSI otherShowTostWithString:@"登录失效，请重新登录！"];

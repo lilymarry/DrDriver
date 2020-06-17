@@ -55,6 +55,7 @@
 #define RGBA(r,g,b,a)   [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
 
 
+
 //判断是否是ipad
 #define isPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 //判断iPhoneX
@@ -93,13 +94,11 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 //正式域名
 //#define HTTP_URL  @"http://app.wllives.com/index.php/"
-#define HTTP_IMG_URL  @"http://app.wllives.com/"
+#define HTTP_IMG_URL  @"http://app.wllives.com"
 
 //测试域名
 #define HTTP_URL  @"http://wxtest.wllives.com/index.php/"
-//#define HTTP_IMG_URL  @"http://echuzu.tangchaoke.com/"
-//#define HTTP_URL  @"http://192.168.0.198/index.php/"
-//#define HTTP_URL  @"http://zhun.e1860.com/index.php/"
+
 //版本更新
 #define DRIVER_VERSION_DRIVER_CLIENT_UPDATE_IOS @"Driver/Version/driver_client_update_ios"
 
@@ -111,7 +110,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 //1.2 司机注册,完善个人信息接口地
 #define DRIVER_REGISTER_PERSON_INFO  @"Driver/Login/driver_register_perfect_info"
-
+ 
 //1.2.4 司机可切换的运行类型列表
 #define DRIVER_SHOW_DRIVER_CLASS @"Driver/Driver/show_driver_class"
 
@@ -141,6 +140,9 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 //1.5.1 司机注册信息
 #define DRIVER_REGISTER_INFO @"Driver/Login/driver_register_info"
+
+//1.5.2 司机快速注册
+#define DRIVER_LOGIN_QUICK_LOGIN @"Driver/Login/quick_login"
 
 //1.6 车主信息
 //#define DRIVER_BASE_DATA  @"Driver/Driver/driver_base_data"
@@ -354,6 +356,9 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 //11.15 司机发布行程
 #define DRIVER_TRAVEL_CREAT_TRAVEL @"Driver/Travel/create_travel"
 
+//11.15.1 车辆核定载客数
+#define DRIVER_TRAVEL_VEHICLE_INFO @"Driver/Travel/vehicle_info"
+
 //11.16.1 司机首页用户发布的行程列表
 #define DRIVER_TRAVEL_USER_TRAVEL_LIST @"Driver/Travel/user_travel_list"
 
@@ -372,4 +377,75 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 //司机注册 选择类型列表
 #define DRIVER_LOGIN_REGISTER_TYPE @"Driver/Login/regist_type"
 
+//12.1 合约列表
+#define DRIVER_SCHOOLBUS_CONTRACT_LIST @"Driver/SchoolBus/contract_list"
+
+//12.2 合约详情
+#define DRIVER_SCHOOLBUS_CONTRACT_DETAIL @"Driver/SchoolBus/contract_detail"
+
+//12.3 孩子信息
+#define DRIVER_SCHOOLBUS_CHILD_DETAIL @"Driver/SchoolBus/child_detail"
+
+//12.4.1 行程列表
+#define DRIVER_SCHOOLBUS_ROUTE_LIST @"Driver/SchoolBus/route_list"
+
+//12.4.2 行程详情
+#define DRIVER_SCHOOLBUS_ROUTE_DETAIL @"Driver/SchoolBus/route_detail"
+
+//12.4.3 司机更改行程状态
+#define DRIVER_SCHOOLBUS_UP_ROUTE_STATE @"Driver/SchoolBus/up_route_state"
+
+//12.4.5 给学生扫脸认证
+#define DRIVER_SCHOOLBUS_CHILD_FACE_MATCH @"Driver/SchoolBus/child_face_match"
+
+//12.4.6 输入接送密码验证
+#define DRIVER_SCHOOLBUS_CHECK_AUTH_PWD @"Driver/SchoolBus/check_auth_pwd"
+
+//12.4.7 接送乘客拍照上传
+#define DRIVER_SCHOOLBUS_UP_CHILD_PIC @"Driver/SchoolBus/up_child_pic"
+
+//12.4.8 司机行程更多
+#define DRIVER_SCHOOLBUS_ORDER_DETIAL @"Driver/SchoolBus/order_detail"
+
+//12.4.9 司机取消原因
+#define DRIVER_SCHOOLBUS_CANCEL_REASON @"Driver/SchoolBus/cancel_reason"
+
+//12.4.10 司机取消订单
+#define DRIVER_SCHOOLBUS_CANCEL_ORDER @"Driver/SchoolBus/cancel_order"
+
+//12.4.11司机开始陪伴学生
+#define DRIVER_SCHOOLBUS_ACCONPANY @"Driver/SchoolBus/accompany"
+
+////12.4.12乘客迟到
+//#define DRIVER_SCHOOLBUS_CHILD_LATE @"Driver/SchoolBus/child_late"
+
+//13.1 通勤行合约列表
+#define DRIVER_WORK_CONTRACT_LIST @"Driver/WorkBus/contract_list"
+
+//13.2 合约详情
+#define DRIVER_WORK_CONTRACT_DETAIL @"Driver/WorkBus/contract_detail"
+
+//13.3 合约详情 乘客的详细信息
+#define DRIVER_WORK_PASSENGER_DETAIL @"Driver/WorkBus/passenger_detail"
+
+//13.4.1 行程列表
+#define DRIVER_WORKBUS_ROUTE_LIST @"Driver/WorkBus/route_list"
+
+//13.4.2 行程详情
+#define DRIVER_WORKBUS_ROUTE_DETIAL @"Driver/WorkBus/route_detail"
+
+//13.4.3 司机行程子订单详情
+#define DRIVER_WORKBUS_ORDER_DETIAL @"Driver/WorkBus/order_detail"
+
+//12.4.4 司机更改行程状态
+#define DRIVER_WORKBUS_UP_ROTE_STATE @"Driver/WorkBus/up_route_state"
+
+//13.4.5 司机取消原因
+#define DRIVER_WORKBUS_CANCEL_REASON @"Driver/WorkBus/cancel_reason"
+
+//13.4.6 司机取消订单
+#define DRIVER_WORKBUS_CANCEL_ORDER @"Driver/WorkBus/cancel_order"
+
+//13.4.7 乘客迟到
+#define DRIVER_WORKBUS_PASSENGER_LATE @"Driver/WorkBus/passenger_late"
 #endif /* PrefixHeader_pch */

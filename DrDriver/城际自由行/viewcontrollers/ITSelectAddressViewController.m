@@ -126,7 +126,7 @@
     {
         return;
     }else{
-        NSLog(@"%@",response.pois);
+//        NSLog(@"%@",response.pois);
         [self.poiArr removeAllObjects];
         for (AMapPOI *poi in response.pois) {
             [self.poiArr addObject:poi];

@@ -33,7 +33,7 @@
     self.endCityLB.font = [UIFont systemFontOfSize:15];
     self.endCityLB.textColor = [CYTSI colorWithHexString:@"#333333"];
     [self addSubview:self.endCityLB];
-///////////////startView
+////////////startView
     self.startImageLB  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"坐标-起始q"]];
     [self addSubview:self.startImageLB];
     
@@ -145,7 +145,6 @@
         make.right.equalTo(self.startMapBtn.mas_left);
     }];
 
-////////////  endView
     self.endImageLB  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"坐标-终点q"]];
     [self addSubview:self.endImageLB];
 
@@ -244,12 +243,6 @@
     self.priceLB.textColor = [CYTSI colorWithHexString:@"#333333"];
     [self addSubview:self.priceLB];
 
-    //        self.sumPriceLB = [[UILabel alloc] init];
-    //        self.sumPriceLB.text = @"一口价包车--元";
-    //        self.sumPriceLB.font = [UIFont systemFontOfSize:15];
-    //        self.sumPriceLB.textColor = [CYTSI colorWithHexString:@"#f5a623"];
-    //        [self addSubview:self.sumPriceLB];
-
     [self.timeLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(15);
         make.top.equalTo(self.endDetailAddressLB.mas_bottom).offset(15);
@@ -261,18 +254,14 @@
         make.left.equalTo(self).offset(15);
         make.top.equalTo(self.timeLB.mas_bottom).offset(10);
     }];
-//
-//            [self.sumPriceLB mas_makeConstraints:^(MASConstraintMaker *make) {
-//                make.right.equalTo(self.mas_right).offset(-15);
-//                make.top.equalTo(self.priceLB.mas_bottom).offset(5);
-//            }];
-    
+
 }
 -(void)mapAction{
     self.mapBlock(self.dic);
 }
 
 -(void)setData:(NSDictionary *)dic{
+    
     self.startCityLB.text  = [NSString stringWithFormat:@"%@%@",dic[@"start_city"],dic[@"start_county"]];
     self.endCityLB.text = [NSString stringWithFormat:@"%@%@",dic[@"end_city"],dic[@"end_county"]];
     self.startAdLB.text= dic[@"old_start_name"];
@@ -296,20 +285,7 @@
     self.dic = @{@"start_lat":dic[@"start_lat"],@"start_lng":dic[@"start_lng"],@"end_lat":dic[@"end_lat"],@"end_lng":dic[@"end_lng"]};
     self.timeLB.text = [NSString stringWithFormat:@"发车时间 %@",dic[@"estimate_time"]];
     self.priceLB.text = dic[@"state"];
-//    if ([dic[@"is_baoche"] isEqualToString:@"0"]) {
-//        self.priceLB.text = [NSString stringWithFormat:@"拼团 乘车人数%@人",dic[@"passenger_num"]];
-//    }else if ([dic[@"is_baoche"] isEqualToString:@"1"]){
-//        self.priceLB.text = @"轿车包车";
-//    }else{
-//        self.priceLB.text = @"商务七人座包车";
-//    }
+
 }
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect {
- // Drawing code
- }
- */
 
 @end

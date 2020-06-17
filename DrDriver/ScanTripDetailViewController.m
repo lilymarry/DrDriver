@@ -160,7 +160,7 @@
 {
     [AFRequestManager postRequestWithUrl:DRIVER_JOURNEY_ORDER_DETAIL_INFO params:@{@"order_id":self.order_id,@"driver_id":[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
 
-        NSLog(@"responseObject%@",responseObject[@"data"]);
+//        NSLog(@"responseObject%@",responseObject[@"data"]);
         [OrderDetailModel mj_setupObjectClassInArray:^NSDictionary *{
 
             return @{@"locus_point":@"DriverModel"};

@@ -187,7 +187,7 @@
     
     // 添加一个删除按钮
     UITableViewRowAction *deleteRowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        NSLog(@"点击了删除");
+//        NSLog(@"点击了删除");
         
         [AFRequestManager postRequestWithUrl:DRIVER_DRIVERBANK_DELETE_DRIVER_BANK params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"bank_id":card.bank_id,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
             

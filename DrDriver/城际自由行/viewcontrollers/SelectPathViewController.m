@@ -125,9 +125,9 @@
         end_lng = self.searchModel.end_lng;
     }
     NSDictionary *dic = @{@"p":currentPage,@"start_province":start_province,@"start_city":start_city,@"start_county":start_county,@"end_province":end_province,@"end_city":end_city,@"end_county":end_county,@"start_name":start_name,@"start_address":start_address,@"start_lat":start_lat,@"start_lng":start_lng,@"end_name":end_name,@"end_address":end_address,@"end_lat":end_lat,@"end_lng":end_lng};
-    NSLog(@"NSDictionary *dic =%@",dic);
+//    NSLog(@"NSDictionary *dic =%@",dic);
     [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_LINE_LIST params:dic tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"responseObjectresponseObject%@",responseObject);
+//        NSLog(@"responseObjectresponseObject%@",responseObject);
         
         if ([currentPage intValue]==1) {
             [self.dataArr removeAllObjects];
@@ -268,7 +268,7 @@
     UILabel *lineLB = [[UILabel alloc] initWithFrame:CGRectMake(10, 45, DeviceWidth - 20, 1)];
     lineLB.backgroundColor = TABLEVIEW_BACKCOLOR;
     [self.topView addSubview:lineLB];
-    //////起点地址
+    //起点地址
     UITapGestureRecognizer *ITTimeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(startplaceAction)];
     self.ITTimeBtn = [[UIView alloc] init];
     [self.ITTimeBtn addGestureRecognizer:ITTimeTap];
@@ -496,7 +496,7 @@
         [self creatHttp];
     }
     
-    NSLog(@"%@  %@  %@",province,city,area);
+//    NSLog(@"%@  %@  %@",province,city,area);
 }
 //设置导航栏
 -(void)setUpNav

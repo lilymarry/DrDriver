@@ -105,7 +105,7 @@
 //请求订单列表
 -(void)requestOrder
 {
-    NSLog(@"09090909090909%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"]);
+//    NSLog(@"09090909090909%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"]);
     NSString *urlStr;
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"] isEqualToString:@"6"]) {//包车司机
         urlStr = DRIVER_INTERCITY_JOURNEY_ORDER_LIST;
@@ -116,11 +116,11 @@
     else {//其他司机
         urlStr = DRIVER_JOURNEY_ORDER_LIST;
     }
-    NSLog(@"driver_id=%@&token=%@&p=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],currentPage);
+//    NSLog(@"driver_id=%@&token=%@&p=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],currentPage);
 
     [AFRequestManager postRequestWithUrl:urlStr params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"p":currentPage} tost:YES special:0 success:^(id responseObject) {
 
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         NSArray *array = [NSArray array];
 //        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"] isEqualToString:@"8"]) {
 //            array = responseObject[@"data"];
@@ -259,7 +259,7 @@
                 cell.startLable.text=order.start_address;
                 cell.endLable.text=order.end_address;
                 cell.stateLable.text=order.state_name;
-                NSLog(@"order.state_nameorder.state_name%@",order.state_name);
+//                NSLog(@"order.state_nameorder.state_name%@",order.state_name);
                 cell.stateLable.textColor=[CYTSI colorWithHexString:@"#386ac6"];
                 if ([order.appoint_type isEqualToString:@"0"]) {//及时单
                     cell.appoint_type_LB.text =@"";
@@ -307,7 +307,7 @@
             }
         }else{//快车、出租车、豪华车、专车
             if (order.order_class <= 100) {
-                NSLog(@"indexPath.section%ld",indexPath.section);
+//                NSLog(@"indexPath.section%ld",indexPath.section);
                 
                 if (order.journey_state==1 || order.journey_state==2 || order.journey_state==3 || order.journey_state==4) {
                     if ([order.driver_face_state isEqualToString:@"1"]) {
@@ -374,7 +374,7 @@
                 
                 NSString * dateString=[CYTSI getDateStr];
                 NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                 
                 NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];

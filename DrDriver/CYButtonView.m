@@ -119,7 +119,7 @@
                 
             }
             
-            NSLog(@"self.isHaveUnEndOrder%d",self.isHaveUnEndOrder);
+//            NSLog(@"self.isHaveUnEndOrder%d",self.isHaveUnEndOrder);
             if (self.isHaveUnEndOrder) {
                 
                 [CYTSI otherShowTostWithString:@"您还有未完成的订单，请先完成"];
@@ -130,7 +130,7 @@
             if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied)
                 //位置服务是在设置中禁用
             {
-                NSLog(@"您没有开启了定位权限");
+//                NSLog(@"您没有开启了定位权限");
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"打开定位开关"
                                                                 message:@"定位服务未开启，请进入系统设置允许APP获取位置信息"
                                                                delegate:self
@@ -148,7 +148,7 @@
                 if (UIUserNotificationTypeNone == setting.types)
                 {
                     
-                    NSLog(@"推送关闭 8.0");
+//                    NSLog(@"推送关闭 8.0");
                     UIAlertView * myAlertView=[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"请打开：设置→通知→网路出行司机端→允许通知，否则您将无法听单" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"设置", nil];
                     [myAlertView show];
                     
@@ -162,7 +162,7 @@
                         
                         return;
                     }
-                    NSLog(@"推送打开 8.0");
+//                    NSLog(@"推送打开 8.0");
                     
                     [JPUSHService setTags:nil alias:[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"] fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
                         
@@ -236,6 +236,8 @@
     animation.repeatCount = MAXFLOAT; //如果这里想设置成一直自旋转，可以设置为MAXFLOAT，否则设置具体的数值则代表执行多少次
     [self.listenButton.layer addAnimation:animation forKey:@"listenanimation"];
     
+     [[NSUserDefaults standardUserDefaults] setObject:@"y" forKey:@"isWork"];
+    
 }
 
 //停止听单
@@ -249,6 +251,8 @@
     self.colorView.backgroundColor=[CYTSI colorWithHexString:@"#386ac6"];
     
     [self stopRobOrderAnimation];//停止抢单
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"n" forKey:@"isWork"];
 }
 
 //抢单动画

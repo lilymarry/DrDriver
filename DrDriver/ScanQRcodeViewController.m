@@ -68,7 +68,7 @@
     [AFRequestManager postRequestWithUrl:DRIVER_QRCODE_GETPAYQRCODE params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
         [weakSelf.scanImageView sd_setImageWithURL:[NSURL URLWithString:responseObject[@"data"][@"poster"] ]placeholderImage:[UIImage imageNamed:@"scanPayDetail"] options:SDWebImageRefreshCached];
     } failure:^(NSError *error) {
-        NSLog(@"ScanQRcodeViewController === %@",error);
+//        NSLog(@"ScanQRcodeViewController === %@",error);
     }];
 
 }

@@ -19,18 +19,14 @@
 
 @property (nonatomic, readwrite, assign) BOOL runningStatus;
 
-/**
- * 设定使用前置摄像头或者后置摄像头
- * AVCaptureDevicePositionFront 前置摄像头(默认)
- * AVCaptureDevicePositionBack 后置摄像头
- */
-@property (nonatomic, readwrite, assign) AVCaptureDevicePosition position;
+- (instancetype)creatWithFount:(BOOL)isFount;
 
 - (void)startSession;
 
 - (void)stopSession;
 
 - (void)resetSession;
+
 
 @end
 

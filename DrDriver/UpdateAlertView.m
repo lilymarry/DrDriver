@@ -110,7 +110,7 @@
 }
 
 -(void)confirmAction{
-    NSLog(@"立即更新");
+//    NSLog(@"立即更新");
     exit(1);
 }
 

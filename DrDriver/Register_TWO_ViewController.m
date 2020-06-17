@@ -12,7 +12,8 @@
 #import "RegisterProgressView.h"
 #import "CYAlertView.h"
 #import "AFNetWorking.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 #import "UIImage+FixIMG.h"
 #import "BJNumberPlateOC.h"
 #import <AVFoundation/AVFoundation.h>
@@ -409,9 +410,9 @@
         
         [weakSingleAlertView hideAlertView];
         NSArray * vcArray=weakSelf.navigationController.viewControllers;
-        for (LoginViewController * vc in vcArray) {
+        for (QuickLoginViewController * vc in vcArray) {
             
-            if ([vc isKindOfClass:[LoginViewController class]]) {
+            if ([vc isKindOfClass:[QuickLoginViewController class]]) {
                 
                 //                [CYTSI otherShowTostWithString:@"上传成功"];
                 [weakSelf.navigationController popToViewController:vc animated:YES];
@@ -728,6 +729,7 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
     LivenessViewController* lvc = [[LivenessViewController alloc] init];
+    lvc.isFount = YES;
     //    __weak typeof(self) weakSelf = self;
     lvc.liveBlock = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{

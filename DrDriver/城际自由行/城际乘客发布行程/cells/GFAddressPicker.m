@@ -47,19 +47,19 @@
     for (NSDictionary *provinceDic in self.china_city_dataArr) {
         [self.provinceArray addObject:provinceDic[@"name"]];
     }
-    NSLog(@"china_city_data%@",self.provinceArray);
+//    NSLog(@"china_city_data%@",self.provinceArray);
 
     NSDictionary *cityDic = self.china_city_dataArr[0];
     for (NSDictionary *cityListDic in cityDic[@"cityList"]) {
         [self.cityArray addObject:cityListDic[@"name"]];
     }
-    NSLog(@"china_city_data%@",self.cityArray);
+//    NSLog(@"china_city_data%@",self.cityArray);
     NSArray *townArr = cityDic[@"cityList"];
     NSDictionary *townDic = townArr[0];
     for (NSDictionary *townListDic in townDic[@"cityList"]) {
         [self.townArray addObject:townListDic[@"name"]];
     }
-    NSLog(@"china_city_data%@",self.townArray);
+//    NSLog(@"china_city_data%@",self.townArray);
 }
 
 - (void)setBaseView {

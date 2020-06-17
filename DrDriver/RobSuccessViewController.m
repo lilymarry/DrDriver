@@ -183,7 +183,7 @@
 
 -(void)orderDetail{
     [AFRequestManager postRequestWithUrl:DRIVER_JOURNEY_ORDER_DETAIL_INFO params:@{@"order_id":self.orderID,@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         if ([responseObject[@"message"] isEqualToString:@"请求成功"]) {
             NSDictionary *dic = responseObject[@"data"];
             self.orderID=dic[@"order_id"];
@@ -211,7 +211,7 @@
             self.appoint_type = dic[@"appoint_type"];
             self.flight_number = dic[@"flight_number"];
             self.orderState=[dic[@"journey_state"] integerValue];
-            NSLog(@"self.orderStateself.orderStateself.orderState%ld",self.orderState);
+//            NSLog(@"self.orderStateself.orderStateself.orderState%ld",self.orderState);
             self.user_real_phone = dic[@"user_real_phone"];
             
             
@@ -255,7 +255,8 @@
     
 }
 -(void)viewDidDisappear:(BOOL)animated{
-    NSLog(@"()()()()()()()()()()()()()()()()()()()()(");
+    [super viewDidDisappear:animated];
+//    NSLog(@"()()()()()()()()()()()()()()()()()()()()(");
 }
 //默认操作订单状态
 -(void)defaultGoOrder
@@ -381,8 +382,8 @@
     }
     //一口价新订单
     if ([notiMessage.extras.operate_class isEqualToString:@"new_user_order"]) {
-        NSLog(@"new_user_order");
-        NSLog(@"backViewControllerbackViewController");
+//        NSLog(@"new_user_order");
+//        NSLog(@"backViewControllerbackViewController");
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"receive_noti"] intValue] == 1) {//(排除正在抢单的)
             //                    NSLog(@"receive_notireceive_notireceive_notireceive_noti");
             
@@ -542,7 +543,7 @@
     //乘客取消订单
     if ([notiMessage.extras.operate_class isEqualToString:@"passenger_cancel_order"]) {
         
-        NSLog(@"RobSuccessViewController ---------passenger_cancel_order");
+//        NSLog(@"RobSuccessViewController ---------passenger_cancel_order");
         [checkTimer invalidate];
         checkTimer=nil;
         
@@ -767,7 +768,7 @@
                 if (![notiMessage.extras.appoint_type isEqualToString:@"new_user_order"]) {
                     if ([notiMessage.extras.appoint_type isEqualToString:@"0"]) {//及时单
                         [AFRequestManager postRequestWithUrl:DRIVER_TAKE_JOURNEY_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":notiMessage.extras.order_id,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:1 success:^(id responseObject) {
-                            NSLog(@"responseObjectresponseObjectresponseObject%@",responseObject);
+//                            NSLog(@"responseObjectresponseObjectresponseObject%@",responseObject);
                             //抢单成功
                             if ([responseObject[@"flag"] isEqualToString:@"success"]) {
                                 if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"receipt_face_state"] isEqualToString:@"1"]){
@@ -792,7 +793,7 @@
                         }];
                     }else{
                         [AFRequestManager postRequestWithUrl:DRIVER_TAKE_JOURNEY_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id": notiMessage.extras.order_id,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:1 success:^(id responseObject) {
-                            NSLog(@"responseObjectresponseObjectresponseObjectresponseObject%@",responseObject);
+//                            NSLog(@"responseObjectresponseObjectresponseObjectresponseObject%@",responseObject);
                             //抢单成功
                             if ([responseObject[@"flag"] isEqualToString:@"success"]) {
                                 UIWindow * window=[UIApplication sharedApplication].delegate.window;
@@ -824,7 +825,7 @@
                     }
                 } else{
                     //一口价订单抢单
-                    NSLog(@"一口价订单抢单");
+//                    NSLog(@"一口价订单抢单");
                     NSDictionary *dic = [NSDictionary dictionary];
                     dic = @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"order_id":notiMessage.extras.order_id};
                     [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_GRAB_ORDER params:dic tost:YES special:1 success:^(id responseObject) {
@@ -882,6 +883,7 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
     LivenessViewController* lvc = [[LivenessViewController alloc] init];
+    lvc.isFount = YES;
     lvc.liveBlock = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -914,7 +916,7 @@
                 
                 NSString * dateString=[CYTSI getDateStr];
                 NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                 
                 NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];
@@ -962,7 +964,7 @@
         
     }else if ([self.appoint_type isEqualToString:@"1"]){
         addressView.dateLB.hidden = NO;
-        NSLog(@"self.appoint_timeself.appoint_time%@",self.appoint_time);
+//        NSLog(@"self.appoint_timeself.appoint_time%@",self.appoint_time);
         addressView.dateLB.text = [NSString stringWithFormat:@"预约出发时间：%@",[CYTSI timeWithTimeIntervalString:self.appoint_time]];
     }else if ([self.appoint_type isEqualToString:@"2"]){
         addressView.planeImageView.hidden = NO;
@@ -971,7 +973,7 @@
         addressView.planeLB.text = [NSString stringWithFormat:@"航班号:%@",self.flight_number];
         
         addressView.planeDateLB.text = [NSString stringWithFormat:@"日期:%@",[CYTSI timeWithTimeIntervalString:self.flight_date]];
-        NSLog(@"self.appoint_timeself.appoint_time%@",self.appoint_time);
+//        NSLog(@"self.appoint_timeself.appoint_time%@",self.appoint_time);
     }
     if (DeviceHeight > 737) {
         addressView.frame=CGRectMake(0, 64 +24, DeviceWidth, 157);
@@ -1001,7 +1003,7 @@
     }];
 
     
-    NSLog(@"_endAddress_endAddress%@",_endAddress);
+//    NSLog(@"_endAddress_endAddress%@",_endAddress);
     
     if ([_endName isEqualToString:@""])
     {
@@ -1140,10 +1142,10 @@
     
     
     [self.lm requestLocationWithReGeocode:YES completionBlock:^(CLLocation *location, AMapLocationReGeocode *regeocode, NSError *error) {
-        NSLog(@"self.locationManagerself.locationManager");
+//        NSLog(@"self.locationManagerself.locationManager");
         if (error)
         {
-            NSLog(@"errorerror%@",error);
+//            NSLog(@"errorerror%@",error);
             [CYTSI otherShowTostWithString:@"定位失败，请重试"];
             [CYTSI setStringWith:@"当前位置不可用 (当前位置仅供参考)" someStr:@"(当前位置仅供参考)" lable:self.alert.addressLB theFont:[UIFont systemFontOfSize:14] theColor:[UIColor lightGrayColor]];
             self.alert.bjActionBlock = ^{
@@ -1183,7 +1185,7 @@
 }
 -(void)bjNetwork{
     [AFRequestManager postRequestWithUrl:DRIVER_JOURNEYORDER_ALARM params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":self.orderID,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"position_lng":self.bjPosition_lng,@"position_lat":self.bjPosition_lat,@"address":self.bjAddress,@"position_time":self.bjPosition_time,@"order_type":@"0"} tost:NO special:0 success:^(id responseObject) {
-        NSLog(@"正在播出报警电话call is dialing ");
+//        NSLog(@"正在播出报警电话call is dialing ");
     } failure:^(NSError *error) {
         
     }];
@@ -1235,7 +1237,7 @@
 
 -(void)setPriceViewText
 {
-    NSLog(@"leftPriceView.bottomLable.textleftPriceView.bottomLable.text%@",leftPriceView.bottomLable.text);
+//    NSLog(@"leftPriceView.bottomLable.textleftPriceView.bottomLable.text%@",leftPriceView.bottomLable.text);
     if ([leftPriceView.bottomLable.text isEqualToString:@"0公里"]) {
         [CYTSI setStringWith:@"0公里" someStr:@"公里" lable:leftPriceView.bottomLable theFont:[UIFont systemFontOfSize:11] theColor:[CYTSI colorWithHexString:@"#666666"]];
     }else{
@@ -1388,7 +1390,7 @@
                     
                     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%.14f",latitude] forKey:@"new_latitude"];
                     [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%.14f",longtitude] forKey:@"new_longitude"];
-                    NSLog(@"==================================================");
+//                    NSLog(@"==================================================");
                     [self firstJoinUpdatePrice];//第一次进来距离时间价钱赋值
                     
                     self.navigationItem.rightBarButtonItems = nil;
@@ -1913,11 +1915,11 @@
             }
         }
         
-        NSLog(@"location:%@", location);
+//        NSLog(@"location:%@", location);
         
         if (regeocode)
         {
-            NSLog(@"reGeocode:%@", regeocode);
+//            NSLog(@"reGeocode:%@", regeocode);
         }
         
         self.currentCoordinate = location.coordinate;
@@ -1943,9 +1945,9 @@
         endAnnotation.title=@"终点";
         [self.mapView addAnnotation:endAnnotation];
         
-        NSLog(@"司机位置：%.14f,%.14f",location.coordinate.latitude,location.coordinate.longitude);
-        NSLog(@"开始位置：%.14f,%.14f",self.userStartCoordinate.latitude,self.userStartCoordinate.longitude);
-        NSLog(@"结束位置：%.14f,%.14f",self.endCoordinate.latitude,self.endCoordinate.longitude);
+//        NSLog(@"司机位置：%.14f,%.14f",location.coordinate.latitude,location.coordinate.longitude);
+//        NSLog(@"开始位置：%.14f,%.14f",self.userStartCoordinate.latitude,self.userStartCoordinate.longitude);
+//        NSLog(@"结束位置：%.14f,%.14f",self.endCoordinate.latitude,self.endCoordinate.longitude);
         
         //设置地图
         //        [weakSelf.mapView setZoomLevel:13 animated:YES];
@@ -1953,7 +1955,7 @@
         //        [weakSelf.mapView setCenterCoordinate:self.userStartCoordinate animated:NO];
         
         [self hidenLoading];
-        NSLog(@"_orderState_orderState_orderState_orderState_orderState%ld",_orderState);
+//        NSLog(@"_orderState_orderState_orderState_orderState_orderState%ld",_orderState);
         if (_orderState==0 || _orderState==1) {
             
             isOverDrawTakeUserLine=YES;
@@ -2300,12 +2302,12 @@
 
 - (void)driveManagerOnCalculateRouteSuccess:(AMapNaviDriveManager *)driveManager
 {
-    NSLog(@"onCalculateRouteSuccess");
+//    NSLog(@"onCalculateRouteSuccess");
     
     //    isAginDrawLine=NO;
     
     //    显示路径或开启导航
-    NSLog(@"线路点：%@",driveManager);
+//    NSLog(@"线路点：%@",driveManager);
     
     //起点到终点
     //    if (driveManager == self.driveManager) {
@@ -2387,7 +2389,7 @@
 //重新导航
 -(void)aginStartNavi
 {
-    NSLog(@"订单状态：%ld",(long)_orderState);
+//    NSLog(@"订单状态：%ld",(long)_orderState);
     
     if (_orderState==1 || _orderState==0) {
         
@@ -2543,7 +2545,7 @@
  */
 - (void)driveManager:(AMapNaviDriveManager *)driveManager playNaviSoundString:(NSString *)soundString soundStringType:(AMapNaviSoundType)soundStringType
 {
-    NSLog(@"导航播报：%@",soundString);
+//    NSLog(@"导航播报：%@",soundString);
     
     [[SpeechSynthesizer sharedSpeechSynthesizer] speakString:soundString];
 }
@@ -2616,7 +2618,7 @@
  */
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode
 {
-    NSLog(@"连续更新车速%f",location.speed);
+//    NSLog(@"连续更新车速%f",location.speed);
     //    carAnnotation.coordinate=location.coordinate;
     carSpeed=location.speed;
     
@@ -3074,7 +3076,7 @@
 -(void)firstJoinUpdatePrice
 {
     
-    NSLog(@"driver_id=%@&order_id=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],_orderID);
+//    NSLog(@"driver_id=%@&order_id=%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],_orderID);
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"] != nil) {
         //根据距离请求服务器价格
         [AFRequestManager postRequestWithUrl:DRIVER_JOURNEYORDER_OBTAIN_JOURNEY_ORDER_MILE params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":_orderID,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:NO special:1 success:^(id responseObject) {
@@ -3110,7 +3112,7 @@
     [AFRequestManager postRequestWithUrl:DRIVER_JOURNEYORDER_CALC_JOURNEY_FEE params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":_orderID,@"journey_mile":distanceStr,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:NO special:1 success:^(id responseObject) {
         
         PriceDistanceModel * priceModel = [PriceDistanceModel mj_objectWithKeyValues:responseObject[@"data"]];
-        NSLog(@"priceModel.real_journey_milepriceModel.real_journey_mile%@",priceModel.real_journey_mile);
+//        NSLog(@"priceModel.real_journey_milepriceModel.real_journey_mile%@",priceModel.real_journey_mile);
         if ([priceModel.real_journey_fee isEqualToString:@"0"]) {
             leftPriceView.bottomLable.text = @"0公里";
         }else{
@@ -3482,7 +3484,7 @@
 
 -(void)textFieldChangeText:(UITextField *)textField
 {
-    NSLog(@"textFieldtextFieldtextFieldtextField%@",textField);
+//    NSLog(@"textFieldtextFieldtextFieldtextField%@",textField);
     if (textField.text!=nil && ![textField.text isEqualToString:@""]) {
         
         [self searchWithKeyWords:textField.text];

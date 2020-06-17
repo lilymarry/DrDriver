@@ -101,7 +101,7 @@
 -(void)creatHttp{
     [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_USER_ORDER_DETAIL params:@{@"order_id":self.order_id} tost:YES special:0 success:^(id responseObject) {
         NSDictionary *dic = responseObject[@"data"];
-        NSLog(@"dicdic%@",dic);
+//        NSLog(@"dicdic%@",dic);
         [self.orderDetailView setData:dic];
         [self.ITDriverDetailView setData:dic];
         [self.orderView setData:dic];

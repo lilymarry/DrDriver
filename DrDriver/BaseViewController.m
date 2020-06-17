@@ -77,7 +77,7 @@
 }
 -(void)newOrder:(NSNotification *)noti{
     notiMessage=[NotiMessageModel mj_objectWithKeyValues:noti.userInfo];
-    NSLog(@"baseviewnoti.userInfo%@",noti.userInfo);
+//    NSLog(@"baseviewnoti.userInfo%@",noti.userInfo);
     //新订单
     if ([notiMessage.extras.operate_class isEqualToString:@"new_order"]) {
         
@@ -102,8 +102,8 @@
     }
     //一口价新订单
     if ([notiMessage.extras.operate_class isEqualToString:@"new_user_order"]) {
-        NSLog(@"new_user_order");
-        NSLog(@"backViewControllerbackViewController");
+//        NSLog(@"new_user_order");
+//        NSLog(@"backViewControllerbackViewController");
         if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"receive_noti"] intValue] == 1) {//(排除正在抢单的)
             //                    NSLog(@"receive_notireceive_notireceive_notireceive_noti");
             
@@ -353,7 +353,7 @@
                 if (![notiMessage.extras.appoint_type isEqualToString:@"new_user_order"]) {
                 if ([notiMessage.extras.appoint_type isEqualToString:@"0"]) {//及时单
                     [AFRequestManager postRequestWithUrl:DRIVER_TAKE_JOURNEY_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id":notiMessage.extras.order_id,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:1 success:^(id responseObject) {
-                        NSLog(@"responseObjectresponseObjectresponseObject%@",responseObject);
+//                        NSLog(@"responseObjectresponseObjectresponseObject%@",responseObject);
                         //抢单成功
                         if ([responseObject[@"flag"] isEqualToString:@"success"]) {
                             if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"receipt_face_state"] isEqualToString:@"1"]){
@@ -382,7 +382,7 @@
                     }];
                 }else{
                     [AFRequestManager postRequestWithUrl:DRIVER_TAKE_JOURNEY_ORDER params:@{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"order_id": notiMessage.extras.order_id,@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:1 success:^(id responseObject) {
-                        NSLog(@"responseObjectresponseObjectresponseObjectresponseObject%@",responseObject);
+//                        NSLog(@"responseObjectresponseObjectresponseObjectresponseObject%@",responseObject);
                         //抢单成功
                         if ([responseObject[@"flag"] isEqualToString:@"success"]) {
                             UIWindow * window=[UIApplication sharedApplication].delegate.window;
@@ -414,7 +414,7 @@
                 }
                 } else{
                     //一口价订单抢单
-                    NSLog(@"一口价订单抢单");
+//                    NSLog(@"一口价订单抢单");
                     NSDictionary *dic = [NSDictionary dictionary];
                     dic = @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"order_id":notiMessage.extras.order_id};
                     [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_GRAB_ORDER params:dic tost:YES special:1 success:^(id responseObject) {
@@ -473,6 +473,7 @@
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
     LivenessViewController* lvc = [[LivenessViewController alloc] init];
+    lvc.isFount = YES;
     lvc.liveBlock = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -505,7 +506,7 @@
                 
                 NSString * dateString=[CYTSI getDateStr];
                 NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                 
                 NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];

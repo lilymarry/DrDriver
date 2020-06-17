@@ -93,9 +93,9 @@
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    NSLog(@"文字长度：%u",textField.text.length);
+//    NSLog(@"文字长度：%u",textField.text.length);
     NSString * str=[NSString stringWithFormat:@"%@%@",textField.text,string];
-    NSLog(@"文字：%@",str);
+//    NSLog(@"文字：%@",str);
     
     if (textField.text.length>5 && ![string isEqualToString:@""]) {
         

@@ -82,7 +82,7 @@
     [super viewDidLoad];
     
     // 初始化相机处理类
-    self.videoCapture = [[VideoCaptureDevice alloc] init];
+    self.videoCapture = [[VideoCaptureDevice alloc] creatWithFount:self.isFount];
     self.videoCapture.delegate = self;
     
     // 用于播放视频流
@@ -234,7 +234,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil message:errorStr preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* action = [UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"知道啦");
+//            NSLog(@"知道啦");
         }];
         [alert addAction:action];
         UIViewController* fatherViewController = weakSelf.presentingViewController;

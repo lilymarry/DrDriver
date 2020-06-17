@@ -10,7 +10,8 @@
 #import "CityAndTypeTableViewCell.h"
 #import "AppDelegate.h"
 #import "JPUSHService.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 
 @interface ChangeCarTypeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)UITableView *tableView;
@@ -160,9 +161,9 @@
     
     BOOL isHave=NO;
     NSArray * vcArray=self.navigationController.viewControllers;
-    for (LoginViewController * vc in vcArray) {
+    for (QuickLoginViewController * vc in vcArray) {
         
-        if ([vc isKindOfClass:[LoginViewController class]]) {
+        if ([vc isKindOfClass:[QuickLoginViewController class]]) {
             
             isHave=YES;
             [nav popToViewController:vc animated:YES];
@@ -173,7 +174,7 @@
     
     if (isHave==NO) {
         
-        LoginViewController * vc=[[LoginViewController alloc]init];
+        QuickLoginViewController * vc=[[QuickLoginViewController alloc]init];
         vc.isMainJump=YES;
         [nav pushViewController:vc animated:YES];
         
@@ -187,7 +188,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%@",self.dataArr);
+//    NSLog(@"%@",self.dataArr);
     return self.dataArr.count;
 }
 

@@ -166,7 +166,7 @@ AMapNaviDriveManagerDelegate,UITextViewDelegate,YuYueAndAirPortViewDelegat>
     }
     __weak typeof(self) weakSelf = self;
     [AFRequestManager postRequestWithUrl:urlStr params:@{@"order_id":_orderID,@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         [OrderDetailModel mj_setupObjectClassInArray:^NSDictionary *{
             
             return @{@"locus_point":@"DriverLocationModel"};
@@ -723,10 +723,10 @@ AMapNaviDriveManagerDelegate,UITextViewDelegate,YuYueAndAirPortViewDelegat>
 //        float floatCount = count * 1.00;
         
 //        int index = (int)orderDetail.locus_point.count*(i/floatCount);
-        NSLog(@"*****第%d个点",index);
+//        NSLog(@"*****第%d个点",index);
         
         DriverLocationModel * model=orderDetail.locus_point[i];
-        NSLog(@"经纬度：%f,%f",model.driver_lat,model.driver_lng);
+//        NSLog(@"经纬度：%f,%f",model.driver_lat,model.driver_lng);
         commonPolylineCoords[i].latitude = model.driver_lat;
         commonPolylineCoords[i].longitude = model.driver_lng;
         

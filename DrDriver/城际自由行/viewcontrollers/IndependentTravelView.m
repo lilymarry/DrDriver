@@ -16,7 +16,8 @@
 #import "TripOneTableViewCell.h"
 
 #import "CYOrderView.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 #import "CompleteOrderModel.h"
 #import "MessageViewController.h"
 #import "CYAlertView.h"
@@ -99,12 +100,12 @@
     [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         // 当网络状态改变了, 就会调用这个block
         if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
-            NSLog(@"网络连接正常");
+//            NSLog(@"网络连接正常");
             
             [self refreshDown];//请求司机信息
             
         }else{
-            NSLog(@"网络连接错误");
+//            NSLog(@"网络连接错误");
         }
     }];
     // 3.开始监控
@@ -134,7 +135,7 @@
     if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied)
         //位置服务是在设置中禁用
     {
-        NSLog(@"您没有开启了定位权限");
+//        NSLog(@"您没有开启了定位权限");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"打开定位开关"
                                                         message:@"定位服务未开启，请进入系统设置允许APP获取位置信息"
                                                        delegate:self
@@ -180,7 +181,7 @@
         
         if (error)
         {
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+//            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
             
             if (error.code == AMapLocationErrorLocateFailed)
             {
@@ -188,11 +189,11 @@
             }
         }
         
-        NSLog(@"location:%@", location);
+//        NSLog(@"location:%@", location);
         
         if (regeocode)
         {
-            NSLog(@"reGeocode:%@    %@",regeocode.province,regeocode.city);
+//            NSLog(@"reGeocode:%@    %@",regeocode.province,regeocode.city);
             NSString *cityName = @"";
             if (regeocode.city  == nil) {
                 cityName = @"天津市";
@@ -340,7 +341,7 @@
 #pragma mark---------------------- 接收到透传消息
 -(void)receiveTouChuan:(NSNotification *)noti
 {
-    NSLog(@"城际自由行透传消息%@",noti.userInfo);
+//    NSLog(@"城际自由行透传消息%@",noti.userInfo);
     if ([noti.userInfo[@"extras"][@"operate_class"] isEqualToString:@"new_travel_order"]) {
         [self playVideo:noti.userInfo[@"content"]];
         [self refreshDown];
@@ -357,7 +358,7 @@
     
     //乘客已付款
     if ([noti.userInfo[@"extras"][@"operate_class"] isEqualToString:@"passenger_payment"]) {
-        NSLog(@"网路出行收款%@元",noti.userInfo[@"extras"][@"journey_fee"]);
+//        NSLog(@"网路出行收款%@元",noti.userInfo[@"extras"][@"journey_fee"]);
         [[SpeechSynthesizer sharedSpeechSynthesizer] speakString:[NSString stringWithFormat:@"网路出行收款%@元",noti.userInfo[@"extras"][@"journey_fee"]]];
     }
 }
@@ -369,7 +370,7 @@
 //登录过期的通知
 -(void)loginFailed
 {
-    LoginViewController * vc=[[LoginViewController alloc]init];
+    QuickLoginViewController * vc=[[QuickLoginViewController alloc]init];
     vc.isMainJump=YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -412,7 +413,7 @@
             }
         }
         self.ITUView.seat_num = responseObject[@"data"][@"seat_num"];
-        NSLog(@"responseObject    =========   %@",responseObject[@"data"]);
+//        NSLog(@"responseObject    =========   %@",responseObject[@"data"]);
         if (driverModel.audit_state == 2) {//可以听单
             self.ITDView.isCanListen=YES;
             self.ITUView.isCanListen = YES;
@@ -631,9 +632,6 @@
     self.ITDView.view.frame = CGRectMake(DeviceWidth, 0, DeviceWidth, self.view.bounds.size.height - topHeight - 189);
     [self addChildViewController:self.ITDView];
     [self.scrollView addSubview:self.ITDView.view];//把子控制器的 view 添加到父控制器的 view 上面
-    
-    
-    
     self.scrollView.contentSize = CGSizeMake(DeviceWidth * 2, self.view.bounds.size.height - topHeight - Bottom_Height - 189);
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -700,7 +698,7 @@
 -(void)checkForUpdate{
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     [AFRequestManager postRequestWithUrl:DRIVER_VERSION_DRIVER_CLIENT_UPDATE_IOS params:@{@"version":[infoDictionary objectForKey:@"CFBundleShortVersionString"]} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"CFBundleShortVersionString%@",responseObject);
+//        NSLog(@"CFBundleShortVersionString%@",responseObject);
         if ([responseObject[@"flag"] isEqualToString:@"success"]) {
             if ([responseObject[@"data"][@"is_force"] isEqualToString:@"1"]) {
                 if (![responseObject[@"data"][@"version"]  isEqualToString:[infoDictionary objectForKey:@"CFBundleShortVersionString"]]) {

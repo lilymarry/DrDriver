@@ -126,7 +126,7 @@
 }
 -(void)creatHttp{
     [AFRequestManager postRequestWithUrl:TRAVEL_REMARK_LIST params:@{} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"responseObjectresponseObject%@",responseObject);
+//        NSLog(@"responseObjectresponseObject%@",responseObject);
         if ([responseObject[@"message"] isEqualToString:@"请求成功"]) {
             self.dataArr = [NSMutableArray array];
             for (NSDictionary *dic in responseObject[@"data"]) {
@@ -142,9 +142,9 @@
 }
 -(void)mainHttp{
     NSDictionary *dic = @{@"line_id":self.line_id,@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"]};
-    NSLog(@"NSDictionary *dic =%@",dic);
+//    NSLog(@"NSDictionary *dic =%@",dic);
     [AFRequestManager postRequestWithUrl:DRIVER_TRAVEL_LINE_DETAIL params:dic tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"responseObjectresponseObject%@",responseObject);
+//        NSLog(@"responseObjectresponseObject%@",responseObject);
         if ([responseObject[@"message"] isEqualToString:@"请求成功"]) {
             [self.numberArr removeAllObjects];
             [self.parcelArr removeAllObjects];
@@ -667,7 +667,7 @@
 -(void)leeTagView:(LeeTagView *)tagView tapTagItem:(LeeTagItem *)tagItem atIndex:(NSInteger)index{
     if (tagView == self.tagView){
         if (tagItem.selected) {
-            NSLog(@"124124141");
+//            NSLog(@"124124141");
             [self.remarkStrArr addObject:tagItem.viewModel.selectedTitle];
         }else{
             [self.remarkStrArr removeObject:tagItem.viewModel.normalTitle];
@@ -996,7 +996,7 @@
     todayMinuteArr = [NSMutableArray array];
     NSInteger newMinute;
     newMinute = (minute + 30)/10;
-    NSLog(@"%ld",(long)newMinute);
+//    NSLog(@"%ld",(long)newMinute);
     if (newMinute > 6) {
         newMinute = newMinute - 6;
     }
@@ -1008,7 +1008,7 @@
             newMinute ++;
         } while (newMinute < 6);
     }
-    NSLog(@"%@",todayMinuteArr);
+//    NSLog(@"%@",todayMinuteArr);
     // 小时
     todayHourArr = [NSMutableArray array];
     NSInteger newHour;
@@ -1025,11 +1025,11 @@
         do {
             [todayHourArr addObject:[NSString stringWithFormat:@"%ld",(long)newHour]];
             newHour ++;
-            NSLog(@"%ld",(long)newHour);
+//            NSLog(@"%ld",(long)newHour);
         } while (newHour < 24);
         dateStr = @"今天";
     }
-    NSLog(@"todayHourArrtodayHourArr%@",todayHourArr);
+//    NSLog(@"todayHourArrtodayHourArr%@",todayHourArr);
     [self creatPickView];
 }
 -(void)creatPickView{

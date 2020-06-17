@@ -192,7 +192,7 @@ static CYTool * CYToolManager=nil;
  */
 -(void)setStringWith:(NSString *)string someStr:(NSString *)str lable:(UILabel *)lable theFont:(UIFont *)textFont theColor:(UIColor *)textColor
 {
-    NSLog(@"555555555555555555%@     %@",string,str);
+//    NSLog(@"555555555555555555%@     %@",string,str);
     NSMutableAttributedString *noteStr = [[NSMutableAttributedString alloc] initWithString:string];
     NSRange redRange = NSMakeRange([[noteStr string] rangeOfString:str].location, [[noteStr string] rangeOfString:str].length);
     [noteStr addAttribute:NSFontAttributeName value:textFont range:redRange];
@@ -704,7 +704,7 @@ static CYTool * CYToolManager=nil;
         NSDate *suDate = [formatter dateFromString:sr];
         [allDaysArray addObject:[self getweekDayWithDate:suDate]];
     }
-    NSLog(@"allDaysArray %@",allDaysArray);
+//    NSLog(@"allDaysArray %@",allDaysArray);
 }
 
 
@@ -804,7 +804,7 @@ static CYTool * CYToolManager=nil;
         {
             NSString* PhoneStr = [NSString stringWithFormat:@"telprompt://%@",phoneStr];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:PhoneStr] options:@{} completionHandler:^(BOOL success) {
-                NSLog(@"phone success");
+//                NSLog(@"phone success");
             }];
             
         }else {
@@ -822,7 +822,7 @@ static CYTool * CYToolManager=nil;
             alert.popoverPresentationController.barButtonItem = selfvc.navigationItem.leftBarButtonItem;
             // 添加按钮
             [alert addAction:[UIAlertAction actionWithTitle:@"呼叫" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-                NSLog(@"点击了呼叫按钮10.2下");
+//                NSLog(@"点击了呼叫按钮10.2下");
                 NSString* PhoneStr = [NSString stringWithFormat:@"tel://%@",phoneStr];
                 if ([PhoneStr hasPrefix:@"sms:"] || [PhoneStr hasPrefix:@"tel:"]) {
                     UIApplication * app = [UIApplication sharedApplication];
@@ -832,7 +832,7 @@ static CYTool * CYToolManager=nil;
                 }
             }]];
             [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                NSLog(@"点击了取消按钮");
+//                NSLog(@"点击了取消按钮");
             }]];
             [selfvc presentViewController:alert animated:YES completion:nil];
         }
@@ -1068,6 +1068,18 @@ static CYTool * CYToolManager=nil;
     NSString *confromTimespStr = [formatter stringFromDate:confromTimesp];
         return confromTimespStr;
 }
+
+- (int)secondWithTimeIntervalString:(NSString *)timeString{
+    NSLog(@"timeString === %@",timeString);
+    int startInt =[timeString intValue];
+    NSDate *endDdate = [NSDate date];
+
+    int endInt = [endDdate timeIntervalSince1970];
+    NSLog(@"startDouble ==== %d endDouble ==== %d",startInt,endInt);
+    return (endInt - startInt);
+
+}
+
 - (NSString *)dateWithTimeIntervalString:(NSString *)timeString
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -1109,4 +1121,19 @@ static CYTool * CYToolManager=nil;
     [dateday setDateFormat:@"yyyy-MM-dd"];
     return [dateday stringFromDate:beginningOfWeek];
 }
+
+-(NSString*)getCurrentTimes
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //现在时间,你可以输出来看下是什么格式
+    NSDate *datenow = [NSDate date];
+    //----------将nsdate按formatter格式转成nsstring
+    NSString *currentTimeString = [formatter stringFromDate:datenow];
+ 
+    return currentTimeString;
+}
+
+
 @end

@@ -23,7 +23,7 @@
     
     self.navigationController.navigationBar.hidden=YES;
     
-    NSLog(@"updatePriceTimerupdatePriceTimerupdatePriceTimer%@    %ld",updatePriceTimer,_orderState);
+//    NSLog(@"updatePriceTimerupdatePriceTimerupdatePriceTimer%@    %ld",updatePriceTimer,_orderState);
     if (updatePriceTimer == nil  &&  _orderState == 3) {
         [self savePointAndPlanDistance];
         updatePriceTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(savePointAndPlanDistance) userInfo:nil repeats:YES];

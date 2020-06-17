@@ -198,7 +198,7 @@
     }
     NSString * ipAddress=[CYTSI deviceWANIPAdress];
     [AFRequestManager postRequestWithUrl:DRIVER_DRIVER_REGISTER params:@{@"driver_account":_phoneTextFiled.text,@"driver_password":_passwordTextFiled.text,@"verify_code":_codeTextFiled.text,@"register_ip":ipAddress,@"invite_code":_invaliteTextFiled.text} tost:YES special:0 success:^(id responseObject) {
-        NSLog(@"%@",responseObject);
+//        NSLog(@"%@",responseObject);
         DriverModel * driver=[DriverModel mj_objectWithKeyValues:responseObject[@"data"]];
         
         [CYTSI otherShowTostWithString:@"注册成功"];
@@ -253,7 +253,7 @@
         
         if (error)
         {
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+//            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
             
             if (error.code == AMapLocationErrorLocateFailed)
             {
@@ -261,11 +261,11 @@
             }
         }
         
-        NSLog(@"location:%@", location);
+//        NSLog(@"location:%@", location);
         
         if (regeocode)
         {
-            NSLog(@"reGeocode:%@", regeocode);
+//            NSLog(@"reGeocode:%@", regeocode);
             
             self.city=regeocode.city;
             

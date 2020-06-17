@@ -19,7 +19,7 @@
         [self addSubview:self.bgView];
         
         self.topLineLB = [[UILabel alloc] init];
-        self.topLineLB.backgroundColor = [UIColor lightGrayColor];
+        self.topLineLB.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self addSubview:self.topLineLB];
         
         self.dateLB = [[UILabel alloc] init];

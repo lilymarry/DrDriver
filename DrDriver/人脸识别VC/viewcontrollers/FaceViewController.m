@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"人脸识别";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self setUpNav];
@@ -60,11 +61,14 @@
     }
 }
 -(void)scanFaceAction{
+    
     if ([[FaceSDKManager sharedInstance] canWork]) {
         NSString* licensePath = [[NSBundle mainBundle] pathForResource:FACE_LICENSE_NAME ofType:FACE_LICENSE_SUFFIX];
         [[FaceSDKManager sharedInstance] setLicenseID:FACE_LICENSE_ID andLocalLicenceFile:licensePath];
     }
+    
     LivenessViewController* lvc = [[LivenessViewController alloc] init];
+    lvc.isFount = YES;
     //    __weak typeof(self) weakSelf = self;
     lvc.liveBlock = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -97,7 +101,7 @@
                 
                 NSString * dateString=[CYTSI getDateStr];
                 NSString * dateStr=[NSString stringWithFormat:@"%@face_img.png",dateString];
-                NSLog(@"dateStr%@",dateStr);
+//                NSLog(@"dateStr%@",dateStr);
                 [CYTSI saveImage:[UIImage fixOrientation:[CYTSI compressImageQuality:image  toByte:1024*1024] ] withName:dateStr];
                 
                 NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];
@@ -149,7 +153,7 @@
         });
         
     };
-    NSLog(@"self.face_numberself.face_numberself.face_number%ld",self.face_number);
+//    NSLog(@"self.face_numberself.face_numberself.face_number%ld",self.face_number);
     [lvc livenesswithList:@[] order:0  numberOfLiveness:self.face_number];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:lvc];
     navi.navigationBarHidden = true;
@@ -158,7 +162,7 @@
 //设置导航栏
 -(void)setUpNav
 {
-    self.title = @"人脸识别";
+    
     UIButton * navBackButton=[UIButton buttonWithType:UIButtonTypeCustom];
     navBackButton.frame=CGRectMake(0, 0, 40, 40);
     navBackButton.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);

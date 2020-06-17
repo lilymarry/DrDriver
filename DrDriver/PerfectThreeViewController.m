@@ -11,8 +11,8 @@
 #import "PerfectThreeTableViewCell.h"
 #import "CYAlertView.h"
 #import "AFNetWorking.h"
-#import "LoginViewController.h"
-
+//#import "LoginViewController.h"
+#import "QuickLoginViewController.h"
 @interface PerfectThreeViewController () <UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 {
@@ -153,7 +153,7 @@
             }
             
             NSString * dateStr=[NSString stringWithFormat:@"%@%@.png",dateString,imageStr];
-            NSLog(@"dateStr%@",dateStr);
+//            NSLog(@"dateStr%@",dateStr);
             [self saveImage:chooseDic[imageStr] withName:dateStr];
             NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:dateStr];
             [formData appendPartWithFileURL:[NSURL fileURLWithPath:fullPath] name:keyStr fileName:dateStr mimeType:@"image/png" error:nil];
@@ -177,9 +177,9 @@
         if (responseObject[@"data"]) {
             
             NSArray * vcArray=self.navigationController.viewControllers;
-            for (LoginViewController * vc in vcArray) {
+            for (QuickLoginViewController * vc in vcArray) {
                 
-                if ([vc isKindOfClass:[LoginViewController class]]) {
+                if ([vc isKindOfClass:[QuickLoginViewController class]]) {
                     
                     [CYTSI otherShowTostWithString:@"上传成功"];
                     [self.navigationController popToViewController:vc animated:YES];
