@@ -213,15 +213,38 @@
     double   latitude=[[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"] doubleValue];
     double  longtitude=[[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"] doubleValue];
     NSString *urlStr;
-    NSDictionary *dic;
+   
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"] == nil) {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"stopUpdate" object:self userInfo:nil];
         return;
     }
-        urlStr = DRIVER_UPDATE_VEHICLE_LOCATION;
-        dic =  @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],@"driver_lng":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"],@"driver_lat":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"],@"speed":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"],@"angle":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"],@"stime":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"],@"order_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"order_id"],@"state":[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"],@"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"],@"is_fatigue":@"1"};
-    //上传服务器司机的位置
+    urlStr = DRIVER_UPDATE_VEHICLE_LOCATION;
     
+    NSMutableDictionary *para=[NSMutableDictionary dictionary];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"] forKey:@"driver_id"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLo"] forKey:@"driver_lng"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"] forKey:@"driver_lat"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"] forKey:@"speed"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"] forKey:@"angle"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"] forKey:@"stime"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"order_id"] forKey:@"order_id"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"] forKey:@"state"];
+    [para setValue:[[NSUserDefaults standardUserDefaults] objectForKey:@"token"] forKey:@"token"];
+    [para setValue:@"1" forKey:@"is_fatigue"];
+    /*
+        dic =  @{@"driver_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"userid"],
+                 @"driver_lng":[[NSUserDefaults standardUserDefaults]objectForKey:@"driverLocationLo"],
+                 @"driver_lat":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationLa"],
+                 @"speed":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationSpeed"],
+                 @"angle":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationCourse"],
+                 @"stime":[[NSUserDefaults standardUserDefaults] objectForKey:@"driverLocationStime"],
+                 @"order_id":[[NSUserDefaults standardUserDefaults] objectForKey:@"order_id"],
+                 @"state":[[NSUserDefaults standardUserDefaults] objectForKey:@"orderState"],
+                 @"token":[[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
+                 ,@"is_fatigue":@"1"};
+     */
+    //上传服务器司机的位置
+    NSDictionary *dic=[NSDictionary dictionaryWithDictionary:para];
     [AFRequestManager postRequestWithUrl:urlStr params:dic tost:NO special:1 success:^(id responseObject) {
         self.networkCount = 0;
         if ([responseObject[@"error_code"] isEqualToString:@"3333"]) {

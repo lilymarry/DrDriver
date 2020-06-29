@@ -28,7 +28,6 @@
 
 @interface TripDetailViewController () <MAMapViewDelegate,
 AMapNaviDriveManagerDelegate,UITextViewDelegate,YuYueAndAirPortViewDelegat>
-
 {
     UIView * blackView;//评价背景黑视图
     UIView * pingJiaView;//评价视图

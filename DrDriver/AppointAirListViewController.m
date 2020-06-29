@@ -46,7 +46,6 @@
 #define myNumbers @"0123456789\n"
 
 @interface AppointAirListViewController ()<AMapLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate,AMapNaviDriveManagerDelegate,AMapNaviCompositeManagerDelegate,AMapNaviDriveDataRepresentable,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,YuYueAndAirPortViewDelegat,UIAlertViewDelegate>
-
 {
     int buttonType;//状态类型 1：到达上车地点  2：开始计费 3：结束行程
     UIButton * bottomButton;//底部按钮
