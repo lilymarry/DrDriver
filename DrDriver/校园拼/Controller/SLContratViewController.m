@@ -119,8 +119,8 @@
     self.tabelView.showsVerticalScrollIndicator=NO;
     [self.view addSubview:self.tabelView];
        //添加下拉刷新及上拉加载
-        self.tabelView.mj_header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshDown)];
-        self.tabelView.mj_footer=[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshUp)];
+    self.tabelView.mj_header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshDown)];
+    self.tabelView.mj_footer=[MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshUp)];
         
 }
 

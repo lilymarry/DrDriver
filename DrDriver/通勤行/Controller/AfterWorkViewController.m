@@ -244,8 +244,8 @@
                            /*添加annotation*/
                            weakSelf.annotations = [NSMutableArray array];
                            for (int i = 0; i < weakSelf.tripDetail.latlng.count; ++i) {
-                               CLLocationDegrees latitude =  [[weakSelf.tripDetail.latlng[i] start_lat] doubleValue];
-                               CLLocationDegrees longitude =  [[weakSelf.tripDetail.latlng[i] start_lng] doubleValue];
+                               CLLocationDegrees latitude = [[weakSelf.tripDetail.latlng[i] start_lat] doubleValue];
+                               CLLocationDegrees longitude = [[weakSelf.tripDetail.latlng[i] start_lng] doubleValue];
                                MAPointAnnotation *a1 = [[MAPointAnnotation alloc] init];
                                a1.coordinate = (CLLocationCoordinate2D) { latitude, longitude };
                                a1.title      = [weakSelf.tripDetail.latlng[i] cm_name];

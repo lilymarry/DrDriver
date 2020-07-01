@@ -29,9 +29,9 @@
     }];
     self.WebView.UIDelegate = self;
     
-    NSString *URLString;
+   
     self.title = @"易出行商城";
-    URLString = @"http://www.e1860.com/";
+    NSString *  URLString = @"http://www.e1860.com/";
     
     [self.WebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
 }
