@@ -46,6 +46,7 @@
 #import "IndependentTravelView.h"
 
 #import "AudioRecoderManager.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface AppDelegate () <JPUSHRegisterDelegate,TencentSessionDelegate,WXApiDelegate,APOpenAPIDelegate,CLLocationManagerDelegate,AMapLocationManagerDelegate>
 
@@ -543,19 +544,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 
 
 
-#pragma mark - QQ delegate
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return [WXApi handleOpenURL:url delegate:self];
-    
-    //    return [TencentOAuth HandleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [WXApi handleOpenURL:url delegate:self];
-    
-    //    return [TencentOAuth HandleOpenURL:url];
-}
 
 //发送崩溃日志
 -(void)sendCrashText
@@ -636,7 +624,126 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     });
     [self.manager startUpdatingLocation];
 }
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    NSLog(@"1---%@",url.host);
+    if ([url.host isEqualToString:@"platformapi"]) {
 
+        //  处理支付宝通过URL启动App时传递的数据
+        return [APOpenAPI handleOpenURL:url delegate:self];
+
+    }
+
+    return  [WXApi handleOpenURL:url delegate:self];
+    //    return [TencentOAuth HandleOpenURL:url];//腾讯微信都有***需判断***
+}
+
+//#pragma mark - QQ delegate
+//
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+//    return [WXApi handleOpenURL:url delegate:self];
+//
+//    //    return [TencentOAuth HandleOpenURL:url];
+//}
+
+
+
+
+//支付成功回调
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    NSLog(@"2---%@",url.host);
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            
+            
+            if ([[resultDic objectForKey:@"resultStatus"] intValue]==9000) {
+                
+                if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"isorder"] intValue]==1) {//支付订单
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"payorder" object:self];
+                    
+                } else {//充值
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"chongzhi" object:self];
+                    
+                }
+                
+            }else{
+                
+                [CYTSI otherShowTostWithString:@"支付失败"];
+                
+            }
+            
+        }];
+    }else if ([url.host isEqualToString:@"platformapi"]) {
+        
+        //  处理支付宝通过URL启动App时传递的数据
+        return [APOpenAPI handleOpenURL:url delegate:self];
+        
+    }else{
+        
+     //   [CPPaySDK handlePayResult:url];
+    }
+    
+    return YES;
+}
+
+// NOTE: 9.0以后使用新API接口
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+    NSLog(@"3---%@",url.host);
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            
+            if ([[resultDic objectForKey:@"resultStatus"] intValue]==9000) {
+                
+                if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"isorder"] intValue]==1) {//支付订单
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"payorder" object:self];
+                    
+                } else {//充值
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"chongzhi" object:self];
+                    
+                }
+                
+            }else{
+                
+                [CYTSI otherShowTostWithString:@"支付失败"];
+                
+            }
+            
+        }];
+        
+        return YES;
+    }else if ([url.host isEqualToString:@"platformapi"]) {
+        
+        //  处理支付宝通过URL启动App时传递的数据
+        return [APOpenAPI handleOpenURL:url delegate:self];
+        
+    }
+    else if ([url.host isEqualToString:@"platformId=wechat"]) {
+        
+        //  处理微信通过URL启动App时传递的数据
+        return [WXApi handleOpenURL:url delegate:self];
+        
+    }
+    else{
+       // [CPPaySDK handlePayResult:url];
+         return [WXApi handleOpenURL:url delegate:self];
+    }
+    
+  
+    
+}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.

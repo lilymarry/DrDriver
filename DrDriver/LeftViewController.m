@@ -28,7 +28,7 @@
 #import "ITTripViewController.h"
 #import "NewTripViewController.h"
 #import "SchoolViewController.h"
-
+#import "BuyMemberViewController.h"
 @interface LeftViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *myTableView;
@@ -40,6 +40,8 @@
     CYStarView *starView;
     UILabel *nickNamelable;
     UIButton *headButon;
+    
+    UILabel *leveLab;
 
     ShouYeModel *shouYe;
 }
@@ -52,11 +54,11 @@
     // Do any additional setup after loading the view from its nib.
     NSString *d_class = [[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"];
     if ([d_class isEqualToString:@"3"] || [d_class isEqualToString:@"6"]) {//扫码车进入
-        imageArray = @[@"left_trip", @"person_qianbao", @"person_invalite", @"person_suggestion", @"商城", @"person_about"];
-        titleArray = @[@"行程", @"钱包", @"邀请好友", @"意见反馈", @"易出行商城", @"关于"];
+        imageArray = @[ @"person_about",@"left_trip", @"person_qianbao", @"person_invalite", @"person_suggestion", @"商城", @"person_about"];
+        titleArray = @[@"会员卡",@"行程", @"钱包", @"邀请好友", @"意见反馈", @"易出行商城", @"关于", @"购买会员卡"];
     } else {
-        imageArray = @[@"left_trip", @"xuexiao",@"xuexiao", @"person_qianbao", @"onlineTime", @"person_invalite", @"person_suggestion", @"商城", @"站点", @"person_about"];
-        titleArray = @[@"行程", @"校园拼", @"通行勤",@"钱包", @"在线时长", @"邀请好友", @"意见反馈", @"易出行商城", @"站点排队", @"关于"];
+        imageArray = @[@"person_about",@"left_trip", @"xuexiao",@"xuexiao", @"person_qianbao", @"onlineTime", @"person_invalite", @"person_suggestion", @"商城", @"站点", @"person_about" ];
+        titleArray = @[ @"会员卡" ,@"行程", @"校园拼", @"通行勤",@"钱包", @"在线时长", @"邀请好友", @"意见反馈", @"易出行商城", @"站点排队", @"关于"];
     }
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(leftView) name:@"leftView" object:nil];
@@ -68,11 +70,11 @@
 - (void)leftView {
     NSString *d_class = [[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"];
     if ([d_class isEqualToString:@"3"] || [d_class isEqualToString:@"6"]) {//扫码车进入
-        imageArray = @[@"left_trip", @"person_qianbao", @"person_invalite", @"person_suggestion", @"商城", @"person_about"];
-        titleArray = @[@"行程", @"钱包", @"邀请好友", @"意见反馈", @"易出行商城", @"关于"];
+        imageArray = @[@"person_about",@"left_trip", @"person_qianbao", @"person_invalite", @"person_suggestion", @"商城", @"person_about"];
+        titleArray = @[@"会员卡",@"行程", @"钱包", @"邀请好友", @"意见反馈", @"易出行商城", @"关于"];
     } else {
-        imageArray = @[@"left_trip", @"xuexiao",@"xuexiao", @"person_qianbao", @"onlineTime", @"person_invalite", @"person_suggestion", @"商城", @"站点", @"person_about"];
-        titleArray = @[@"行程", @"校园拼", @"通行勤",@"钱包", @"在线时长", @"邀请好友", @"意见反馈", @"易出行商城", @"站点排队", @"关于"];
+        imageArray = @[@"person_about",@"left_trip", @"xuexiao",@"xuexiao", @"person_qianbao", @"onlineTime", @"person_invalite", @"person_suggestion", @"商城", @"站点", @"person_about"];
+        titleArray = @[@"会员卡",@"行程", @"校园拼", @"通行勤",@"钱包", @"在线时长", @"邀请好友", @"意见反馈", @"易出行商城", @"站点排队", @"关于"];
     }
     [myTableView reloadData];
 }
@@ -142,8 +144,9 @@
 //    }
     [self.view addSubview:myTableView];
 
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DeviceWidth, 210)];
-
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DeviceWidth, 240)];
+   // headerView.backgroundColor=[UIColor redColor];
+    
     leftView = [[CYLableView alloc]init];
     leftView.backgroundColor = [UIColor whiteColor];
     leftView.topLable.text = @"总订单数";
@@ -168,7 +171,7 @@
         make.bottom.equalTo(headerView.mas_bottom);
         make.width.equalTo(@80);
     }];
-
+    //星级
     starView = [[CYStarView alloc]init];
     [starView setViewWithNumber:0 width:14 space:2 enable:NO];
     [headerView addSubview:starView];
@@ -178,7 +181,7 @@
         make.width.equalTo(@78);
         make.top.equalTo(rightView.mas_top).with.offset(-27);
     }];
-
+    
     nickNamelable = [[UILabel alloc]init];
     nickNamelable.text = @"";
     nickNamelable.textColor = [CYTSI colorWithHexString:@"#666666"];
@@ -211,18 +214,31 @@
         make.width.equalTo(@62);
         make.left.equalTo(nickNamelable.mas_right).with.offset(3);
     }];
-
+   
+          leveLab=[UILabel new];
+          leveLab.text=@"普通会员";
+          leveLab.font = [UIFont boldSystemFontOfSize:16];
+          [headerView addSubview:leveLab];
+          [leveLab mas_makeConstraints:^(MASConstraintMaker *make) {
+              make.centerX.equalTo(headerView.mas_centerX);
+           //   make.width.equalTo(headerView);
+              make.height.equalTo(@20);
+              make.bottom.equalTo(nickNamelable.mas_top).with.offset(-15);
+          }];
+      
+    
     headButon = [UIButton buttonWithType:UIButtonTypeCustom];
     headButon.layer.cornerRadius = 41;
     headButon.layer.masksToBounds = YES;
     [headButon addTarget:self action:@selector(headButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:headButon];
     [headButon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(nickNamelable.mas_top).with.offset(-15);
+        make.bottom.equalTo(leveLab.mas_top).with.offset(-15);
         make.centerX.equalTo(headerView.mas_centerX);
         make.height.and.width.equalTo(@82);
     }];
-
+   
+      
     self.typeLB = [[UILabel alloc] init];
     [headerView addSubview:self.typeLB];
     self.typeLB.layer.cornerRadius = 15;
@@ -340,7 +356,7 @@
     if ([d_class isEqualToString:@"3"] || [d_class isEqualToString:@"6"]) {//扫码车进入
         return 6;
     } else {
-        return 10;
+        return 11;
     }
 }
 
@@ -382,7 +398,13 @@
     NSString *d_class = [[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"];
     if ([d_class isEqualToString:@"3"] || [d_class isEqualToString:@"6"]) {//扫码车进入
         switch (indexPath.row) {
-            case 0://行程
+                case 0://购买会员
+                                  {
+                                      BuyMemberViewController *vc = [[BuyMemberViewController alloc]init];
+                                      [nav pushViewController:vc animated:YES];
+                                  }
+                                  break;
+            case 1://行程
             {
                 //                if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"driver_class"] isEqualToString:@"8"]){
                 //                    ITTripViewController *vc = [[ITTripViewController alloc] init];
@@ -393,31 +415,31 @@
                 //                }
             }
             break;
-            case 1://钱包
+            case 2://钱包
             {
                 MoneyViewController *vc = [[MoneyViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 2://邀请
+            case 3://邀请
             {
                 InvitationViewController *vc = [[InvitationViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 3://意见反馈
+            case 4://意见反馈
             {
                 SuggestionViewController *vc = [[SuggestionViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 4://商城
+            case 5://商城
             {
                 ShopViewController *vc = [[ShopViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 5://关于
+            case 6://关于
             {
                 AboutViewController *vc = [[AboutViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
@@ -428,68 +450,74 @@
         }
     } else {
         switch (indexPath.row) {
-            case 0://行程
+            case 1://行程
             {
                 NewTripViewController *vc = [[NewTripViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 1://校园拼
+            case 2://校园拼
             {
                 SchoolViewController *vc = [[SchoolViewController alloc]init];
                 vc.whichType = @"0";
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 2://通行勤
+            case 3://通行勤
             {
                 SchoolViewController *vc = [[SchoolViewController alloc]init];
                 vc.whichType = @"1";
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 3://钱包
+            case 4://钱包
             {
                 MoneyViewController *vc = [[MoneyViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 4://在线时长
+            case 5://在线时长
             {
                 OnlineTimeViewController *vc = [[OnlineTimeViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 5://邀请
+            case 6://邀请
             {
                 InvitationViewController *vc = [[InvitationViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 6://意见反馈
+            case 7://意见反馈
             {
                 SuggestionViewController *vc = [[SuggestionViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 7://商城
+            case 8://商城
             {
                 ShopViewController *vc = [[ShopViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 8://站点排队
+            case 9://站点排队
             {
                 QueueUpViewController *vc = [[QueueUpViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
-            case 9://关于
+            case 10://关于
             {
                 AboutViewController *vc = [[AboutViewController alloc]init];
                 [nav pushViewController:vc animated:YES];
             }
             break;
+                case 0://购买会员
+                         {
+                             BuyMemberViewController *vc = [[BuyMemberViewController alloc]init];
+                             [nav pushViewController:vc animated:YES];
+                         }
+                         break;
             default:
                 break;
         }

@@ -13,4 +13,5 @@ target 'DrDriver' do
     pod 'AMapLocation', '~> 2.6.3'
     pod 'AMapNavi', '~> 7.1.0'
     pod 'JPush', '~> 3.2.6'
+    pod 'AlipaySDK-iOS',  '~> 15.7.4'
 end
